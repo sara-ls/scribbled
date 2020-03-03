@@ -6,6 +6,7 @@
   font-family: Source Sans Pro, sans-serif;
   text-decoration: none;
   color: black;
+  -webkit-font-smoothing: antialiased;
 }
 
 /**
@@ -109,8 +110,34 @@ Start NavBar formatting
   background-color: #e47b01;
   width: 8%
 }
+
+.dropdown-content {
+  background-color: #fff;
+  border: 2px solid #e9edf8;
+  min-width: 240px;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  right: 13px;
+  text-align: left;
+  top: 60px;
+  z-index: 1000;
+}
+
+.dropdown-list {
+  list-style: none;
+}
+
+.dropdown-list li * {
+  color: #57617a;
+  display: block;
+  font-size: 16px;
+  height: 100%;
+  padding: 4px 16px;
+  width: 100%;
+}
 /**
-End NavBar formatting
+End NavBar formatting ------------------
 **/
 
 

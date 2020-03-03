@@ -10,6 +10,28 @@ import {
 } from "@fortawesome/react-fontawesome";
 
 class NavBar extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      showMenu: false,
+    }
+
+    this.toggleMenu = this.toggleMenu.bind(this)
+  }
+
+  toggleMenu(event) {
+    if (this.state.showMenu) {
+      this.setState({
+        showMenu: false,
+      })
+    } else {
+      this.setState({
+        showMenu: true,
+      })
+    }
+  }
+
   render() {
     return (
       <nav className="navbar">
@@ -22,12 +44,30 @@ class NavBar extends React.Component {
             />
           </div>
           <div className="navbar-tools">
-            <div className="user-menu-btn">
+            <div className="user-menu-btn" onClick={this.toggleMenu}>
               <div className="user-btns">
-                <FontAwesomeIcon id="user-icon" className="user-icon" icon={faUserCircle} />
+                <FontAwesomeIcon 
+                  id="user-icon" 
+                  className="user-icon" 
+                  icon={faUserCircle} 
+                />
                 <FontAwesomeIcon id="down-arrow-icon" icon={faAngleDown} />
               </div>
             </div>
+            {
+              this.state.showMenu ? 
+              (
+                <div className="dropdown-content">
+                  <ul className="dropdown-list">
+                    <li>Hi</li> 
+                    <li><Link>Account Settings</Link></li>
+                    <li><Link>Sign Out</Link></li>
+                  </ul>
+                </div>
+              ) 
+              : 
+              ( null )
+            }
           </div>
         </div>
         <div className="color-divider-line"> 
