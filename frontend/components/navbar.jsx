@@ -1,6 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+// import icons
+import {
+  faUserCircle, faAngleDown
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  FontAwesomeIcon
+} from "@fortawesome/react-fontawesome";
+
 class NavBar extends React.Component {
   render() {
     return (
@@ -10,8 +18,16 @@ class NavBar extends React.Component {
             <img 
               alt="Scribbled"
               className="logo-img"
-              src="https://s-f.scribdassets.com/images/landing/home2_landing/scribd_logo_horiz_small.svg?0c87b4bda"
+              src = "assets/scribbled-logo.png"
             />
+          </div>
+          <div className="navbar-tools">
+            <div className="user-menu-btn">
+              <div className="user-btns">
+                <FontAwesomeIcon id="user-icon" className="user-icon" icon={faUserCircle} />
+                <FontAwesomeIcon id="down-arrow-icon" icon={faAngleDown} />
+              </div>
+            </div>
           </div>
         </div>
         <div className="color-divider-line"> 

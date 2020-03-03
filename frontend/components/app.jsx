@@ -10,14 +10,23 @@ import {
   HashRouter
 } from 'react-router-dom';
 import NavBar from './navbar'
+import Footer from './footer'
+import SideBar from './sidebar'
 
 const App = () => {
   return (
     <div className="app">
       <NavBar />
-      <Switch>
-        {/* <Route exact path="/" component={} /> */}
-      </Switch>
+      <div className="main-section">
+        <SideBar />
+        <div className="main-content">
+          <Switch>
+            {/* <Route exact path="/" component={} /> */}
+          </Switch>
+        </div>
+      </div>
+
+      {/* <Footer /> */}
     </div>
   )
 }

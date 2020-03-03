@@ -2,14 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+* {
+  font-family: Source Sans Pro, sans-serif;
+  text-decoration: none;
+  color: black;
+}
 
 /**
 Start NavBar formatting
 **/
+
+
+
 .navbar {
   display: block;
   position: fixed;
-  width: 100%
+  width: 100%;
+  z-index: 5;
+  background-color: white;
 }
 
 .nav-items-container {
@@ -22,6 +32,7 @@ Start NavBar formatting
   align-items: center;
   width: 100%;
   padding: 0 16px 0 10px;
+  height: 59px;
 }
 
 .logo-container {
@@ -29,8 +40,33 @@ Start NavBar formatting
 }
 
 .logo-img {
-  width: 110px;
-  height: 25px;
+  width: 140px;
+  height: 30px;
+}
+
+.user-btns {
+  width: 58px;
+  color: #1e7b85;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #1e7b85;
+  cursor: pointer;
+}
+
+.user-btns * {
+  color: #1e7b85;
+}
+
+#user-icon {
+  width: 40px;
+  height: 40px;
+}
+
+#down-arrow-icon {
+  height: 11px;
+  font-weight: lighter;
 }
 
 .color-divider-line {
@@ -76,3 +112,55 @@ Start NavBar formatting
 /**
 End NavBar formatting
 **/
+
+
+
+/**
+Start SideBar formatting --------------
+**/
+aside {
+  height: 100%;
+  position: fixed;
+  width: 180px;
+  background-color: #f8f9fd;
+  background-image: linear-gradient(0deg, #fcf5ea, #fbf1f7 35%, #eff7f8 67%, #e9f7fe);
+  z-index: 2;
+}
+
+.sidebar-content {
+  position: relative;
+  top: 61px;
+}
+
+.sidebar-content > ul {
+  list-style: none;
+} 
+
+.sidebar-content * {
+  color: #57617a;
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+  line-height: 24px;
+}
+/**
+End SideBar formatting ---------------
+**/
+
+
+
+/**
+Start Footer formatting
+**/
+footer {
+  background: #f8f9fd;
+  border-top: 2px solid #e9edf8;
+  text-align: center;
+}
+footer a {
+  font-size: 14px;
+  margin: 0;
+  color: #666;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
