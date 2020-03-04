@@ -29,6 +29,7 @@ class App extends React.Component {
       showSidebar: (window.store.entities.users )
     }
 
+    this.modalRef = React.createRef();
     this.openModal = this.openModal.bind(this)
     this.hideModal = this.hideModal.bind(this)
   }
@@ -37,6 +38,8 @@ class App extends React.Component {
     this.setState({
       showModal: true
     })
+    // scroll to form 
+    window.scrollTo(0, this.modalRef.current.offsetTop);
   }
 
   hideModal(e) {
@@ -60,27 +63,25 @@ class App extends React.Component {
     }
 
     let sessionForm = ( 
-      <LoginForm
-        show={this.state.showModal} 
-        openModal={this.openModal} 
-        hideModal={this.hideModal}
-      /> 
+        <LoginForm
+          id="form"
+          show={this.state.showModal} 
+          openModal={this.openModal} 
+          hideModal={this.hideModal}
+        /> 
     )
 
     return (
       <div className="app">
-        <NavBar openModal={ this.openModal } />
-        <div className="modal-container">
-          {sessionForm}
-        </div>
+        <NavBar openModal={this.openModal} />
+        <div ref={this.modalRef}></div>
+        {sessionForm}
         <div className="main-section">
-          <div className="main-content">
-            {mainContent}
-          </div>
+          <div className="main-content">{mainContent}</div>
         </div>
         {/* <Footer /> */}
       </div>
-    )
+    );
   }
 }
 
