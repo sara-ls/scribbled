@@ -12,7 +12,7 @@ class TopBooks extends React.Component {
             src="assets/book-covers/consider-the-lobster.jpg"
           />
           <img className="book-cover" src="assets/book-covers/DearGirls.jpg" />
-          <img className="book-cover" src="assets/book-covers/fleabag.jpg" />
+          {/* <img className="book-cover" src="assets/book-covers/fleabag.jpg" /> */}
           <img className="book-cover" src="assets/book-covers/sapiens.jpg" />
           <img className="book-cover" src="assets/book-covers/homo-deus.jpg" />
           <img
@@ -22,6 +22,26 @@ class TopBooks extends React.Component {
           <img
             className="book-cover"
             src="assets/book-covers/bad_blood_cover.png"
+          />
+          <img
+            className="book-cover"
+            src="assets/book-covers/My_Year_of_Rest_and_Relaxation.jpg"
+          />
+          <img
+            className="book-cover"
+            src="assets/book-covers/cover_schizopgrenias.jpg"
+          />
+          <img
+            className="book-cover"
+            src="assets/book-covers/stories.jpg"
+          />
+          <img
+            className="book-cover"
+            src="assets/book-covers/enlight.jpg"
+          />
+          <img
+            className="book-cover"
+            src="assets/book-covers/factfulness.jpg"
           />
         </div>
       </div>
