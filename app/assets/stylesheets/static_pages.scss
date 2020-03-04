@@ -12,6 +12,15 @@
 body {
   -webkit-font-smoothing: antialiased;
 }
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 /**
 Start NavBar formatting
 **/
@@ -219,10 +228,11 @@ End SideBar formatting ---------------
 Start Footer formatting
 **/
 footer {
-  background: #f8f9fd;
+  background: #cbcedb;
   border-top: 2px solid #e9edf8;
   text-align: center;
   position: relative;
+  top:0px;
   width: 100%;
   padding: 0 180px;
 }
@@ -443,7 +453,7 @@ form label {
 
 .home-content-box {
   position: relative;
-  /* height: 1000px; */
+  min-height: 800px;
   width: 100%;
   /* top: 5px; */
   z-index: 9;
@@ -603,7 +613,6 @@ li.offer-container {
   padding-top: 10px;
   color: #fafbfd;
   text-transform: uppercase;
-    font-weight: normal;
   line-height: 1em;
   font-size: 34px;
 }
@@ -613,6 +622,7 @@ li.offer-container {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  width: 75%;
 }
 .book-cover {
     height: 140px;

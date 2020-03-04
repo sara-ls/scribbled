@@ -6,13 +6,14 @@ class TopBooks extends React.Component {
       <div className="top-books">
         <h2>All of the Best Books</h2>
         <div className="book-covers-container">
+          <img className="book-cover" src="assets/book-covers/kill.jpg" />
           <img className="book-cover" src="assets/book-covers/chemistry.jpg" />
           <img
             className="book-cover"
             src="assets/book-covers/consider-the-lobster.jpg"
           />
           <img className="book-cover" src="assets/book-covers/DearGirls.jpg" />
-          {/* <img className="book-cover" src="assets/book-covers/fleabag.jpg" /> */}
+          <img className="book-cover" src="assets/book-covers/fleabag.jpg" />
           <img className="book-cover" src="assets/book-covers/sapiens.jpg" />
           <img className="book-cover" src="assets/book-covers/homo-deus.jpg" />
           <img
@@ -33,7 +34,15 @@ class TopBooks extends React.Component {
           />
           <img
             className="book-cover"
+            src="assets/book-covers/animals.jpg"
+          />
+          <img
+            className="book-cover"
             src="assets/book-covers/stories.jpg"
+          />
+          <img
+            className="book-cover"
+            src="assets/book-covers/talk.jpg"
           />
           <img
             className="book-cover"
