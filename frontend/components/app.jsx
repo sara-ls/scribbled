@@ -78,8 +78,8 @@ class App extends React.Component {
         {sessionForm}
         <div className="main-section">
           <div className="main-content">{mainContent}</div>
+          <Footer />
         </div>
-        {/* <Footer /> */}
       </div>
     );
   }

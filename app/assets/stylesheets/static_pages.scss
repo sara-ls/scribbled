@@ -5,7 +5,6 @@
 * {
   font-family: Source Sans Pro, sans-serif;
   text-decoration: none;
-  color: black;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -190,6 +189,15 @@ Start NavBar formatting
   cursor: pointer;
 }
 
+
+.signout-btn {
+    color: #57617a;
+    display: block;
+    font-size: 16px;
+    border: none;
+    background-color: none;
+}
+
 /**
 End NavBar formatting ------------------
 **/
@@ -231,10 +239,10 @@ End SideBar formatting ---------------
 
 
 /**
-Start Footer formatting
+Start Footer formatting -------------
 **/
 footer {
-  background: #cbcedb;
+
   border-top: 2px solid #e9edf8;
   text-align: center;
   position: relative;
@@ -250,6 +258,97 @@ footer a {
   letter-spacing: 2px;
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+    background: #f8f9fd;
+}
+
+.footer-list {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.social-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 12px;
+}
+
+.social-container a {
+  padding: 2px;
+  margin: 0px 10px;
+}
+
+#scribd-icon {
+  width: 15px;
+  height: auto;
+  color: #1e7b85;
+}
+#github-icon {
+  width: 18px;
+    height: auto;
+  color: #535151;
+}
+#linkedin-icon {
+  width: 18px;
+    height: auto;
+  color: rgb(91, 130, 201);
+}
+
+.footer-bottom {
+  padding-bottom: 40px;
+  padding-top: 12px;
+  width: 60%;
+  border-top: 1px solid #e9edf8;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.footer-bottom ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  padding-left: 0;
+
+}
+
+.footer-bottom li {
+  margin: 0 5px;
+}
+.footer-bottom span {
+  color: #57617a;
+}
+.footer-main {
+  display: block;
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.footer-list a {
+  font-size: 12px;
+  color: #444;
+  font-weight: normal;
+}
+
+.footer-main h4 {
+    font-size: 14px;
+    margin-top: 32px;
+    color: #666;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#dot svg {
+  width: 2px;
+}
+/**
+End Footer formatting ---------------
+**/
 
 
 

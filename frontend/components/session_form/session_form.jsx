@@ -8,7 +8,8 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      full_name: ""
     };
 
     this.switchFormType = this.switchFormType.bind(this);
@@ -35,7 +36,7 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
     this.props.hideModal();
-    this.props.currentUser = user;
+    // this.props.currentUser = user;
   }
 
   // renderErrors() {
@@ -52,15 +53,29 @@ class SessionForm extends React.Component {
 
   render() {
     let rightFooter;
+    let nameInput = null
     if (this.props.formType === "login") {
       rightFooter = "New to Scribbled?";
     } else {
       rightFooter = "Already have an account?";
+      nameInput = (
+        <div>
+          <br />
+          <label>Name</label>
+          <input
+            type="text"
+            value={this.state.full_name}
+            onChange={this.update("full_name")}
+            className="login-input"
+            autoComplete="off"
+          />
+        </div>
+      );
     }
 
     if (this.props.show) {
       return (
-        <div className="modal-container" id="modal" >
+        <div className="modal-container" id="modal">
           <div id="overlay"></div>
           <div className="login-form-container">
             <div className="login-form-box">
@@ -82,7 +97,7 @@ class SessionForm extends React.Component {
                       className="close-btn"
                       onClick={this.props.hideModal}
                     >
-                      <FontAwesomeIcon id="modal-icon" icon={faTimes} />
+                      <FontAwesomeIcon id="modal-icon" icon={faTimes} color="grey" />
                     </button>
                   </div>
                 </div>
@@ -91,6 +106,7 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="login-form">
                   {/* {this.renderErrors()} */}
                   <div className="login-form">
+                    {nameInput}
                     <br />
                     <label>Email</label>
                     <input
@@ -99,14 +115,19 @@ class SessionForm extends React.Component {
                       value={this.state.email}
                       onChange={this.update("email")}
                       className="login-input"
+                      autoComplete="off"
                     />
                     <br />
                     <label>Password</label>
+                    {this.props.formType === "signup"
+                      ? "<label>(at least 6 characters)</label>"
+                      : null}
                     <input
                       type="password"
                       value={this.state.password}
                       onChange={this.update("password")}
                       className="login-input"
+                      autoComplete="off"
                     />
                     <br />
                     <button className="session-submit submit-btn" type="submit">

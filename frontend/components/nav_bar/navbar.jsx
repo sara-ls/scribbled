@@ -48,7 +48,7 @@ class NavBar extends React.Component {
                 <li className="greeting">Hi, {currentUser.full_name}</li>
                 {/* <li>Account Settings</li> */}
                 <li>
-                  <button onClick={this.props.logout}>Sign Out</button>
+                  <button className="signout-btn" onClick={this.props.logout}>Sign Out</button>
                 </li>
               </ul>
             </div>
