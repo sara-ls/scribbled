@@ -4,19 +4,27 @@ import {
 } from 'react-router-dom'
 
 class SideBar extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
-    return (
-      <aside>
-        <div className="sidebar-content">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            {/* <li></li> */}
-          </ul>
-        </div>
-      </aside>
-    )
+    if (this.props.show) {
+      return (
+        <aside>
+          <div className="sidebar-content">
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              {/* <li></li> */}
+            </ul>
+          </div>
+        </aside>
+      )
+    } else {
+      return null
+    }
   }
 }
 

@@ -10,9 +10,9 @@ import {
 } from "@fortawesome/react-fontawesome";
 
 class NavBar extends React.Component {
-  constructor() {
-    super();
-
+  constructor(props) {
+    super(props);
+    //openModal prop
     this.state = {
       showMenu: false,
     }
@@ -32,7 +32,43 @@ class NavBar extends React.Component {
     }
   }
 
+  logout(e) {
+    console.log(this.props.store)
+  }
+
   render() {
+    let navbarTools
+    let currentUser = window.store.entities.users[window.store.session.id];
+    if (currentUser) {
+      navbarTools = (
+        <div className="user-menu-btn" onClick={this.toggleMenu}>
+          <div className="user-btns">
+            <FontAwesomeIcon
+              id="user-icon"
+              className="user-icon"
+              icon={faUserCircle}
+            />
+            <FontAwesomeIcon id="down-arrow-icon" icon={faAngleDown} />
+          </div>
+          {this.state.showMenu ? (
+            <div className="dropdown-content">
+              <ul className="dropdown-list">
+                <li className="greeting">Hi, {currentUser.full_name}</li>
+                {/* <li>Account Settings</li> */}
+                <li onClick={this.logOut}>Sign Out</li>
+              </ul>
+            </div>
+          ) : null}
+        </div>
+      );
+    } else {
+      navbarTools = (
+        <button className="signin-btn" onClick={this.props.openModal}>
+          Sign In
+        </button>
+      );
+    }
+
     return (
       <nav className="navbar">
         <div className="nav-items-container">
@@ -43,32 +79,7 @@ class NavBar extends React.Component {
               src = "assets/scribbled-logo.png"
             />
           </div>
-          <div className="navbar-tools">
-            <div className="user-menu-btn" onClick={this.toggleMenu}>
-              <div className="user-btns">
-                <FontAwesomeIcon 
-                  id="user-icon" 
-                  className="user-icon" 
-                  icon={faUserCircle} 
-                />
-                <FontAwesomeIcon id="down-arrow-icon" icon={faAngleDown} />
-              </div>
-            </div>
-            {
-              this.state.showMenu ? 
-              (
-                <div className="dropdown-content">
-                  <ul className="dropdown-list">
-                    <li>Hi</li> 
-                    <li><Link>Account Settings</Link></li>
-                    <li><Link>Sign Out</Link></li>
-                  </ul>
-                </div>
-              ) 
-              : 
-              ( null )
-            }
-          </div>
+          {navbarTools}
         </div>
         <div className="color-divider-line"> 
           <div className="color-div seafoam"></div>
