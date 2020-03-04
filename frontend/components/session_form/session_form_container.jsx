@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ session, entities: { users } }) => {
   return {
+    currentUser: users[session.id],
     formType: 'login'
   };
 };

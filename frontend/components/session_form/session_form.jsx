@@ -23,11 +23,11 @@ class SessionForm extends React.Component {
   }
 
   switchFormType(e) {
-    // if (this.props.formType === 'login') {
-    //   this.props.formType = 'signup'
-    // } else {
-    //   this.props.formType = 'login'
-    // }
+    if (this.props.formType === 'login') {
+      this.props.formType = 'signup'
+    } else {
+      this.props.formType = 'login'
+    }
   }
 
   handleSubmit(e) {
@@ -35,6 +35,7 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
     this.props.hideModal();
+    this.props.currentUser = user;
   }
 
   // renderErrors() {
@@ -110,7 +111,7 @@ class SessionForm extends React.Component {
               <div className="right-footer-container">
                 <span className="footer-text">{rightFooter}</span>
                 <button className="alt-btn" onClick={this.switchFormType}>
-                  {this.formType === "login" ? "Sign Up" : "Sign In"}
+                  {this.props.formType === "login" ? "Sign Up" : "Sign In"}
                 </button>
               </div>
             </div>

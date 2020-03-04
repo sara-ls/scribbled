@@ -9,7 +9,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom'
-import NavBar from './navbar'
+import NavBar from './nav_bar/navbar_container'
 import Footer from './footer'
 import SideBar from './sidebar'
 // import {

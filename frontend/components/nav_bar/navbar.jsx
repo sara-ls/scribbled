@@ -1,44 +1,36 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 // import icons
-import {
-  faUserCircle, faAngleDown
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  FontAwesomeIcon
-} from "@fortawesome/react-fontawesome";
+import { faUserCircle, faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     //openModal prop
     this.state = {
-      showMenu: false,
-    }
+      showMenu: false
+    };
 
-    this.toggleMenu = this.toggleMenu.bind(this)
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   toggleMenu(event) {
     if (this.state.showMenu) {
       this.setState({
-        showMenu: false,
-      })
+        showMenu: false
+      });
     } else {
       this.setState({
-        showMenu: true,
-      })
+        showMenu: true
+      });
     }
   }
 
-  logout(e) {
-    console.log(this.props.store)
-  }
-
   render() {
-    let navbarTools
-    let currentUser = window.store.entities.users[window.store.session.id];
+    let navbarTools;
+    let currentUser = this.props.currentUser;
     if (currentUser) {
       navbarTools = (
         <div className="user-menu-btn" onClick={this.toggleMenu}>
@@ -55,7 +47,9 @@ class NavBar extends React.Component {
               <ul className="dropdown-list">
                 <li className="greeting">Hi, {currentUser.full_name}</li>
                 {/* <li>Account Settings</li> */}
-                <li onClick={this.logOut}>Sign Out</li>
+                <li>
+                  <button onClick={this.props.logout}>Sign Out</button>
+                </li>
               </ul>
             </div>
           ) : null}
@@ -73,15 +67,15 @@ class NavBar extends React.Component {
       <nav className="navbar">
         <div className="nav-items-container">
           <div className="logo-container">
-            <img 
+            <img
               alt="Scribbled"
               className="logo-img"
-              src = "assets/scribbled-logo.png"
+              src="assets/scribbled-logo.png"
             />
           </div>
           {navbarTools}
         </div>
-        <div className="color-divider-line"> 
+        <div className="color-divider-line">
           <div className="color-div seafoam"></div>
           <div className="color-div teal-dark"></div>
           <div className="color-div teal-light"></div>
@@ -90,8 +84,8 @@ class NavBar extends React.Component {
           <div className="color-div yellow"></div>
         </div>
       </nav>
-    )
+    );
   }
 }
 
-export default NavBar
+export default NavBar;
