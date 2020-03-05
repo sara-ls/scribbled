@@ -12,8 +12,6 @@ class SessionForm extends React.Component {
       full_name: ""
     };
 
-    console.log(window.store.ui.modal)
-
     this.switchFormType = this.switchFormType.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
