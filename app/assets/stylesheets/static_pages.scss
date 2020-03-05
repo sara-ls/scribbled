@@ -56,7 +56,8 @@ Start NavBar formatting
 
 .logo-img {
   width: 140px;
-  height: 30px;
+  /* height: 30px; */
+  padding-left: 15px;
 }
 
 .user-btns {
@@ -255,7 +256,6 @@ footer a {
   margin: 0;
   color: #666;
   font-weight: bold;
-  letter-spacing: 2px;
 }
 
 .footer {
@@ -601,13 +601,13 @@ form label {
 .home-container span {
   color: white;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 28px;
   margin-bottom: 30px;
 }
 
 .signup-btn {
   background-color: #1e7b85;
-  border: 1px solid hsla(0, 0%, 100%, .2);
+  border: 1px solid rgba($color: #0e6b6bad, $alpha: 0.3);
   color: white;
   font-size: 18px;
   min-height: 2.44444em;

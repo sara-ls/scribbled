@@ -1,6 +1,8 @@
 import React from "react";
 import { faTimes, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import LoginForm from './login_form'
+import SignupForm from './signup_form'
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -53,7 +55,7 @@ class SessionForm extends React.Component {
 
   render() {
     let rightFooter;
-    let nameInput = null
+    let nameInput = null;
     if (this.props.formType === "login") {
       rightFooter = "New to Scribbled?";
     } else {
@@ -97,11 +99,14 @@ class SessionForm extends React.Component {
                       className="close-btn"
                       onClick={this.props.hideModal}
                     >
-                      <FontAwesomeIcon id="modal-icon" icon={faTimes} color="grey" />
+                      <FontAwesomeIcon
+                        id="modal-icon"
+                        icon={faTimes}
+                        color="grey"
+                      />
                     </button>
                   </div>
                 </div>
-
                 <div className="form-title">Sign In with Email</div>
                 <form onSubmit={this.handleSubmit} className="login-form">
                   {/* {this.renderErrors()} */}

@@ -16,10 +16,10 @@ import SideBar from './sidebar'
 //   AuthRoute,
 //   ProtectedRoute
 // } from '../util/route_util'
-import SessionForm from './session_form/session_form'
+import SessionForm from './user_form/user_form'
 import Home from './home'
-import LoginForm from './session_form/session_form_container'
-import SignupForm from './session_form/signup_form_container'
+import LoginForm from './user_form/session_form_container'
+import SignupForm from './user_form/signup_form_container'
 
 class App extends React.Component {
   constructor(props) {

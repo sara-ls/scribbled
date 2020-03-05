@@ -16,12 +16,12 @@ class Footer extends React.Component {
           <h4>ABOUT</h4>
           <ul className="footer-list">
             <li>
-              <a href="https://github.com/sara-ls/Scribbled">Scribbled Repo</a>
-            </li>
-            <li>
               <a href="https://github.com/sara-ls/Scribbled/blob/master/README.md">
                 Read Me
               </a>
+            </li>
+            <li>
+              <a href="https://github.com/sara-ls/Scribbled">Scribbled Repo</a>
             </li>
             <li>
               <a href="https://github.com/sara-ls/Scribbled/wiki">Wiki</a>
@@ -60,7 +60,7 @@ class Footer extends React.Component {
               <FontAwesomeIcon icon={faCircle} />
             </li>
             <li>
-              <span>Site Language: English</span>
+              <span>slimsampson</span>
             </li>
           </ul>
         </div>
