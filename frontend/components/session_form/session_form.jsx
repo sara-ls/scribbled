@@ -1,8 +1,6 @@
 import React from "react";
 import { faTimes, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import LoginForm from './login_form'
-import SignupForm from './signup_form'
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -35,10 +33,8 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(Object.assign({}, this.state));
     this.props.hideModal();
-    // this.props.currentUser = user;
   }
 
   // renderErrors() {
@@ -82,7 +78,11 @@ class SessionForm extends React.Component {
           <div className="login-form-container">
             <div className="login-form-box">
               <div className="left-col">
-                <img alt="Scribbled" className="logo-img" src={window.logoURL} />
+                <img
+                  alt="Scribbled"
+                  className="logo-img"
+                  src={window.logoURL}
+                />
               </div>
               <div className="right-col">
                 <div className="form-top">
@@ -138,9 +138,7 @@ class SessionForm extends React.Component {
                 </form>
                 <div className="right-footer-container">
                   <span className="footer-text">{rightFooter}</span>
-                  <button className="alt-btn" onClick={this.switchFormType}>
-                    {this.props.formType === "login" ? "Sign Up" : "Sign In"}
-                  </button>
+                  {this.props.otherForm }
                 </div>
               </div>
             </div>

@@ -10,7 +10,6 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-container">
-        {/* <img className="splash-img" src="assets/splash.jpg" /> */}
         <div className="home-content-box">
           <div className="home-content">
             <span>

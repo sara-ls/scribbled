@@ -29,6 +29,7 @@ class NavBar extends React.Component {
   }
 
   render() {
+    let sessionLinks;
     let navbarTools;
     let currentUser = this.props.currentUser;
     if (currentUser) {
@@ -61,6 +62,16 @@ class NavBar extends React.Component {
           Sign In
         </button>
       );
+
+      sessionLinks = (
+        <nav className="login-signup">
+          <button className="signin-btn" onClick={this.props.openModal}>
+            Sign In
+          </button>
+          {/* <Link to="/login">Login</Link> */}
+          {/* <Link to="/signup">Sign up!</Link> */}
+        </nav>
+      );
     }
 
     return (
@@ -72,14 +83,9 @@ class NavBar extends React.Component {
             </Link>
           </div>
           {navbarTools}
+          {/* {sessionLinks} */}
         </div>
         <div className="color-divider-line">
-          <div className="color-div seafoam"></div>
-          <div className="color-div teal-dark"></div>
-          <div className="color-div teal-light"></div>
-          <div className="color-div midnight"></div>
-          <div className="color-div wine"></div>
-          <div className="color-div yellow"></div>
         </div>
       </nav>
     );
