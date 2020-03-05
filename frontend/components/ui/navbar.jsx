@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
+import { openModal, closeModal } from "../../actions/modal_actions";
 
 // import icons
 import { faUserCircle, faAngleDown } from "@fortawesome/free-solid-svg-icons";
@@ -62,14 +63,17 @@ class NavBar extends React.Component {
       );
     } else {
       navbarTools = (
-        <button className="signin-btn" onClick={this.props.openModal}>
+        <button className="signin-btn" onClick={() => this.props.openModal("login")}>
           Sign In
         </button>
       );
 
       sessionLinks = (
         <nav className="login-signup">
-          <button className="signin-btn" onClick={this.props.openModal}>
+          <button
+            className="signin-btn"
+            onClick={() => this.props.openModal("login")}
+          >
             Sign In
           </button>
           {/* <Link to="/login">Login</Link> */}
@@ -102,7 +106,8 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

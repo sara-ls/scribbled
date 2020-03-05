@@ -12,7 +12,6 @@ class SessionForm extends React.Component {
       full_name: ""
     };
 
-    this.switchFormType = this.switchFormType.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -21,14 +20,6 @@ class SessionForm extends React.Component {
       this.setState({
         [field]: e.currentTarget.value
       });
-  }
-
-  switchFormType(e) {
-    if (this.props.formType === "login") {
-      this.props.formType = "signup";
-    } else {
-      this.props.formType = "login";
-    }
   }
 
   handleSubmit(e) {
@@ -71,83 +62,72 @@ class SessionForm extends React.Component {
       );
     }
 
-    if (this.props.show) {
-      return (
-        <div className="modal-container" id="modal">
-          <div id="overlay"></div>
-          <div className="login-form-container">
-            <div className="login-form-box">
-              <div className="left-col">
-                <img
-                  alt="Scribbled"
-                  className="logo-img"
-                  src={window.logoURL}
-                />
-              </div>
-              <div className="right-col">
-                <div className="form-top">
-                  <div className="form-top-btns">
-                    <div className="back-btn-container">
-                      {/* <FontAwesomeIcon id="modal-icon" icon={ faAngleLeft } />
+    return (
+      <div className="modal-container" id="modal">
+        <div id="overlay"></div>
+        <div className="login-form-container">
+          <div className="login-form-box">
+            <div className="left-col">
+              <img alt="Scribbled" className="logo-img" src={window.logoURL} />
+            </div>
+            <div className="right-col">
+              <div className="form-top">
+                <div className="form-top-btns">
+                  <div className="back-btn-container">
+                    {/* <FontAwesomeIcon id="modal-icon" icon={ faAngleLeft } />
                     <span>Back</span> */}
-                    </div>
-                    <button
-                      className="close-btn"
-                      onClick={this.props.hideModal}
-                    >
-                      <FontAwesomeIcon
-                        id="modal-icon"
-                        icon={faTimes}
-                        color="grey"
-                      />
-                    </button>
                   </div>
-                </div>
-                <div className="form-title">Sign In with Email</div>
-                <form onSubmit={this.handleSubmit} className="login-form">
-                  {/* {this.renderErrors()} */}
-                  <div className="login-form">
-                    {nameInput}
-                    <br />
-                    <label>Email</label>
-                    <input
-                      id="email-input"
-                      type="text"
-                      value={this.state.email}
-                      onChange={this.update("email")}
-                      className="login-input"
-                      autoComplete="off"
+                  <button className="close-btn" onClick={this.props.closeModal}>
+                    <FontAwesomeIcon
+                      id="modal-icon"
+                      icon={faTimes}
+                      color="grey"
                     />
-                    <br />
-                    <label>Password</label>
-                    {this.props.formType === "signup"
-                      ? "<label>(at least 6 characters)</label>"
-                      : null}
-                    <input
-                      type="password"
-                      value={this.state.password}
-                      onChange={this.update("password")}
-                      className="login-input"
-                      autoComplete="off"
-                    />
-                    <br />
-                    <button className="session-submit submit-btn" type="submit">
-                      {this.props.formType === "login" ? "Sign In" : "Sign Up"}
-                    </button>
-                  </div>
-                </form>
-                <div className="right-footer-container">
-                  <span className="footer-text">{rightFooter}</span>
-                  { this.props.otherForm }
+                  </button>
                 </div>
+              </div>
+              <div className="form-title">Sign In with Email</div>
+              <form onSubmit={this.handleSubmit} className="login-form">
+                {/* {this.renderErrors()} */}
+                <div className="login-form">
+                  {nameInput}
+                  <br />
+                  <label>Email</label>
+                  <input
+                    id="email-input"
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.update("email")}
+                    className="login-input"
+                    autoComplete="off"
+                  />
+                  <br />
+                  <label>Password</label>
+                  {this.props.formType === "signup"
+                    ? "<label>(at least 6 characters)</label>"
+                    : null}
+                  <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    className="login-input"
+                    autoComplete="off"
+                  />
+                  <br />
+                  <button className="session-submit submit-btn" type="submit">
+                    {this.props.formType === "login" ? "Sign In" : "Sign Up"}
+                  </button>
+                </div>
+              </form>
+              <div className="right-footer-container">
+                <span className="footer-text">{rightFooter}</span>
+                {this.props.otherForm}
               </div>
             </div>
           </div>
         </div>
-      );
-    } else {
-      return null;
-    }
+      </div>
+    );
   }
 }
 

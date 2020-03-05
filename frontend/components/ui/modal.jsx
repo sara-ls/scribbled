@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { closeModal } from "../../actions/modal_actions";
-import LoginFormContainer from "../session_form/login_form_container";
-import SignupFormContainer from "../session_form/signup_form_container";
+import LoginForm from "../session_form/login_form_container";
+import SignupForm from "../session_form/signup_form_container";
 
-function Modal({ modal, closeModal }) {
+const Modal = ({ modal, closeModal }) => {
   if (!modal) {
     return null;
   }
@@ -12,10 +12,10 @@ function Modal({ modal, closeModal }) {
 
   switch (modal) {
     case "login":
-      component = <LoginFormContainer id="form"/>;
+      component = <LoginForm id="form" />;
       break;
     case "signup":
-      component = <SignupFormContainer id="form" />;
+      component = <SignupForm id="form" />;
       break;
     default:
       return null;
@@ -42,4 +42,3 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);
-

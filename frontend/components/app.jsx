@@ -62,13 +62,10 @@ class App extends React.Component {
       <div className="app">
         <NavBar openModal={this.openModal} />
         <div ref={this.modalRef}></div>
-        {/* <Modal
+        <Modal
           id="form"
-          show={this.state.showModal}
-          openModal={this.openModal}
-          hideModal={this.hideModal}
-        /> */}
-        {sessionForm}
+        />
+        {/* {sessionForm} */}
         <div className="main-section">
           <div className="main-content">{mainContent}</div>
           <Footer />
