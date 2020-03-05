@@ -29,7 +29,7 @@ html {
 
 
 /**
-Start NavBar formatting
+NavBar start -----------------------------
 **/
 .navbar {
   display: block;
@@ -94,19 +94,19 @@ Start NavBar formatting
   height: 1px;
   z-index: 1001;
   background-image: linear-gradient(90deg,
-    #02a793 10%,
-    #0d6069 20%,
-    #509ba8 60%,
-    #003451,
-    #7f1652,
-    #e47b01);
+      #02a793 10%,
+      #0d6069 20%,
+      #509ba8 60%,
+      #003451,
+      #7f1652,
+      #e47b01);
   // display: flex
 }
 
 // .color-div {
 //   height: 1px;
 //   display: block;
-  
+
 // }
 
 // .seafoam {
@@ -156,7 +156,7 @@ Start NavBar formatting
   list-style: none;
 }
 
-.dropdown-list li{
+.dropdown-list li {
   color: #57617a;
   display: block;
   font-size: 16px;
@@ -194,28 +194,34 @@ Start NavBar formatting
 
 
 .signout-btn {
-    color: #57617a;
-    display: block;
-    font-size: 16px;
-    border: none;
-    background-color: none;
+  color: #57617a;
+  display: block;
+  font-size: 16px;
+  border: none;
+  background-color: none;
 }
 
 /**
-End NavBar formatting ------------------
+NavBar end -----------------------------
 **/
 
 
 
 /**
-Start SideBar formatting --------------
+SideBar start -----------------------------
 **/
 aside {
   height: 100%;
   position: fixed;
   width: 180px;
   background-color: #f8f9fd;
-  background-image: linear-gradient(0deg, #fcf5ea, #fbf1f7 35%, #eff7f8 67%, #e9f7fe);
+  background-image: linear-gradient(
+      0deg, 
+      #fcf5ea,
+      #fbf1f7 35%, 
+      #eff7f8 67%, 
+      #e9f7fe
+    );
   z-index: 2;
 }
 
@@ -224,9 +230,9 @@ aside {
   top: 61px;
 }
 
-.sidebar-content > ul {
+.sidebar-content>ul {
   list-style: none;
-} 
+}
 
 .sidebar-content * {
   color: #57617a;
@@ -235,23 +241,25 @@ aside {
   vertical-align: middle;
   line-height: 24px;
 }
+
 /**
-End SideBar formatting ---------------
+SideBar end -----------------------------
 **/
 
 
 
 /**
-Start Footer formatting -------------
+Footer start -----------------------------
 **/
 footer {
   border-top: 2px solid #e9edf8;
   text-align: center;
   position: relative;
-  top:0px;
+  top: 0px;
   width: 100%;
   padding: 0 180px;
 }
+
 footer a {
   font-size: 14px;
   margin: 0;
@@ -262,8 +270,8 @@ footer a {
 .footer {
   display: flex;
   flex-direction: column;
-    align-items: center;
-    background: #f8f9fd;
+  align-items: center;
+  background: #f8f9fd;
 }
 
 .footer-list {
@@ -288,14 +296,16 @@ footer a {
   height: auto;
   color: #1e7b85;
 }
+
 #github-icon {
   width: 18px;
-    height: auto;
+  height: auto;
   color: #535151;
 }
+
 #linkedin-icon {
   width: 18px;
-    height: auto;
+  height: auto;
   color: rgb(91, 130, 201);
 }
 
@@ -312,8 +322,8 @@ footer a {
   list-style: none;
   display: flex;
   flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
   padding-left: 0;
 
 }
@@ -321,9 +331,11 @@ footer a {
 .footer-bottom li {
   margin: 0 5px;
 }
+
 .footer-bottom span {
   color: #57617a;
 }
+
 .footer-main {
   display: block;
   text-align: left;
@@ -337,25 +349,27 @@ footer a {
 }
 
 .footer-main h4 {
-    font-size: 14px;
-    margin-top: 32px;
-    color: #666;
-    font-weight: bold;
-    letter-spacing: 2px;
+  font-size: 14px;
+  margin-top: 32px;
+  color: #666;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 #dot svg {
   width: 2px;
 }
+
 /**
-End Footer formatting ---------------
+Footer end -----------------------------
 **/
 
 
 
 
-// SessionForm 
-// modal
+/**
+Session Form / Modal start ------------------------
+**/
 // .modal-background {
 //   position: fixed;
 //   top: 0;
@@ -410,7 +424,7 @@ End Footer formatting ---------------
   box-shadow: 0 0 12px #000514;
   display: flex;
   flex-direction: row;
-      box-shadow: 0 0 12px #000514;
+  box-shadow: 0 0 12px #000514;
 
 }
 
@@ -447,6 +461,7 @@ End Footer formatting ---------------
   display: flex;
   align-items: center;
 }
+
 .back-btn-container span {
   padding: 0 8px;
   font-family: Source Sans Pro, sans-serif;
@@ -473,9 +488,7 @@ End Footer formatting ---------------
   justify-content: center;
 }
 
-.left-col .logo-img {
-
-}
+.left-col .logo-img {}
 
 .form-title {
   font-size: 28px;
@@ -565,14 +578,17 @@ form label {
   color: #135057;
 
 }
-// End Session Form Modal
+
+/**
+Session Form / Modal end ------------------------
+**/
 
 
 
 
-
-
-// Home Start
+/**
+Home start ---------------------------
+**/
 .main-section {
   position: relative;
   top: 60px;
@@ -647,18 +663,18 @@ form label {
 
 .offerings-container {
   padding: 50px 0;
-      background: #fff;
-      background-position: 50%;
-      text-align: center;
+  background: #fff;
+  background-position: 50%;
+  text-align: center;
 }
 
 .offerings-heading {
-      font-size: 36px;
-      font-weight: 700;
-      font-family: Source Sans Pro,
-      sans-serif;
-      margin: 0 40px;
-      color: #1c263d;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: Source Sans Pro,
+    sans-serif;
+  margin: 0 40px;
+  color: #1c263d;
 }
 
 
@@ -672,11 +688,12 @@ form label {
 }
 
 li.offer-container {
-      display: inline-block;
-      max-width: 300px;
-      padding: 0 10px;
-      vertical-align: top;
+  display: inline-block;
+  max-width: 300px;
+  padding: 0 10px;
+  vertical-align: top;
 }
+
 .offer-container img {
   width: 200px;
 }
@@ -702,15 +719,17 @@ li.offer-container {
   margin: 0 auto;
   color: #000514;
 }
+
 .offerings-list {
   list-style: none;
   margin: 0 0 24px;
 }
+
 .fold {
   padding: 50px;
 }
 
- .landing-sub-heading {
+.landing-sub-heading {
   margin: 0;
   padding: 15px 0 5px;
   font-size: 19px;
@@ -718,6 +737,7 @@ li.offer-container {
   text-align: left;
   color: #57617a;
 }
+
 .fold h2 {
   font-size: 60px;
   line-height: 55px;
@@ -725,21 +745,19 @@ li.offer-container {
   display: inline-flex;
   text-transform: uppercase;
   margin-bottom: 0;
-    margin-top: 0;
+  margin-top: 0;
   color: #000514;
   text-align: left;
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
 }
+
 .fold h2 strong {
   font-weight: bolder;
   color: #a9085e;
 }
-// Home End
 
-
-
-// Start TopBooks
+// TopBooks start
 .top-books {
   background-color: #5a1d41;
   display: flex;
@@ -755,6 +773,7 @@ li.offer-container {
   line-height: 1em;
   font-size: 34px;
 }
+
 .book-covers-container {
   margin: 15px;
   display: flex;
@@ -763,9 +782,15 @@ li.offer-container {
   justify-content: center;
   width: 75%;
 }
+
 .book-cover {
-    height: 140px;
-    width: 95px;
-    margin: 5px;
+  height: 140px;
+  width: 95px;
+  margin: 5px;
 }
-// End TopBooks
+
+// TopBooks end
+
+/**
+Home end ---------------------------
+**/

@@ -12,13 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
       session: { id: window.currentUser.id },
       entities: {
         users: { [window.currentUser.id]: window.currentUser }
+      },
+      ui: {
+        modal: null
       }
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
   } 
-
-  // testing
   window.store = store.getState()
 
   const root = document.getElementById('root');
