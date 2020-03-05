@@ -416,8 +416,8 @@ Session Form / Modal start ------------------------
   position: relative;
   z-index: 500;
   top: 78px;
-  height: 500px;
-  width: 700px;
+  height: 566px;
+  width: 666px;
   background: #fff;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -493,7 +493,7 @@ Session Form / Modal start ------------------------
 .form-title {
   font-size: 28px;
   font-weight: bold;
-  margin: 16px auto 0;
+  margin: 0 auto 0;
   padding-left: 0;
   padding-right: 0;
   text-align: center;
@@ -577,6 +577,21 @@ form label {
 .right-footer-container button:hover {
   color: #135057;
 
+}
+
+.password-length {
+      font-size: 14px;
+      color: #57617a;
+      display: block;
+      text-align: left;
+      margin: 0;
+      font-weight: normal;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /**

@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
     } else {
       rightFooter = "Already have an account?";
       nameInput = (
-        <div>
+        <div className="input-container">
           <br />
           <label>Name</label>
           <input
@@ -85,33 +85,45 @@ class SessionForm extends React.Component {
                   </button>
                 </div>
               </div>
-              <div className="form-title">Sign In with Email</div>
+              <div className="form-title">
+                {this.props.formType === "login" ? "Sign In" : "Sign Up"} with
+                Email
+              </div>
               <form onSubmit={this.handleSubmit} className="login-form">
                 {/* {this.renderErrors()} */}
                 <div className="login-form">
                   {nameInput}
-                  <br />
-                  <label>Email</label>
-                  <input
-                    id="email-input"
-                    type="text"
-                    value={this.state.email}
-                    onChange={this.update("email")}
-                    className="login-input"
-                    autoComplete="off"
-                  />
-                  <br />
-                  <label>Password</label>
-                  {this.props.formType === "signup"
-                    ? "<label>(at least 6 characters)</label>"
-                    : null}
-                  <input
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.update("password")}
-                    className="login-input"
-                    autoComplete="off"
-                  />
+                  <div className="input-container">
+                    <br />
+                    <label>Email</label>
+                    <input
+                      id="email-input"
+                      type="text"
+                      value={this.state.email}
+                      onChange={this.update("email")}
+                      className="login-input"
+                      autoComplete="off"
+                    />
+                  </div>
+                  <div className="input-container">
+                    <br />
+                    <label>
+                      Password
+                      <p className="password-length">
+                        {this.props.formType === "signup"
+                          ? "(at least 6 characters)"
+                          : null}
+                      </p>
+                    </label>
+
+                    <input
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.update("password")}
+                      className="login-input"
+                      autoComplete="off"
+                    />
+                  </div>
                   <br />
                   <button className="session-submit submit-btn" type="submit">
                     {this.props.formType === "login" ? "Sign In" : "Sign Up"}
