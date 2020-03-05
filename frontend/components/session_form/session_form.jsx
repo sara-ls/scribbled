@@ -12,6 +12,8 @@ class SessionForm extends React.Component {
       full_name: ""
     };
 
+    console.log(window.store.ui.modal)
+
     this.switchFormType = this.switchFormType.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -138,7 +140,7 @@ class SessionForm extends React.Component {
                 </form>
                 <div className="right-footer-container">
                   <span className="footer-text">{rightFooter}</span>
-                  {this.props.otherForm }
+                  { this.props.otherForm }
                 </div>
               </div>
             </div>

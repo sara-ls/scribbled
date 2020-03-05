@@ -13,14 +13,13 @@ import NavBar from './nav_bar/navbar_container'
 import Footer from './footer'
 import SideBar from './sidebar'
 // import {
-//   AuthRoute,
-//   ProtectedRoute
+//   AuthRoute, //   ProtectedRoute
 // } from '../util/route_util'
 import SessionForm from './session_form/session_form'
 import Home from './home'
 import LoginForm from './session_form/login_form_container'
 import SignupForm from './session_form/signup_form_container'
-import ModalContainer from './session_form/modal_container';
+import Modal from './session_form/modal';
 
 class App extends React.Component {
   constructor(props) {
@@ -76,10 +75,10 @@ class App extends React.Component {
       <div className="app">
         <NavBar openModal={this.openModal} />
         <div ref={this.modalRef}></div>
-        {/* <ModalContainer
+        {/* <Modal
           id="form"
           show={this.state.showModal}
-          nopenModal={this.openModal}
+          openModal={this.openModal}
           hideModal={this.hideModal}
         /> */}
         {sessionForm}
