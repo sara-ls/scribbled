@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { logout } from "../../actions/session_actions";
 
 // import icons
 import { faUserCircle, faAngleDown } from "@fortawesome/free-solid-svg-icons";
@@ -49,7 +51,9 @@ class NavBar extends React.Component {
                 <li className="greeting">Hi, {currentUser.full_name}</li>
                 {/* <li>Account Settings</li> */}
                 <li>
-                  <button className="signout-btn" onClick={this.props.logout}>Sign Out</button>
+                  <button className="signout-btn" onClick={this.props.logout}>
+                    Sign Out
+                  </button>
                 </li>
               </ul>
             </div>
@@ -85,11 +89,20 @@ class NavBar extends React.Component {
           {navbarTools}
           {/* {sessionLinks} */}
         </div>
-        <div className="color-divider-line">
-        </div>
+        <div className="color-divider-line"></div>
       </nav>
     );
   }
 }
 
-export default NavBar;
+const mapStateToProps = ({ session, entities: { users } }) => {
+  return {
+    currentUser: users[session.id]
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
