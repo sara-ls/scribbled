@@ -82,11 +82,7 @@ class SessionForm extends React.Component {
           <div className="login-form-container">
             <div className="login-form-box">
               <div className="left-col">
-                <img
-                  alt="Scribbled"
-                  className="logo-img"
-                  src="assets/scribbled-logo.png"
-                />
+                <img alt="Scribbled" className="logo-img" src={window.logoURL} />
               </div>
               <div className="right-col">
                 <div className="form-top">

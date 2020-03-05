@@ -67,11 +67,9 @@ class NavBar extends React.Component {
       <nav className="navbar">
         <div className="nav-items-container">
           <div className="logo-container">
-            <Link to="/"><img
-              alt="Scribbled"
-              className="logo-img"
-              src="assets/scribbled-logo.png"
-            /></Link>
+            <Link to="/">
+              <img alt="Scribbled" className="logo-img" src={window.logoURL} />
+            </Link>
           </div>
           {navbarTools}
         </div>
