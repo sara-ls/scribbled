@@ -23,12 +23,10 @@ class NavBar extends React.Component {
       this.setState({
         showMenu: false
       });
-    } else {
-      this.setState({
+    } else { this.setState({
         showMenu: true
       });
-    }
-  }
+    } }
 
   render() {
     let sessionLinks;
@@ -77,8 +75,7 @@ class NavBar extends React.Component {
       //       onClick={() => this.props.openModal("login")}
       //     >
       //       Sign In
-      //     </button>
-      //     {/* <Link to="/login">Login</Link> */}
+      //     </button> //     {/* <Link to="/login">Login</Link> */}
       //     {/* <Link to="/signup">Sign up!</Link> */}
       //   </nav>
       // );
