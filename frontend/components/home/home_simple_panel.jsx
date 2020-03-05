@@ -12,7 +12,13 @@ const HomeSimplePanel = props => {
         Unlimited books. Unlimited audiobooks.
       </div>
       <div className="cta-row">
-        <button className="signup-btn" onClick={props.openModal}>
+        <button
+          className="signup-btn"
+          onClick={() => {
+            props.openModal("signup");
+            window.scrollTo(0, window.modalRef.current.offsetTop);
+          }}
+        >
           Read Free for 30 Days
         </button>
       </div>

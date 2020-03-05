@@ -12,32 +12,22 @@ import Home from "./home/home";
 import LoginForm from "./session_form/login_form_container";
 import SignupForm from "./session_form/signup_form_container";
 import Modal from "./ui/modal";
+import { openModal, closeModal } from "../actions/modal_actions";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false,
       showSidebar: window.store.entities.users
     };
 
-    this.modalRef = React.createRef();
-    this.openModal = this.openModal.bind(this);
-    this.hideModal = this.hideModal.bind(this);
+    window.modalRef = React.createRef();
+    this.scrollToModal = this.scrollToModal.bind(this);
   }
 
-  openModal(e) {
-    this.setState({
-      showModal: true
-    });
+  scrollToModal(e) {
     // scroll to form
-    window.scrollTo(0, this.modalRef.current.offsetTop);
-  }
-
-  hideModal(e) {
-    this.setState({
-      showModal: false
-    });
+    window.scrollTo(0, window.modalRef.current.offsetTop);
   }
 
   render() {
@@ -46,25 +36,20 @@ class App extends React.Component {
     if (currentUser) {
       mainContent = <SideBar show={true} />;
     } else {
-      mainContent = <Home openModal={this.openModal} />;
+      mainContent = <Home scrollToModal={this.scrollToModal} />;
     }
 
     let sessionForm = (
       <LoginForm
         id="form"
-        show={this.state.showModal}
-        openModal={this.openModal}
-        hideModal={this.hideModal}
       />
     );
 
     return (
       <div className="app">
-        <NavBar openModal={this.openModal} />
-        <div ref={this.modalRef}></div>
-        <Modal
-          id="form"
-        />
+        <NavBar scrollToModal={this.scrollToModal} />
+        <div ref={window.modalRef}></div>
+        <Modal id="form" />
         {/* {sessionForm} */}
         <div className="main-section">
           <div className="main-content">{mainContent}</div>

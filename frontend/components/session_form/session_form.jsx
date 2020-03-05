@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class SessionForm extends React.Component {
   constructor(props) {
-    // show, openModal, hideModal --- props
     super(props);
     this.state = {
       email: "",
@@ -25,7 +24,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(Object.assign({}, this.state));
-    this.props.hideModal();
+    this.props.closeModal();
   }
 
   // renderErrors() {

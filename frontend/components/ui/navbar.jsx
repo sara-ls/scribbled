@@ -15,7 +15,6 @@ class NavBar extends React.Component {
     this.state = {
       showMenu: false
     };
-
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
@@ -63,23 +62,26 @@ class NavBar extends React.Component {
       );
     } else {
       navbarTools = (
-        <button className="signin-btn" onClick={() => this.props.openModal("login")}>
+        <button className="signin-btn" onClick={() => {
+          this.props.openModal("login")
+          this.props.scrollToModal()
+        }}>
           Sign In
         </button>
       );
 
-      sessionLinks = (
-        <nav className="login-signup">
-          <button
-            className="signin-btn"
-            onClick={() => this.props.openModal("login")}
-          >
-            Sign In
-          </button>
-          {/* <Link to="/login">Login</Link> */}
-          {/* <Link to="/signup">Sign up!</Link> */}
-        </nav>
-      );
+      // sessionLinks = (
+      //   <nav className="login-signup">
+      //     <button
+      //       className="signin-btn"
+      //       onClick={() => this.props.openModal("login")}
+      //     >
+      //       Sign In
+      //     </button>
+      //     {/* <Link to="/login">Login</Link> */}
+      //     {/* <Link to="/signup">Sign up!</Link> */}
+      //   </nav>
+      // );
     }
 
     return (
