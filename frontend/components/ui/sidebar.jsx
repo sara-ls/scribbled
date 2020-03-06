@@ -9,9 +9,9 @@ class SideBar extends React.Component {
   }
 
   render() {
-    if (this.props.show) {
+    if (this.props.showSidebar) {
       return (
-        <aside>
+        <aside className="sidebar">
           <div className="sidebar-content">
             <ul>
               <li>

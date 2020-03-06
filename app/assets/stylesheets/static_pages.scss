@@ -651,7 +651,7 @@ Session Form / Modal end ------------------------
 
 
 /**
-Home start ---------------------------
+Splash start ---------------------------
 **/
 .main-section {
   position: relative;
@@ -856,5 +856,105 @@ li.offer-container {
 // TopBooks end
 
 /**
+Splash end ---------------------------
+**/
+
+
+
+/**
+Home start ---------------------------
+**/
+.featured {
+  padding: 0;
+  background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-018.jpg")
+}
+
+.featured-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.featured-info {
+  min-width: 80px;
+}
+
+.featured-info * {
+  color: #fff;
+}
+
+.featured-label {
+  background: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin: 0 auto 0 0;
+  padding: 0 6px;
+  color: black;
+}
+
+.featured-info {
+  padding-left: 180px;
+}
+
+.featured-info {
+  margin-left: 10px;
+}
+
+img.featured {
+  width: 140px;
+  height: 100%;
+  margin: 20px 50px;
+}
+
+.featured-header {
+  margin: 5px 0;
+  font-weight: bold;
+  display: block;
+  font-size: 32px;
+  overflow: hidden;
+}
+
+.featured-subheader {
+  font-weight: 400;
+  display: block;
+  font-size: 22px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.featured-para {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  width: 85%;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  line-height: 1.2;
+}
+
+/**
 Home end ---------------------------
 **/
+
+
+
+
+
+
+
+
+
+// media queries
+
+//sidebar home page
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .featured-info {
+    padding-left: 0px;
+  }
+
+}
