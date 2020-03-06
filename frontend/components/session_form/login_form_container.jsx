@@ -14,9 +14,12 @@ const mapStateToProps = ({ session, entities: { users }, errors }) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    processForm: user => dispatch(login(user)).then(() => ownProps.onSuccess()),
+    processForm: user =>
+      dispatch(login(user)).then(() => ownProps.onSuccess(true)),
     demoLogin: () =>
-      dispatch(login({ email: "demo@demo.demo", password: "demopassword" })),
+      dispatch(
+        login({ email: "demo@demo.demo", password: "demopassword" })
+      ).then(() => ownProps.onSuccess(true)),
     closeModal: () => dispatch(closeModal()),
     otherForm: (
       <button

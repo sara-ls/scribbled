@@ -34,7 +34,6 @@ class NavBar extends React.Component {
     let sessionLinks;
     let navbarTools;
     let currentUser = this.props.currentUser;
-    const onSuccess = () => this.props.onSuccess();
     if (currentUser) {
       navbarTools = (
         <div className="user-menu-btn" onClick={this.toggleMenu}>
@@ -52,11 +51,14 @@ class NavBar extends React.Component {
                 <li className="greeting">Hi, {currentUser.full_name}</li>
                 {/* <li>Account Settings</li> */}
                 <li>
-                  <button className="signout-btn" onClick={
-                    () => {
-                      this.props.logout().then(()=> this.props.onSuccess())
-                    }
-                  }>
+                  <button
+                    className="signout-btn"
+                    onClick={() => {
+                      this.props
+                        .logout()
+                        // .then(() => this.props.onSuccess(false));
+                    }}
+                  >
                     Sign Out
                   </button>
                 </li>
@@ -68,11 +70,7 @@ class NavBar extends React.Component {
     } else {
       navbarTools = (
         <div className="navbar-tools">
-          <button className="demo-signin-btn" onClick={
-            () => {
-              this.props.demoLogin().then(() => onSuccess())
-            }
-          }>
+          <button className="demo-signin-btn" onClick={this.props.demoLogin}>
             Demo User Login
           </button>
           <button
@@ -111,11 +109,13 @@ const mapStateToProps = ({ session, entities: { users } }) => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout()),
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  logout: () => dispatch(logout()).then(() => ownProps.onSuccess(false)),
   openModal: modal => dispatch(openModal(modal)),
   demoLogin: () =>
-    dispatch(login({ email: "demo@demo.demo", password: "demopassword" }))
+    dispatch(
+      login({ email: "demo@demo.demo", password: "demopassword" })
+    ).then(() => ownProps.onSuccess(true))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

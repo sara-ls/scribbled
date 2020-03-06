@@ -26,9 +26,9 @@ class App extends React.Component {
     window.scrollTo(0, window.modalRef.current.offsetTop);
   }
 
-  onSuccess() {
-    if (!this.state.loggedIn) {
-      this.setState({loggedIn: true})
+  onSuccess(isLoggedIn) {
+    if (window.store.session.id || isLoggedIn) {
+      this.setState({ loggedIn: true})
     } else {
       this.setState({ loggedIn: false });
     }

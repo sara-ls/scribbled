@@ -13,7 +13,7 @@ const mapStateToProps = ({ errors }) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    processForm: user => dispatch(signup(user)).then(() => ownProps.onSuccess()),
+    processForm: user => dispatch(signup(user)).then(() => ownProps.onSuccess(true)),
     closeModal: () => dispatch(closeModal()),
     otherForm: (
       <button
