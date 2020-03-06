@@ -319,21 +319,36 @@ footer a {
 }
 
 #scribd-icon {
-  width: 15px;
+  width: 16px;
   height: auto;
-  color: #1e7b85;
+  color: #287c85ec;
+}
+#scribd-icon:hover {
+  width: 16px;
+  height: auto;
+  color: #0a7783;
 }
 
 #github-icon {
-  width: 18px;
+  width: 19px;
   height: auto;
-  color: #535151;
+  color: #535151ee;
+}
+#github-icon:hover {
+  width: 19px;
+  height: auto;
+  color: #2b2a2a;
 }
 
 #linkedin-icon {
-  width: 18px;
+  width: 19px;
   height: auto;
   color: rgb(91, 130, 201);
+}
+#linkedin-icon:hover {
+  width: 19px;
+  height: auto;
+  color: rgb(55, 103, 193);
 }
 
 .footer-bottom {
@@ -374,6 +389,11 @@ footer a {
   color: #444;
   font-weight: normal;
 }
+.footer-list a:hover {
+  font-size: 12px;
+  color: rgba(99, 99, 109, 0.954);
+  font-weight: normal;
+}
 
 .footer-main h4 {
   font-size: 14px;
@@ -408,8 +428,7 @@ Session Form / Modal start ------------------------
 }
 
 .modal-child {
-  position: absolute;
-  // top: 50%;
+  position: absolute; // top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -419,8 +438,7 @@ Session Form / Modal start ------------------------
 #overlay {
   position: fixed;
   width: 100%;
-  height: 100%;
-  top: 0;
+  height: 100%; top: 0;
   left: 0;
   right: 0;
   bottom: 0;

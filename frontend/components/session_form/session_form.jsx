@@ -5,6 +5,7 @@ import {
   faExclamationCircle
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Checkbox from './checkbox'
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -17,11 +18,11 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateChecked =this.updateChecked.bind(this)
+    this.updateChecked = this.updateChecked.bind(this);
   }
 
   componentWillUnmount() {
-    this.props.clearErrors()
+    this.props.clearErrors();
   }
 
   update(field) {
@@ -36,6 +37,7 @@ class SessionForm extends React.Component {
       checked: !this.state.checked
     });
   }
+
 
   handleSubmit(e) {
     e.preventDefault();
