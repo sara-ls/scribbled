@@ -667,6 +667,8 @@ svg#error-icon {
   width: 65%;
   height: 50px;
   z-index: 3000;
+  display: flex;
+  align-items: flex-start;
 }
 
 .welcome {
