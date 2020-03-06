@@ -16,7 +16,6 @@ class SessionForm extends React.Component {
       full_name: "",
       checked: false
     };
-    // this.onSuccess = this.props.onSuccess
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateChecked = this.updateChecked.bind(this);
   }
@@ -48,7 +47,7 @@ class SessionForm extends React.Component {
   renderErrors() {
     return (
       <ul className="errors-list">
-        {this.props.errors.map((error, i) => (
+        {this.props.errors.slice(0, 3).map((error, i) => (
           <li key={`error-${i}`} className="err">
             <FontAwesomeIcon icon={faExclamationCircle} id="error-icon" />
             {error}
@@ -59,9 +58,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    /* get session error type */
-    if (this.props.errors.some(err => err.includes("Full"))) {
-    }
 
     let rightFooter;
     let nameInput = null;
