@@ -37,11 +37,13 @@ class SessionForm extends React.Component {
     });
   }
 
-
-  handleSubmit(e) {
-    // const onSuccess = () => this.onSuccess()
-    e.preventDefault();
-    this.props.processForm(Object.assign({}, this.state))
+  handleSubmit(clicked) {
+    return e => {
+      if (e.which === 13 || clicked) {
+        e.preventDefault();
+        this.props.processForm(Object.assign({}, this.state));
+      }
+    }
   }
 
   renderErrors() {
@@ -58,7 +60,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-
     let rightFooter;
     let nameInput = null;
     let updatesCheckbox = null;
@@ -76,6 +77,7 @@ class SessionForm extends React.Component {
             onChange={this.update("full_name")}
             className="login-input"
             autoComplete="off"
+            onKeyPress={this.handleSubmit(false)}
             required
           />
         </div>
@@ -133,7 +135,7 @@ class SessionForm extends React.Component {
                 Email
               </div>
               <div className="errors-container">{this.renderErrors()}</div>
-              <form onSubmit={this.handleSubmit} className="login-form">
+              <form onSubmit={this.handleSubmit(true)} className="login-form">
                 <div className="login-form">
                   {nameInput}
                   <div className="input-container">
@@ -146,7 +148,7 @@ class SessionForm extends React.Component {
                       onChange={this.update("email")}
                       className="login-input"
                       autoComplete="off"
-                      required
+                      onKeyPress={this.handleSubmit(false)}
                     />
                   </div>
                   <div className="input-container">
@@ -166,6 +168,7 @@ class SessionForm extends React.Component {
                       onChange={this.update("password")}
                       className="login-input"
                       autoComplete="off"
+                      onKeyPress={this.handleSubmit(false)}
                       required
                     />
                   </div>
