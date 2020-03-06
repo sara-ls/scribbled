@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      render json: ["No account found with that email or username. Please try again or sign up."], status: 401
+      render json: ["No account found with that email. Please try again or sign up."], status: 401
     end
   end
 

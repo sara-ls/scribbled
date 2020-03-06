@@ -16,7 +16,7 @@ const HomeSimplePanel = props => {
           className="signup-btn"
           onClick={() => {
             props.openModal("signup");
-            window.scrollTo(0, window.modalRef.current.offsetTop);
+            // window.scrollTo(0, window.modalRef.current.offsetTop);
           }}
         >
           Read Free for 30 Days

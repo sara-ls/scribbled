@@ -1,5 +1,9 @@
 import React from "react";
-import { faTimes, faAngleLeft, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTimes,
+  faAngleLeft,
+  faExclamationCircle
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class SessionForm extends React.Component {
@@ -27,12 +31,12 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return(
+    return (
       <ul className="errors-list">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`} >
-            <FontAwesomeIcon icon={faExclamationCircle} id="error-icon"/>
-             {error}
+          <li key={`error-${i}`} className="err">
+            <FontAwesomeIcon icon={faExclamationCircle} id="error-icon" />
+            {error}
           </li>
         ))}
       </ul>
@@ -40,6 +44,10 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    /* get session error type */
+    if (this.props.errors.some(err => err.includes("Full"))) {
+    }
+    
     let rightFooter;
     let nameInput = null;
     if (this.props.formType === "login") {
