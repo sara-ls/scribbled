@@ -12,10 +12,16 @@ class SessionForm extends React.Component {
     this.state = {
       email: "",
       password: "",
-      full_name: ""
+      full_name: "",
+      checked: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateChecked =this.updateChecked.bind(this)
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors()
   }
 
   update(field) {
@@ -23,6 +29,12 @@ class SessionForm extends React.Component {
       this.setState({
         [field]: e.currentTarget.value
       });
+  }
+
+  updateChecked(e) {
+    this.setState({
+      checked: !this.state.checked
+    });
   }
 
   handleSubmit(e) {
@@ -47,9 +59,10 @@ class SessionForm extends React.Component {
     /* get session error type */
     if (this.props.errors.some(err => err.includes("Full"))) {
     }
-    
+
     let rightFooter;
     let nameInput = null;
+    let updatesCheckbox = null;
     if (this.props.formType === "login") {
       rightFooter = "New to Scribbled?";
     } else {
@@ -68,6 +81,25 @@ class SessionForm extends React.Component {
           />
         </div>
       );
+
+      // updatesCheckbox = (
+      //   <div className="checkbox-container">
+      //     <br />
+      //     <div className="checkbox-wrapper">
+      //       <input
+      //         id="checkbox-input"
+      //         type="checkbox"
+      //         className="login-input"
+      //         checked={this.state.checked}
+      //         onChange={this.updateChecked}
+      //       />
+      //       <span className="checkmark"></span>
+      //       <span className="checkbox-label">
+      //         Send me updates from Scribbled
+      //       </span>
+      //     </div>
+      //   </div>
+      // );
     }
 
     return (
@@ -77,6 +109,9 @@ class SessionForm extends React.Component {
           <div className="login-form-box">
             <div className="left-col">
               <img alt="Scribbled" className="logo-img" src={window.logoURL} />
+              <span className="welcome">
+                {this.props.formType === "login" ? "Welcome back!" : ""}
+              </span>
             </div>
             <div className="right-col">
               <div className="form-top">
@@ -135,6 +170,7 @@ class SessionForm extends React.Component {
                       required
                     />
                   </div>
+                  {updatesCheckbox}
                   <br />
                   <button className="session-submit submit-btn" type="submit">
                     {this.props.formType === "login" ? "Sign In" : "Sign Up"}
