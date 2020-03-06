@@ -5,7 +5,7 @@ import {
   faExclamationCircle
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Checkbox from './checkbox'
+// import Checkbox from './checkbox'
 
 class SessionForm extends React.Component {
   constructor(props) {
