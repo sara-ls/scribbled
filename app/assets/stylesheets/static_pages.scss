@@ -726,7 +726,7 @@ svg#error-icon {
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-  content: "";
+  content: "✔";
   position: absolute;
   display: none;
 }
@@ -1033,10 +1033,11 @@ img.featured {
 .featured-para {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
-  width: 85%;
+  width: 80%;
   overflow: hidden;
   overflow-wrap: break-word;
   line-height: 1.2;
+  text-align: justify;
 }
 
 /**

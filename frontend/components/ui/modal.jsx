@@ -4,7 +4,7 @@ import { closeModal } from "../../actions/modal_actions";
 import LoginForm from "../session_form/login_form_container";
 import SignupForm from "../session_form/signup_form_container";
 
-const Modal = ({ modal, closeModal }) => {
+const Modal = ({ modal, closeModal, onSuccess }) => {
   if (!modal) {
     return null;
   }
@@ -12,10 +12,10 @@ const Modal = ({ modal, closeModal }) => {
 
   switch (modal) {
     case "login":
-      component = <LoginForm id="form" />;
+      component = <LoginForm id="form" onSuccess={onSuccess}/>;
       break;
     case "signup":
-      component = <SignupForm id="form" />;
+      component = <SignupForm id="form" onSuccess={onSuccess} />;
       break;
     default:
       return null;
@@ -29,9 +29,10 @@ const Modal = ({ modal, closeModal }) => {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    onSuccess: ownProps.onSuccess
   };
 };
 

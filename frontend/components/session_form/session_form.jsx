@@ -16,7 +16,7 @@ class SessionForm extends React.Component {
       full_name: "",
       checked: false
     };
-
+    // this.onSuccess = this.props.onSuccess
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateChecked = this.updateChecked.bind(this);
   }
@@ -40,8 +40,9 @@ class SessionForm extends React.Component {
 
 
   handleSubmit(e) {
+    // const onSuccess = () => this.onSuccess()
     e.preventDefault();
-    this.props.processForm(Object.assign({}, this.state));
+    this.props.processForm(Object.assign({}, this.state))
   }
 
   renderErrors() {

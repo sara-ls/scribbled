@@ -11,7 +11,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    //openModal prop
     this.state = {
       showMenu: false
     };
@@ -35,6 +34,7 @@ class NavBar extends React.Component {
     let sessionLinks;
     let navbarTools;
     let currentUser = this.props.currentUser;
+    const onSuccess = () => this.props.onSuccess();
     if (currentUser) {
       navbarTools = (
         <div className="user-menu-btn" onClick={this.toggleMenu}>
@@ -52,7 +52,11 @@ class NavBar extends React.Component {
                 <li className="greeting">Hi, {currentUser.full_name}</li>
                 {/* <li>Account Settings</li> */}
                 <li>
-                  <button className="signout-btn" onClick={this.props.logout}>
+                  <button className="signout-btn" onClick={
+                    () => {
+                      this.props.logout().then(()=> this.props.onSuccess())
+                    }
+                  }>
                     Sign Out
                   </button>
                 </li>
@@ -64,7 +68,11 @@ class NavBar extends React.Component {
     } else {
       navbarTools = (
         <div className="navbar-tools">
-          <button className="demo-signin-btn" onClick={this.props.demoLogin}>
+          <button className="demo-signin-btn" onClick={
+            () => {
+              this.props.demoLogin().then(() => onSuccess())
+            }
+          }>
             Demo User Login
           </button>
           <button

@@ -7,14 +7,13 @@ import Featured from './home/featured'
 const MainContent = (props) => {
   let component;
   let currentUser = window.store.entities.users[window.store.session.id];
-  if (currentUser) {
+  if (props.loggedIn) {
     component = (
       <div>
         <SideBar showSidebar={true} />
         <Featured />
       </div>
-    
-    )
+    );
   } else {
     component = <Splash scrollToModal={props.scrollToModal} />;
   }

@@ -12,9 +12,9 @@ const mapStateToProps = ({ session, entities: { users }, errors }) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    processForm: user => dispatch(login(user)),
+    processForm: user => dispatch(login(user)).then(() => ownProps.onSuccess()),
     demoLogin: () =>
       dispatch(login({ email: "demo@demo.demo", password: "demopassword" })),
     closeModal: () => dispatch(closeModal()),
