@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { logout } from "../../actions/session_actions";
+import { login, logout } from "../../actions/session_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
 
 // import icons
@@ -23,12 +23,15 @@ class NavBar extends React.Component {
       this.setState({
         showMenu: false
       });
-    } else { this.setState({
+    } else {
+      this.setState({
         showMenu: true
       });
-    } }
+    }
+  }
 
   render() {
+    let demoUserBtn = null;
     let sessionLinks;
     let navbarTools;
     let currentUser = this.props.currentUser;
@@ -60,25 +63,21 @@ class NavBar extends React.Component {
       );
     } else {
       navbarTools = (
-        <button className="signin-btn" onClick={() => {
-          this.props.openModal("login")
-          this.props.scrollToModal()
-        }}>
-          Sign In
-        </button>
+        <div className="navbar-tools">
+          <button className="demo-signin-btn" onClick={this.props.demoLogin}>
+            Demo User Login
+          </button>
+          <button
+            className="signin-btn"
+            onClick={() => {
+              this.props.openModal("login");
+              this.props.scrollToModal();
+            }}
+          >
+            Sign In
+          </button>
+        </div>
       );
-
-      // sessionLinks = (
-      //   <nav className="login-signup">
-      //     <button
-      //       className="signin-btn"
-      //       onClick={() => this.props.openModal("login")}
-      //     >
-      //       Sign In
-      //     </button> //     {/* <Link to="/login">Login</Link> */}
-      //     {/* <Link to="/signup">Sign up!</Link> */}
-      //   </nav>
-      // );
     }
 
     return (
@@ -106,7 +105,9 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  openModal: (modal) => dispatch(openModal(modal))
+  openModal: modal => dispatch(openModal(modal)),
+  demoLogin: () =>
+    dispatch(login({ email: "demo@demo.demo", password: "demopassword" }))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
