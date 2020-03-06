@@ -594,6 +594,27 @@ form label {
   justify-content: flex-start;
 }
 
+.errors-list {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.errors-list * {
+  color: #b31e30;
+  font-size: 14px;
+}
+
+svg#error-icon {
+  padding: 1px 0 0 0;
+  margin-right: 2px;
+}
+
+.errors-container {
+  width: 65%;
+  height: 50px;
+  z-index: 3000;
+}
+
 /**
 Session Form / Modal end ------------------------
 **/

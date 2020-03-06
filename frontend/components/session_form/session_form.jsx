@@ -1,5 +1,5 @@
 import React from "react";
-import { faTimes, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faAngleLeft, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class SessionForm extends React.Component {
@@ -24,20 +24,20 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(Object.assign({}, this.state));
-    this.props.closeModal();
   }
 
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    return(
+      <ul className="errors-list">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`} >
+            <FontAwesomeIcon icon={faExclamationCircle} id="error-icon"/>
+             {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   render() {
     let rightFooter;
@@ -56,6 +56,7 @@ class SessionForm extends React.Component {
             onChange={this.update("full_name")}
             className="login-input"
             autoComplete="off"
+            required
           />
         </div>
       );
@@ -89,8 +90,8 @@ class SessionForm extends React.Component {
                 {this.props.formType === "login" ? "Sign In" : "Sign Up"} with
                 Email
               </div>
+              <div className="errors-container">{this.renderErrors()}</div>
               <form onSubmit={this.handleSubmit} className="login-form">
-                {/* {this.renderErrors()} */}
                 <div className="login-form">
                   {nameInput}
                   <div className="input-container">
@@ -103,6 +104,7 @@ class SessionForm extends React.Component {
                       onChange={this.update("email")}
                       className="login-input"
                       autoComplete="off"
+                      required
                     />
                   </div>
                   <div className="input-container">
@@ -122,6 +124,7 @@ class SessionForm extends React.Component {
                       onChange={this.update("password")}
                       className="login-input"
                       autoComplete="off"
+                      required
                     />
                   </div>
                   <br />
