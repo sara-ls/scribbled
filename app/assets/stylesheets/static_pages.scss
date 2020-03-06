@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //  @import "./reset.css";
+input, button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 
 * {
   font-family: Source Sans Pro, sans-serif;
@@ -199,7 +205,7 @@ NavBar start -----------------------------
   display: block;
   font-size: 16px;
   border: none;
-  background-color: none;
+  background-color: transparent;
 }
 
 .demo-signin-btn {
@@ -569,7 +575,7 @@ form label {
 }
 
 .close-btn {
-  background-color: none;
+  background-color: transparent;
   border: none;
   margin-top: 5px;
   padding-top: 10px;
@@ -622,7 +628,7 @@ form label {
   font-size: 16px;
   letter-spacing: .3px;
   color: #1e7b85;
-  background-color: none;
+  background-color: transparent;
   border: none;
   font-weight: bold;
 }
@@ -680,6 +686,11 @@ svg#error-icon {
   padding-bottom: 50px;
   text-align: center;
   margin-top: 5px;
+}
+
+button.other-form {
+  background-color: transparent;
+  border: none;
 }
 
 // .checkbox-wrapper {
