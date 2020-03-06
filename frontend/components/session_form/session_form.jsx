@@ -169,7 +169,6 @@ class SessionForm extends React.Component {
                       className="login-input"
                       autoComplete="off"
                       onKeyPress={this.handleSubmit(false)}
-                      required
                     />
                   </div>
                   {updatesCheckbox}
