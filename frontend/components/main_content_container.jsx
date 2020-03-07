@@ -7,7 +7,8 @@ import Featured from './home/featured'
 const MainContent = (props) => {
   let component;
   let currentUser = window.store.entities.users[window.store.session.id];
-  if (props.loggedIn) {
+  console.log(props.loggedIn)
+  if (currentUser || props.loggedIn) {
     component = (
       <div>
         <SideBar showSidebar={true} />
@@ -25,9 +26,10 @@ const MainContent = (props) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps)=> {
   return {
-    
+    scrollToModal: ownProps.scrollToModal,
+    loggedIn: ownProps.loggedIn
   };
 };
 
