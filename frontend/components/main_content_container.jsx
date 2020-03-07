@@ -1,10 +1,10 @@
 import React from "react";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 import Splash from "./splash_page/splash";
-import SideBar from './ui/sidebar'
-import Featured from './home/featured'
+import SideBar from "./ui/sidebar";
+import Featured from "./home/featured";
 
-const MainContent = (props) => {
+const MainContent = props => {
   let component;
   let currentUser = window.store.entities.users[window.store.session.id];
   if (currentUser || props.loggedIn) {
@@ -18,14 +18,10 @@ const MainContent = (props) => {
     component = <Splash scrollToModal={props.scrollToModal} />;
   }
 
-  return (
-    <div className="main-content">
-      {component}
-    </div>
-  );
+  return <div className="main-content">{component}</div>;
 };
 
-const mapStateToProps = (state, ownProps)=> {
+const mapStateToProps = (state, ownProps) => {
   return {
     scrollToModal: ownProps.scrollToModal,
     loggedIn: ownProps.loggedIn
@@ -33,9 +29,7 @@ const mapStateToProps = (state, ownProps)=> {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-    
-  };
+  return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContent);

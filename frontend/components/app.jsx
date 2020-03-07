@@ -5,7 +5,7 @@ import Footer from "./ui/footer";
 // import {
 //   AuthRoute, //   ProtectedRoute
 // } from '../util/route_util'
-import MainContent from './main_content_container'
+import MainContent from "./main_content_container";
 import Modal from "./ui/modal";
 import { openModal, closeModal } from "../actions/modal_actions";
 
@@ -14,12 +14,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       loggedIn: false
-      // showSidebar: window.store.entities.users
     };
 
     window.modalRef = React.createRef();
     this.scrollToModal = this.scrollToModal.bind(this);
-    this.onSuccess = this.onSuccess.bind(this)
+    this.onSuccess = this.onSuccess.bind(this);
   }
 
   scrollToModal(e) {
@@ -28,7 +27,7 @@ class App extends React.Component {
 
   onSuccess(isLoggedIn) {
     if (window.store.session.id || isLoggedIn) {
-      this.setState({ loggedIn: true})
+      this.setState({ loggedIn: true });
     } else {
       this.setState({ loggedIn: false });
     }
