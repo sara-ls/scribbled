@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
       rightFooter = "Already have an account?";
       nameInput = (
         <div className="input-container">
-          <br />
+          
           <label>Name</label>
           <input
             type="text"
@@ -78,14 +78,13 @@ class SessionForm extends React.Component {
             className="login-input"
             autoComplete="off"
             onKeyPress={this.handleSubmit(false)}
-            required
           />
         </div>
       );
 
       // updatesCheckbox = (
       //   <div className="checkbox-container">
-      //     <br />
+      //     
       //     <div className="checkbox-wrapper">
       //       <input
       //         id="checkbox-input"
@@ -139,7 +138,7 @@ class SessionForm extends React.Component {
                 <div className="login-form">
                   {nameInput}
                   <div className="input-container">
-                    <br />
+                    
                     <label>Email</label>
                     <input
                       id="email-input"
@@ -152,7 +151,7 @@ class SessionForm extends React.Component {
                     />
                   </div>
                   <div className="input-container">
-                    <br />
+                    
                     <label>
                       Password
                       <p className="password-length">
@@ -172,7 +171,7 @@ class SessionForm extends React.Component {
                     />
                   </div>
                   {updatesCheckbox}
-                  <br />
+                  
                   <button className="session-submit submit-btn" type="submit">
                     {this.props.formType === "login" ? "Sign In" : "Sign Up"}
                   </button>
