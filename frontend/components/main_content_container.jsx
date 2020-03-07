@@ -7,7 +7,6 @@ import Featured from './home/featured'
 const MainContent = (props) => {
   let component;
   let currentUser = window.store.entities.users[window.store.session.id];
-  console.log(props.loggedIn)
   if (currentUser || props.loggedIn) {
     component = (
       <div>
