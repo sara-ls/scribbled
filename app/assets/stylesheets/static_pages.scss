@@ -510,6 +510,7 @@ div.login-form {
   padding: 8px 14px;
   width: 280px;
   height: 40px;
+  margin-top: 2px;
 }
 
 .form-top {
@@ -565,6 +566,8 @@ div.login-form {
   margin-bottom: 25px;
 }
 
+
+
 .form-title {
   font-size: 28px;
   font-weight: bold;
@@ -573,8 +576,8 @@ div.login-form {
   padding-right: 0;
   text-align: center;
   line-height: normal;
-    height: 7%;
-    padding-top: 5px;
+  height: 7%;
+  padding-top: 5px;
 }
 
 form label {
@@ -662,7 +665,7 @@ form label {
 }
 
 .password-length {
-  font-size: 14px;
+  font-size: 13px;
   color: #57617a;
   display: block;
   text-align: left;
@@ -700,7 +703,7 @@ svg#error-icon {
 
 .errors-container {
   width: 65%;
-height: 12%;
+  height: 12%;
   z-index: 3000;
   display: flex;
   align-items: flex-end;
