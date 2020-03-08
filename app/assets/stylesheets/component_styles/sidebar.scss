@@ -1,0 +1,37 @@
+/**
+SideBar start -----------------------------
+**/
+
+aside {
+  height: 100%;
+  position: fixed;
+  width: 180px;
+  background-color: #f8f9fd;
+  background-image: linear-gradient(0deg,
+      #fcf5ea,
+      #fbf1f7 35%,
+      #eff7f8 67%,
+      #e9f7fe);
+  z-index: 2;
+}
+
+.sidebar-content {
+  position: relative;
+  top: 61px;
+}
+
+.sidebar-content>ul {
+  list-style: none;
+}
+
+.sidebar-content * {
+  color: #57617a;
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+  line-height: 24px;
+}
+
+/**
+SideBar end -----------------------------
+**/

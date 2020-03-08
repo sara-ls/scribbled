@@ -1,0 +1,437 @@
+/**
+Session Form / Modal start ------------------------
+**/
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(112, 118, 142, 0.563);
+
+  z-index: 1000;
+}
+
+.modal-child {
+  position: absolute; // top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 100;
+}
+
+.login-form-container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 500;
+  // background-color: rgba($color: #000000, $alpha: 0.5);
+}
+
+.login-form-box {
+  position: relative;
+  z-index: 500;
+  top: 78px;
+  height: 566px;
+  width: 666px;
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 0 12px #000514;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 0 12px #000514;
+  -webkit-transition: all .3s ease-in-out 1.7s;
+
+}
+
+
+form.login-form {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  height: 60%;
+  margin: 0 0 25px 0;
+  justify-content: flex-start;
+}
+
+div.login-form {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.login-form input {
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid #8f929e;
+  padding: 8px 14px;
+  width: 280px;
+  height: 40px;
+  margin-top: 2px;
+}
+
+.form-top {
+  display: block;
+  width: 450px;
+  // position: absolute;
+  height: 8%;
+  // top: 0px;
+}
+
+.form-top-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.back-btn-container {
+  display: flex;
+  align-items: center;
+}
+
+.back-btn-container span {
+  padding: 0 8px;
+  font-family: Source Sans Pro, sans-serif;
+  font-size: 18px;
+  color: #1c263d;
+}
+
+.form-top-btns div {
+  padding: 24px;
+}
+
+#modal-icon {
+  height: 25px;
+  width: 25px;
+  color: #8f929e
+}
+
+.left-col {
+  width: 240px;
+  height: 100%;
+  background: #d9effb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 80px;
+}
+
+.left-col .logo-img {
+  padding-left: 0px;
+  margin-bottom: 25px;
+}
+
+
+
+.form-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 auto 0;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+  line-height: normal;
+  height: 7%;
+  padding-top: 5px;
+}
+
+form label {
+  font-size: 14px;
+  text-align: left;
+  font-weight: bold;
+  width: 95%;
+  padding-bottom: 1px;
+  color: #1c263d;
+}
+
+.right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 460px;
+  height: 100%;
+}
+
+.close-btn {
+  background-color: transparent;
+  border: none;
+  margin-top: 5px;
+  padding-top: 10px;
+}
+
+.form-top-btns {
+  margin-right: 15px;
+}
+
+.submit-btn {
+  outline: none;
+  border-radius: 4px;
+  width: 280px;
+  height: 40px;
+  background-color: #1e7b85;
+  border: 1px solid hsla(0, 0%, 100%, .2);
+  color: white;
+  font-size: 18px;
+  min-width: 120px;
+  padding: 0px 30px;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: bold;
+  vertical-align: middle;
+  min-height: 2.44444em;
+  line-height: 2.44444em;
+}
+
+.submit-btn:hover {
+  border: 1px solid #135057;
+  background-color: #135057;
+  cursor: pointer;
+}
+
+.right-footer-container {
+  display: flex;
+  border-top: 1px solid #caced9;
+  width: 100%;
+  justify-content: center;
+  height: 13%;
+  align-items: center;
+}
+
+.right-footer-container span {
+  font-size: 16px;
+  letter-spacing: .3px;
+  color: #1c263d;
+}
+
+.right-footer-container button {
+  font-size: 16px;
+  letter-spacing: .3px;
+  color: #1e7b85;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+}
+
+.right-footer-container button:hover {
+  color: #135057;
+
+}
+
+.password-length {
+  font-size: 13px;
+  color: #57617a;
+  display: block;
+  text-align: left;
+  margin: 0;
+  font-weight: normal;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 0;
+}
+
+.errors-list {
+  list-style: none;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 14px 0 0 0;
+  justify-content: flex-end;
+
+}
+
+.errors-list li {
+  color: #b31e30;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+svg#error-icon {
+  padding: 1px 0 0 0;
+  margin-right: 2px;
+}
+
+.errors-container {
+  width: 65%;
+  height: 12%;
+  z-index: 3000;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.welcome {
+  font-size: 17px;
+  color: rgb(30, 38, 57);
+  line-height: 1.69;
+  margin-bottom: 0;
+  max-width: 200px;
+  padding-bottom: 50px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+button.other-form {
+  background-color: transparent;
+  border: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #02a793;
+  box-shadow: 0 0 1px 0 #017f70;
+}
+
+// .checkbox-wrapper {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// #checkbox-input {
+//   margin-right: 2px;
+//   opacity: 0;
+//   cursor: pointer;
+//   height: 0;
+//   width: 0;
+// }
+
+// .checkbox-label {
+//   font-family: Source Sans Pro,
+//     sans-serif;
+//   font-size: 14px;
+//   color: #1c263d;
+//   display: inline-block;
+//   font-weight: 400;
+//   line-height: unset;
+//   vertical-align: unset;
+// }
+// .checkbox-wrapper {
+//   display: block;
+//   position: relative;
+//   padding-left: 35px;
+//   margin-bottom: 12px;
+//   font-size: 22px;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+// }
+
+// .checkmark {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 25px;
+//   width: 25px;
+//   background-color: #eee;
+// }
+
+// /* Create the checkmark/indicator (hidden when not checked) */
+// .checkmark:after {
+//   content: "✔";
+//   position: absolute;
+//   display: none;
+// }
+
+// /* Show the checkmark when checked */
+// .checkbox-wrapper input:checked ~ .checkmark:after {
+//   display: block;
+// }
+
+// /* Style the checkmark/indicator */
+// .checkbox-wrapper .checkmark:after {
+//   left: 9px;
+//   top: 5px;
+//   width: 5px;
+//   height: 10px;
+//   border: solid white;
+//   border-width: 0 3px 3px 0;
+//   -webkit-transform: rotate(45deg);
+//   -ms-transform: rotate(45deg);
+//   transform: rotate(45deg);
+// }
+
+.modal-background {
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  /* Firefox */
+  -webkit-animation: fadein 1s;
+  /* Safari and Chrome */
+  -o-animation: fadein 1s;
+  /* Opera */
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+
+  /* Firefox */
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+
+  /* Safari and Chrome */
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadein {
+
+  /* Opera */
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/**
+Session Form / Modal end ------------------------
+**/

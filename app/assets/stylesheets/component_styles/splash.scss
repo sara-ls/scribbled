@@ -1,0 +1,207 @@
+/**
+Splash start ---------------------------
+**/
+.main-section {
+  position: relative;
+  top: 60px;
+}
+
+// .home-container {
+//   position: relative;
+//   top: 60px;
+// }
+
+// .splash-img {
+//   // background-image: url('splash.png');
+//   height: 100%;
+//   width: 100%;
+//   z-index: 8;
+// }
+
+.home-content-box {
+  position: relative;
+  min-height: 800px;
+  width: 100%;
+  /* top: 5px; */
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 150px;
+  background-image: url("https://miro.medium.com/max/5140/1*DztB9SYNfMX-9d149yRa_w.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home-content {
+  margin: 0px 200px;
+  height: 400px;
+  width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+}
+
+.home-container span {
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.signup-btn {
+  background-color: #1e7b85;
+  border: 1px solid rgba($color: #0e6b6bad, $alpha: 0.3);
+  color: white;
+  font-size: 18px;
+  min-height: 2.44444em;
+  line-height: 2.44444em;
+  min-width: 120px;
+  padding: 0px 30px;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.signup-btn:hover {
+  border: 1px solid #135057;
+  background-color: #135057;
+  cursor: pointer;
+}
+
+.offerings-container {
+  padding: 50px 0;
+  background: #fff;
+  background-position: 50%;
+  text-align: center;
+}
+
+.offerings-heading {
+  font-size: 36px;
+  font-weight: 700;
+  font-family: Source Sans Pro,
+    sans-serif;
+  margin: 0 40px;
+  color: #1c263d;
+}
+
+
+.offerings .landing-sub-heading {
+  font-weight: 400;
+  margin: 0 auto 30px;
+  font-size: 18px;
+  text-align: center;
+  color: #1c263d;
+  width: 65%;
+}
+
+li.offer-container {
+  display: inline-block;
+  max-width: 300px;
+  padding: 0 10px;
+  vertical-align: top;
+}
+
+.offer-container img {
+  width: 200px;
+}
+
+.summary {
+  left: 0;
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000514;
+}
+
+.summary-subtext {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-align: center;
+  display: block;
+  width: 166px;
+  margin: 0 auto;
+  color: #000514;
+}
+
+.offerings-list {
+  list-style: none;
+  margin: 0 0 24px;
+}
+
+.fold {
+  padding: 50px;
+}
+
+.landing-sub-heading {
+  margin: 0;
+  padding: 15px 0 5px;
+  font-size: 19px;
+  width: 200px;
+  text-align: left;
+  color: #57617a;
+}
+
+.fold h2 {
+  font-size: 60px;
+  line-height: 55px;
+  font-weight: normal;
+  display: inline-flex;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 0;
+  color: #000514;
+  text-align: left;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fold h2 strong {
+  font-weight: bolder;
+  color: #a9085e;
+}
+
+// TopBooks start
+.top-books {
+  background-color: #5a1d41;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.top-books h2 {
+  padding-top: 10px;
+  color: #fafbfd;
+  text-transform: uppercase;
+  line-height: 1em;
+  font-size: 34px;
+}
+
+.book-covers-container {
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 75%;
+}
+
+.book-cover {
+  height: 140px;
+  width: 95px;
+  margin: 5px;
+}
+// TopBooks end
+
+/**
+Splash end ---------------------------
+**/
