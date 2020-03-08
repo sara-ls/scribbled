@@ -75,10 +75,7 @@ class NavBar extends React.Component {
           </button>
           <button
             className="signin-btn"
-            onClick={() => {
-              this.props.openModal("login");
-              this.props.scrollToModal();
-            }}
+            onClick={() => this.props.openModal("login")}
           >
             Sign In
           </button>

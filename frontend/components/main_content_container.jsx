@@ -15,7 +15,7 @@ const MainContent = props => {
       </div>
     );
   } else {
-    component = <Splash scrollToModal={props.scrollToModal} />;
+    component = <Splash />;
   }
 
   return <div className="main-content">{component}</div>;
@@ -23,7 +23,6 @@ const MainContent = props => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    scrollToModal: ownProps.scrollToModal,
     loggedIn: ownProps.loggedIn
   };
 };

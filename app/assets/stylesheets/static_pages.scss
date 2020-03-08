@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //  @import "./reset.css";
+
 input,
 button {
   -webkit-appearance: none;
@@ -28,7 +29,6 @@ button:focus {
 button:hover {
   cursor: pointer;
 }
-
 
 html {
   scroll-behavior: smooth;

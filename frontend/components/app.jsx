@@ -2,9 +2,7 @@ import React from "react";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 import NavBar from "./ui/navbar";
 import Footer from "./ui/footer";
-// import {
-//   AuthRoute, //   ProtectedRoute
-// } from '../util/route_util'
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import MainContent from "./main_content_container";
 import Modal from "./ui/modal";
 import { openModal, closeModal } from "../actions/modal_actions";
@@ -16,13 +14,7 @@ class App extends React.Component {
       loggedIn: false
     };
 
-    window.modalRef = React.createRef();
-    this.scrollToModal = this.scrollToModal.bind(this);
     this.onSuccess = this.onSuccess.bind(this);
-  }
-
-  scrollToModal(e) {
-    window.scrollTo(0, window.modalRef.current.offsetTop);
   }
 
   onSuccess(isLoggedIn) {
@@ -37,11 +29,9 @@ class App extends React.Component {
     return (
       <div className="app">
         <NavBar
-          scrollToModal={this.scrollToModal}
           onSuccess={this.onSuccess}
           loggedIn={this.state.loggedIn}
         />
-        <div ref={window.modalRef}></div>
         <Modal
           id="form"
           loggedIn={this.state.loggedIn}
@@ -49,7 +39,6 @@ class App extends React.Component {
         />
         <div className="main-section">
           <MainContent
-            scrollToModal={this.scrollToModal}
             loggedIn={this.state.loggedIn}
           />
           <Footer />
