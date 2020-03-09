@@ -4,8 +4,8 @@ import NavBar from "./ui/navbar";
 import Footer from "./ui/footer";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Modal from "./ui/modal";
-import Splash from './splash_page/splash';
-import Home from './home/home';
+import Splash from "./splash_page/splash";
+import Home from "./home/home";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +18,6 @@ class App extends React.Component {
   }
 
   onSuccess(isLoggedIn) {
-    console.log(window.store)
     if (window.store.session.id || isLoggedIn) {
       this.setState({ loggedIn: true });
     } else {

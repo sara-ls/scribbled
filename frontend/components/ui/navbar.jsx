@@ -31,7 +31,6 @@ class NavBar extends React.Component {
 
   render() {
     let demoUserBtn = null;
-    let sessionLinks;
     let navbarTools;
     let currentUser = this.props.currentUser;
     if (currentUser) {
@@ -53,11 +52,7 @@ class NavBar extends React.Component {
                 <li>
                   <button
                     className="signout-btn"
-                    onClick={() => {
-                      this.props
-                        .logout()
-                        // .then(() => this.props.onSuccess(false));
-                    }}
+                    onClick={this.props.logout}
                   >
                     Sign Out
                   </button>
@@ -92,7 +87,6 @@ class NavBar extends React.Component {
             </Link>
           </div>
           {navbarTools}
-          {/* {sessionLinks} */}
         </div>
         <div className="color-divider-line"></div>
       </nav>
