@@ -15,21 +15,51 @@ aside {
   z-index: 2;
 }
 
-.sidebar-content {
-  position: relative;
-  top: 61px;
-}
-
-.sidebar-content>ul {
+ul.sidebar-content {
   list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .sidebar-content * {
   color: #57617a;
-  display: inline-block;
   font-size: 14px;
   vertical-align: middle;
   line-height: 24px;
+}
+
+svg#scribd-icon-side {
+  margin: 0 12px 0 16px;
+  font-size: 24px;
+  width: 24px;
+}
+
+.sidebar-content li {
+  display: block;
+  width: 100%;
+}
+
+.nav-link {
+  height: 100%;
+  margin: 20px 0;
+  // padding: 0 20px;
+  height: 32px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.active-nav-link {
+  border-left: 4px solid #a9085e;
+  color: #a9085e;
+  font-weight: bold;
+}
+
+.active-nav-link #scribd-icon-side path {
+  color: #a9085e;
 }
 
 /**

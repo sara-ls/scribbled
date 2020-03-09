@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import NavBar from "./ui/navbar";
 import Footer from "./ui/footer";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
@@ -20,6 +20,7 @@ class App extends React.Component {
               <AuthRoute exact path="/splash" component={Splash} />
               {/* Render Splash page as main content component if logged in */}
               <ProtectedRoute exact path="/" component={Home} />
+              {/* Auto redirect given bad path */}
               <Redirect path="*" to="/" />
             </Switch>
           </div>
