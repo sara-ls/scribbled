@@ -46,7 +46,7 @@ svg#scribd-icon-side {
   height: 100%;
   margin: 12px 0;
   // padding: 0 20px;
-  height: 32px;
+  height: 34px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -108,13 +108,33 @@ svg#scribd-icon-side {
 svg#doc-icon-side {
   margin: 0 12px 0 16px;
   font-size: 24px;
-  width: 24px;
+  width: 23px;
 }
+
 svg#book-icon-side {
   margin: 0 12px 0 16px;
   font-size: 24px;
-  width: 24px;
+  width: 23px;
 }
+
+svg#saved-icon {
+  margin: 0 12px 0 16px;
+  font-size: 24px;
+  width: 22px;
+}
+
+li.sidebar-div {
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+div.sidebar-div {
+  height: 15px;
+  border-bottom: 1px solid #e2e4e5;
+}
+
 /**
 SideBar end -----------------------------
 **/
