@@ -8,8 +8,8 @@ const Modal = ({ modal, closeModal, onSuccess }) => {
   if (!modal) {
     return null;
   }
-  let component;
 
+  let component = null;
   switch (modal) {
     case "login":
       component = <LoginForm id="form" onSuccess={onSuccess} />;
@@ -17,8 +17,6 @@ const Modal = ({ modal, closeModal, onSuccess }) => {
     case "signup":
       component = <SignupForm id="form" onSuccess={onSuccess} />;
       break;
-    default:
-      return null;
   }
   return (
     <div className="modal-background" onClick={closeModal}>

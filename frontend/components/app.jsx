@@ -10,30 +10,22 @@ import Home from "./home/home";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loggedIn: false
-    };
+    // this.state = {
+    //   loggedIn: !!window.currentUser
+    // };
 
     this.onSuccess = this.onSuccess.bind(this);
   }
 
   onSuccess(isLoggedIn) {
-    if (isLoggedIn) {
-      this.setState({ loggedIn: true });
-    } else {
-      this.setState({ loggedIn: false });
-    }
+    this.setState({ loggedIn: isLoggedIn });
   }
 
   render() {
     return (
       <div className="app">
-        <NavBar onSuccess={this.onSuccess} loggedIn={this.state.loggedIn} />
-        <Modal
-          id="form"
-          loggedIn={this.state.loggedIn}
-          onSuccess={this.onSuccess}
-        />
+        <NavBar onSuccess={this.onSuccess} />
+        <Modal id="form" onSuccess={this.onSuccess} />
         <div className="main-section">
           <div className="main-content">
             <Switch>
