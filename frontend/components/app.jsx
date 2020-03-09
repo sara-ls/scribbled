@@ -18,6 +18,7 @@ class App extends React.Component {
   }
 
   onSuccess(isLoggedIn) {
+    console.log(window.store)
     if (window.store.session.id || isLoggedIn) {
       this.setState({ loggedIn: true });
     } else {
@@ -38,9 +39,10 @@ class App extends React.Component {
           <div className="main-content">
             <Switch>
               {/* Render Splash page as main content component if logged out */}
-              <AuthRoute path="/splash" component={Splash} />
+              <AuthRoute exact path="/splash" component={Splash} />
               {/* Render Splash page as main content component if logged in */}
-              <ProtectedRoute path="/" component={Home} />
+              <ProtectedRoute exact path="/" component={Home} />
+              <Redirect path="*" to="/" />
             </Switch>
           </div>
           <Footer />
