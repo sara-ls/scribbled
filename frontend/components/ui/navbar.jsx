@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { login, logout } from "../../actions/session_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
-
-// import icons
 import { faUserCircle, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -17,16 +15,10 @@ class NavBar extends React.Component {
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
-  toggleMenu(event) {
-    if (this.state.showMenu) {
-      this.setState({
-        showMenu: false
-      });
-    } else {
-      this.setState({
-        showMenu: true
-      });
-    }
+  toggleMenu() {
+    this.setState({
+      showMenu: !this.state.showMenu
+    });
   }
 
   render() {

@@ -6,28 +6,16 @@ import HomeSimplePanel from "./simple_panel";
 import { connect } from "react-redux";
 import { openModal, closeModal } from "../../actions/modal_actions";
 
-class Splash extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+const Splash = ({openModal}) => {
     return (
       <div className="home-container">
-        <HomeTopPanel openModal={this.props.openModal} />
+        <HomeTopPanel openModal={openModal} />
         <Offerings />
         <TopBooks />
-        <HomeSimplePanel openModal={this.props.openModal} />
+        <HomeSimplePanel openModal={openModal} />
       </div>
     );
-  }
 }
-
-const mapStateToProps = state => {
-  return {
-    modal: state.ui.modal
-  };
-};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -36,4 +24,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Splash);
+export default connect(null, mapDispatchToProps)(Splash);

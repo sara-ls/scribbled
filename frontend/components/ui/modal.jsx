@@ -12,7 +12,7 @@ const Modal = ({ modal, closeModal, onSuccess }) => {
 
   switch (modal) {
     case "login":
-      component = <LoginForm id="form" onSuccess={onSuccess}/>;
+      component = <LoginForm id="form" onSuccess={onSuccess} />;
       break;
     case "signup":
       component = <SignupForm id="form" onSuccess={onSuccess} />;
@@ -27,19 +27,15 @@ const Modal = ({ modal, closeModal, onSuccess }) => {
       </div>
     </div>
   );
-}
-
-const mapStateToProps = (state, ownProps) => {
-  return {
-    modal: state.ui.modal,
-    onSuccess: ownProps.onSuccess
-  };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    closeModal: () => dispatch(closeModal())
-  };
-};
+const mapStateToProps = (state, ownProps) => ({
+  modal: state.ui.modal,
+  onSuccess: ownProps.onSuccess
+});
+
+const mapDispatchToProps = dispatch => ({
+  closeModal: () => dispatch(closeModal())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);
