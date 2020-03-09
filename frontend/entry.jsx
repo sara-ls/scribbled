@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
-
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
 
@@ -20,7 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore(preloadedState);
     delete window.currentUser;
   } 
-  window.store = store.getState()
+
+  // testing 
+  // window.dispatch = store.dispatch;
+  // window.getState = store.dispatch;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

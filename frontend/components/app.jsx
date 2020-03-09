@@ -6,6 +6,7 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Modal from "./ui/modal";
 import Splash from "./splash_page/splash";
 import Home from "./home/home";
+import DocumentsIndex from "./documents/documents_index";
 
 class App extends React.Component {
   render() {
@@ -18,8 +19,9 @@ class App extends React.Component {
             <Switch>
               {/* Render Splash page as main content component if logged out */}
               <AuthRoute exact path="/splash" component={Splash} />
-              {/* Render Splash page as main content component if logged in */}
+              {/* Render Home page as main content component if logged in */}
               <ProtectedRoute exact path="/" component={Home} />
+              <Route exact path="/documents" component={DocumentsIndex} />
               {/* Auto redirect given bad path */}
               <Redirect path="*" to="/" />
             </Switch>

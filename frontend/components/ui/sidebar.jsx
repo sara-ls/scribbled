@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faScribd } from "@fortawesome/free-brands-svg-icons";
+import { faFileAlt } from "@fortawesome/free-regular-svg-icons";
 
 class SideBar extends React.Component {
   render() {
@@ -10,20 +11,33 @@ class SideBar extends React.Component {
         <aside className="sidebar">
           <ul className="sidebar-content">
             <li className="sidebar-row">
-              <NavLink 
-                to="/" 
+              <NavLink
+                exact to="/"
                 className="nav-link"
                 activeClassName="active-nav-link"
               >
                 <FontAwesomeIcon
                   icon={faScribd}
-                  className="social-icon"
+                  className="social-icon icon"
                   id="scribd-icon-side"
                 />
                 Home
               </NavLink>
             </li>
-            {/* <li></li> */}
+            <li className="sidebar-row">
+              <NavLink
+                to="/documents"
+                className="nav-link"
+                activeClassName="active-nav-link"
+              >
+                <FontAwesomeIcon
+                  icon={faFileAlt}
+                  className="icon"
+                  id="doc-icon-side"
+                />
+                Documents
+              </NavLink>
+            </li>
           </ul>
         </aside>
       );

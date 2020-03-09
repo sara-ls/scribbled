@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//  @import "./reset.css";
-
 input,
 button {
   -webkit-appearance: none;
@@ -34,17 +32,3 @@ html {
   scroll-behavior: smooth;
   line-height: 1.3;
 }
-
-@import "./component_styles/navbar.scss";
-
-@import "./component_styles/sidebar.scss";
-
-@import "./component_styles/footer.scss";
-
-@import "./component_styles/modal_session_form.scss";
-
-@import "./component_styles/splash.scss";
-
-@import "./component_styles/home.scss";
-
-@import "./media_queries.scss"
