@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   onSuccess(isLoggedIn) {
-    if (window.store.session.id || isLoggedIn) {
+    if (isLoggedIn) {
       this.setState({ loggedIn: true });
     } else {
       this.setState({ loggedIn: false });

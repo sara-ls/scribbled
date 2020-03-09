@@ -30,10 +30,8 @@ class NavBar extends React.Component {
   }
 
   render() {
-    let demoUserBtn = null;
-    let navbarTools;
-    let currentUser = this.props.currentUser;
-    if (currentUser) {
+    let navbarTools = null;
+    if (this.props.currentUser) {
       navbarTools = (
         <div className="user-menu-btn" onClick={this.toggleMenu}>
           <div className="user-btns">
@@ -47,13 +45,12 @@ class NavBar extends React.Component {
           {this.state.showMenu ? (
             <div className="dropdown-content">
               <ul className="dropdown-list">
-                <li className="greeting">Hi, {currentUser.full_name}</li>
+                <li className="greeting">
+                  Hi, {this.props.currentUser.full_name}!
+                </li>
                 {/* <li>Account Settings</li> */}
                 <li>
-                  <button
-                    className="signout-btn"
-                    onClick={this.props.logout}
-                  >
+                  <button className="signout-btn" onClick={this.props.logout}>
                     Sign Out
                   </button>
                 </li>
@@ -81,11 +78,11 @@ class NavBar extends React.Component {
     return (
       <nav className="navbar">
         <div className="nav-items-container">
-          <div className="logo-container">
-            <Link to="/">
+          <Link to="/">
+            <div className="logo-container">
               <img alt="Scribbled" className="logo-img" src={window.logoURL} />
-            </Link>
-          </div>
+            </div>
+          </Link>
           {navbarTools}
         </div>
         <div className="color-divider-line"></div>
