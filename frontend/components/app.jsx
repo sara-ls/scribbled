@@ -6,7 +6,8 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Modal from "./ui/modal";
 import Splash from "./splash_page/splash";
 import Home from "./home/home";
-import DocumentsIndex from "./documents/documents_index";
+import DocumentIndex from "./documents/documents_index";
+import BookIndex from "./books/books_index";
 
 class App extends React.Component {
   render() {
@@ -21,7 +22,8 @@ class App extends React.Component {
               <AuthRoute exact path="/splash" component={Splash} />
               {/* Render Home page as main content component if logged in */}
               <ProtectedRoute exact path="/" component={Home} />
-              <Route exact path="/documents" component={DocumentsIndex} />
+              <Route exact path="/documents" component={DocumentIndex} />
+              <Route exact path="/books" component={BookIndex} />
               {/* Auto redirect given bad path */}
               <Redirect path="*" to="/" />
             </Switch>

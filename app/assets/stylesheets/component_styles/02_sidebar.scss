@@ -57,10 +57,52 @@ svg#scribd-icon-side {
   border-left: 4px solid #a9085e;
   color: #a9085e;
   font-weight: bold;
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  /* Firefox */
+  -webkit-animation: fadein 1s;
 }
 
 .active-nav-link path {
   color: #a9085e;
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  /* Firefox */
+  -webkit-animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+
+  /* Firefox */
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+
+  /* Safari and Chrome */
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 svg#doc-icon-side {
@@ -68,7 +110,11 @@ svg#doc-icon-side {
   font-size: 24px;
   width: 24px;
 }
-
+svg#book-icon-side {
+  margin: 0 12px 0 16px;
+  font-size: 24px;
+  width: 24px;
+}
 /**
 SideBar end -----------------------------
 **/
