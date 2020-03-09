@@ -3,9 +3,9 @@ import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 import NavBar from "./ui/navbar";
 import Footer from "./ui/footer";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import MainContent from "./main_content_container";
 import Modal from "./ui/modal";
-import { openModal, closeModal } from "../actions/modal_actions";
+import Splash from './splash_page/splash';
+import Home from './home/home';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,19 +28,21 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <NavBar
-          onSuccess={this.onSuccess}
-          loggedIn={this.state.loggedIn}
-        />
+        <NavBar onSuccess={this.onSuccess} loggedIn={this.state.loggedIn} />
         <Modal
           id="form"
           loggedIn={this.state.loggedIn}
           onSuccess={this.onSuccess}
         />
         <div className="main-section">
-          <MainContent
-            loggedIn={this.state.loggedIn}
-          />
+          <div className="main-content">
+            <Switch>
+              {/* Render Splash page as main content component if logged out */}
+              <AuthRoute path="/splash" component={Splash} />
+              {/* Render Splash page as main content component if logged in */}
+              <ProtectedRoute path="/" component={Home} />
+            </Switch>
+          </div>
           <Footer />
         </div>
       </div>

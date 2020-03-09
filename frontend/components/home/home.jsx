@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { openModal, closeModal } from "../../actions/modal_actions";
-
+import SideBar from "../ui/sidebar";
 import Featured from './featured'
 
 class Home extends React.Component {
@@ -12,7 +12,8 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-container">
-        <Featured />
+          <SideBar showSidebar={true} />
+          <Featured />
       </div>
     );
   }

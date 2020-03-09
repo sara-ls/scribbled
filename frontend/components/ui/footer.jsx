@@ -25,6 +25,9 @@ const Footer = () => {
           <li>
             <a href="https://github.com/sara-ls/Scribbled/wiki">Wiki</a>
           </li>
+          <li>
+            <a href="https://www.scribd.com/?lohp=2">Scribd.com</a>
+          </li>
         </ul>
       </div>
       <div className="social-container">

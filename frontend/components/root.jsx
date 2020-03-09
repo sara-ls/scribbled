@@ -8,10 +8,11 @@ const Root = ({store}) => {
   return (
     <Provider store={store}>
       <HashRouter>
-        <Switch>
+        {/* <Switch>
           <Route exact path="/"  component={App} />
           <Redirect to="/" />
-        </Switch>
+        </Switch> */}
+        <App />
       </HashRouter>
     </Provider>
   );
