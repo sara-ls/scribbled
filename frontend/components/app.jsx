@@ -8,24 +8,11 @@ import Splash from "./splash_page/splash";
 import Home from "./home/home";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   loggedIn: !!window.currentUser
-    // };
-
-    this.onSuccess = this.onSuccess.bind(this);
-  }
-
-  onSuccess(isLoggedIn) {
-    this.setState({ loggedIn: isLoggedIn });
-  }
-
   render() {
     return (
       <div className="app">
-        <NavBar onSuccess={this.onSuccess} />
-        <Modal id="form" onSuccess={this.onSuccess} />
+        <NavBar />
+        <Modal id="form" />
         <div className="main-section">
           <div className="main-content">
             <Switch>

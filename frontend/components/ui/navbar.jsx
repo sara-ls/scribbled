@@ -15,13 +15,6 @@ class NavBar extends React.Component {
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    return {
-      loggedIn: !!nextProps.currentUser,
-      showMenu: prevState.showMenu
-    }
-  }
-
   toggleMenu() {
     this.setState({
       showMenu: !this.state.showMenu
@@ -95,12 +88,12 @@ const mapStateToProps = ({ session, entities: { users } }) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  logout: () => dispatch(logout()).then(() => ownProps.onSuccess(false)),
+  logout: () => dispatch(logout()),
   openModal: modal => dispatch(openModal(modal)),
   demoLogin: () =>
     dispatch(
       login({ email: "demo@demo.demo", password: "demopassword" })
-    ).then(() => ownProps.onSuccess(true))
+    )
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
