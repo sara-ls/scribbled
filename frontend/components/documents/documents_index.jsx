@@ -1,25 +1,34 @@
 import React from "react";
-import DocumentsIndexItem from "./documents_index_item";
-import { createDocument } from "../../actions/document_actions";
+import DocumentIndexItem from "./documents_index_item";
+import { fetchDocuments } from "../../actions/document_actions";
 import { connect } from "react-redux";
-import SideBar from '../ui/sidebar'
+import SideBar from "../ui/sidebar";
 
 class DocumentIndex extends React.Component {
+  componentDidMount() {
+    this.props.fetchDocuments();
+  }
+
   render() {
-    // let items = this.props.documents.map(document => {
-    //   if (document) {
-    //     return <DocumentsIndexItem document={document} key={document.id} />;
-    //   } else {
-    //     return null;
-    //   }
-    // });
+    let items = this.props.documents.map(document => {
+      if (document) {
+        return <DocumentIndexItem document={document} key={document.id} />;
+      } else {
+        return null;
+      }
+    });
 
     return (
       <div className="documents-container">
         <SideBar showSidebar={true} />
         <div className="documents-inner-container">
-          <h1>Documents</h1>
-          {/* {items} */}
+          <section className="doc-index-section1">
+            <div className="documents-header">
+              <h1>Documents</h1>
+              <span>Get started with the community’s uploads</span>
+            </div>
+            <div className="documents-items-container">{items}</div>
+          </section>
         </div>
       </div>
     );
@@ -28,12 +37,12 @@ class DocumentIndex extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    documents: state.entities.documents
+    documents: Object.values(state.entities.documents)
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {};
-};
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  fetchDocuments: () => dispatch(fetchDocuments())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(DocumentIndex);

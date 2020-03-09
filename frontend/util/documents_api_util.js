@@ -3,8 +3,7 @@ export const fetchDocuments = () => {
     method: "GET",
     url: "api/documents"
   });
-}
-
+};
 
 export const fetchDocument = id =>
   $.ajax({
@@ -20,8 +19,8 @@ export const createDocument = documentForm =>
   });
 
 export const updateDocument = documentForm =>
-         $.ajax({
-           method: "PATCH",
-           url: `api/documents/${documentForm.id}`,
-           data: { document: documentForm }
-         });
+  $.ajax({
+    method: "PATCH",
+    url: `api/documents/${documentForm.id}`,
+    data: { document: documentForm }
+  });

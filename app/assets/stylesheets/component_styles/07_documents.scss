@@ -1,3 +1,36 @@
 .documents-container h1 {
   margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.documents-inner-container span {
+  color: #57617a;
+  font-size: 18px;
+  padding-bottom: 8px;
+  font-style: normal;
+  display: block;
+}
+
+.documents-inner-container {
+  padding: 10px;
+  padding-left: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.documents-inner-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.doc-index-section1 {
+  padding: 10px;
+}
+
+.documents-header {
+  padding: 14px;
 }

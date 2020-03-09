@@ -14,4 +14,4 @@ user1 = User.create!(email: 'user1@gmail.com', full_name: 'User One', password: 
 
 demo_user = User.create!(email: 'demo@demo.demo', full_name: 'Demo User', password: 'demopassword')
 
-# document1 = Document.create!(title: "Catch and Kill", description: "Both a spy thriller and a meticulous work of investigative journalism, Catch and Kill breaks devastating new stories about the rampant abuse of power and sheds far-reaching light on investigations that shook our culture.", user_id: user1.id, thumbnail_url: "", document_url: "", format: "pdf", private: false)
+document1 = Document.create!(title: "Catch and Kill", description: "Both a spy thriller and a meticulous work of investigative journalism, Catch and Kill breaks devastating new stories about the rampant abuse of power and sheds far-reaching light on investigations that shook our culture.", user_id: user1.id, thumbnail_url: "", document_url: "", format: "pdf", private: false)
