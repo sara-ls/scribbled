@@ -28,21 +28,6 @@ class SideBar extends React.Component {
             </li>
             <li className="sidebar-row">
               <NavLink
-                exact
-                to="/"
-                className="nav-link"
-                activeClassName="active-nav-link"
-              >
-                <FontAwesomeIcon
-                  icon={faScribd}
-                  className="social-icon icon"
-                  id="scribd-icon-side"
-                />
-                Home
-              </NavLink>
-            </li>
-            <li className="sidebar-row">
-              <NavLink
                 to="/books"
                 className="nav-link"
                 activeClassName="active-nav-link"
