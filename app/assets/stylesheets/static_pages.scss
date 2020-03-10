@@ -2,18 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-input,
-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
 
 * {
   font-family: Source Sans Pro, sans-serif;
-  text-decoration: none;
   -webkit-font-smoothing: antialiased;
+  text-decoration: none;
 }
 
 body {

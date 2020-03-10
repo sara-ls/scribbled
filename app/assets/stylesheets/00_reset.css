@@ -597,3 +597,30 @@ textarea,
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
+
+input,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input,
+textarea {
+  border-radius: 4px;
+}
+
+:focus {
+  -webkit-appearance: none;
+  outline: none;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid #8f929e;
+  padding: 8px 14px;
+  margin-top: 2px;
+}

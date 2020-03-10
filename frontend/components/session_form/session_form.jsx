@@ -115,8 +115,6 @@ class SessionForm extends React.Component {
               <div className="form-top">
                 <div className="form-top-btns">
                   <div className="back-btn-container">
-                    {/* <FontAwesomeIcon id="modal-icon" icon={ faAngleLeft } />
-                    <span>Back</span> */}
                   </div>
                   <button className="close-btn" onClick={this.props.closeModal}>
                     <FontAwesomeIcon

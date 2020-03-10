@@ -10,8 +10,7 @@ import DocumentIndex from "./documents/documents_index";
 import BookIndex from "./books/books_index";
 import TopCharts from "./books/top_charts";
 import Saved from "./saved/saved";
-import LoginForm from "./session_form/login_form_container";
-import SignupForm from "./session_form/signup_form_container";
+import UploadForm from "./documents/upload"
 
 class App extends React.Component {
   render() {
@@ -30,7 +29,8 @@ class App extends React.Component {
               <Route exact path="/documents" component={DocumentIndex} />
               <Route exact path="/books" component={BookIndex} />
               <Route exact path="/topcharts" component={TopCharts} />
-              {/* Auto redirect given bad path */}
+              <ProtectedRoute exact path="/upload" component={UploadForm} />
+              {/* Default redirect given bad path */}
               <Redirect path="*" to="/" />
             </Switch>
           </div>

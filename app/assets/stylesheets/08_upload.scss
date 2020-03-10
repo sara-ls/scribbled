@@ -1,0 +1,91 @@
+
+
+.upload-form {
+  margin: 10px 20px 10px 0;
+  width: 60%;
+}
+
+.upload-form-div {
+  padding: 20px 0 20px 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-form-container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.thumbnail-container {
+  width: 30%;
+  margin: 15px 20px 0 0;
+}
+
+.thumbnail-container img {
+  width: 100%;
+  opacity: 60%;
+}
+
+.upload-form input,
+.upload-form textarea {
+  border: 1px solid #e9edf8;
+}
+
+input#description-input {
+  height: 100px;
+  text-align: start;
+}
+
+.upload-form .submit-btn {
+  width: 120px;
+  padding: 0 25px;
+}
+
+.upload-form input,
+.upload-form textarea {
+  width: 100%;
+}
+
+span.req {
+  font-size: 13px;
+  color: #57617a;
+  display: block;
+  text-align: left;
+  margin: 0;
+  font-weight: normal;
+}
+
+textarea:focus {
+  border-color: #02a793;
+  box-shadow: 0 0 1px 0 #017f70;
+}
+
+textarea {
+  width: 100%;
+  min-height: 180px;
+}
+
+.upload-form-div h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.label-contain {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.label-contain label {
+  width: fit-content;
+  padding: 0 5px 0 0;
+}

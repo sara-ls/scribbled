@@ -15,9 +15,7 @@ const Footer = () => {
         <h4>ABOUT</h4>
         <ul className="footer-list">
           <li>
-            <a href="https://github.com/sara-ls/Scribbled/blob/master/README.md">
-              Read Me
-            </a>
+            <a href="https://www.scribd.com/?lohp=2">Scribd.com</a>
           </li>
           <li>
             <a href="https://github.com/sara-ls/Scribbled">Scribbled Repo</a>
@@ -26,7 +24,12 @@ const Footer = () => {
             <a href="https://github.com/sara-ls/Scribbled/wiki">Wiki</a>
           </li>
           <li>
-            <a href="https://www.scribd.com/?lohp=2">Scribd.com</a>
+            <a href="https://github.com/sara-ls/Scribbled/blob/master/README.md">
+              Read Me
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/sara-ls">Contact</a>
           </li>
         </ul>
       </div>
