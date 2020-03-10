@@ -19,11 +19,11 @@ class DocumentIndex extends React.Component {
     });
 
     return (
-      <div className="documents-container">
+      <div className="main-component-container">
         <SideBar showSidebar={true} />
-        <div className="documents-inner-container">
+        <div className="main-component">
           <section className="doc-index-section1">
-            <div className="documents-header">
+            <div className="page-header">
               <h1>Documents</h1>
               <span>Get started with the community’s uploads</span>
             </div>

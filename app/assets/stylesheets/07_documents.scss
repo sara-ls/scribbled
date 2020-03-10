@@ -1,11 +1,11 @@
-.documents-container h1 {
+.main-component-container h1 {
   margin: 0;
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 0;
 }
 
-.documents-inner-container span {
+.main-component span {
   color: #57617a;
   font-size: 18px;
   padding-bottom: 8px;
@@ -13,16 +13,16 @@
   display: block;
 }
 
-.documents-inner-container {
-  padding: 10px;
+.main-component {
+  padding: 0px;
   padding-left: 180px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  // justify-content: center;
 }
 
-.documents-inner-container ul {
+.main-component ul {
   list-style: none;
   padding: 0;
 }
@@ -31,7 +31,7 @@
   padding: 10px;
 }
 
-.documents-header {
+.page-header {
   padding: 14px;
 }
 

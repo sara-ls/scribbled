@@ -8,7 +8,9 @@ const documentsReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_DOCUMENT:
-      return Object.assign(nextState, {[action.document.id]: action.document});
+      return Object.assign(nextState, {
+        [action.document.id]: action.document
+      });
     case RECEIVE_DOCUMENTS:
       return action.documents;
     default:

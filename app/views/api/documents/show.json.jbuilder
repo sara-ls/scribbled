@@ -1,3 +1,3 @@
 json.document do
-  json.partial! '/api/documents/document', document: @document
+  json.extract! @document, :id, :description, :title, :format, :user_id
 end

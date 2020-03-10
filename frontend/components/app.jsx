@@ -10,7 +10,7 @@ import DocumentIndex from "./documents/documents_index";
 import BookIndex from "./books/books_index";
 import TopCharts from "./books/top_charts";
 import Saved from "./saved/saved";
-import UploadForm from "./documents/upload"
+import UploadForm from "./documents/upload";
 
 class App extends React.Component {
   render() {
@@ -18,22 +18,20 @@ class App extends React.Component {
       <div className="app">
         <NavBar />
         <Modal id="form" />
-        <div className="main-section">
-          <div className="main-content">
-            <Switch>
-              {/* Render Splash page as main content component if logged out */}
-              <AuthRoute exact path="/splash" component={Splash} />
-              {/* Render Home page as main content component if logged in */}
-              <ProtectedRoute exact path="/" component={Home} />
-              <ProtectedRoute exact path="/saved" component={Saved} />
-              <Route exact path="/documents" component={DocumentIndex} />
-              <Route exact path="/books" component={BookIndex} />
-              <Route exact path="/topcharts" component={TopCharts} />
-              <ProtectedRoute exact path="/upload" component={UploadForm} />
-              {/* Default redirect given bad path */}
-              <Redirect path="*" to="/" />
-            </Switch>
-          </div>
+        <div className="main">
+          <Switch>
+            <Route exact path="/documents" component={DocumentIndex} />
+            <Route exact path="/books" component={BookIndex} />
+            <Route exact path="/topcharts" component={TopCharts} />
+            {/* Render Splash page as main content component if logged out */}
+            <AuthRoute exact path="/splash" component={Splash} />
+            {/* Render Home page as main content component if logged in */}
+            <ProtectedRoute exact path="/" component={Home} />
+            <ProtectedRoute exact path="/saved" component={Saved} />
+            <ProtectedRoute exact path="/upload" component={UploadForm} />
+            {/* Default redirect given bad path */}
+            <Redirect path="*" to="/" />
+          </Switch>
           <Footer />
         </div>
       </div>

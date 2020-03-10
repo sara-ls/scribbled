@@ -5,26 +5,37 @@ class Api::DocumentsController < ApplicationController
 
   def index
     @documents = Document.all
-    render :index
+    render "api/documents/index"
   end
 
   def show
-    @document = Document.find(params[:id])
-    render :show
+    @document = Document.find_by(id: params[:id]).with_attached_file
+    render "api/documents/show"
   end
 
   def create
     @document = Document.new(document_params)
-
     if @document.save
-      render :show
+      render "api/documents/show"
+    else
+      render json: @document.errors.full_messages, status: 422
+    end
+  end
+
+  def update
+    @document = Document.find_by(id: params[id])
+
+    if UpdateDocumentService.new(@document, document_params).call
+      render "api/documents/show"
+    # if @document.update(document_params)
+    #   render :show
     else
       render json: @document.errors.full_messages, status: 422
     end
   end
 
   def destroy
-    @document = Document.find(params[:id])
+    @document = Document.find_by(id: params[:id])
     @document.destroy
   end
 
@@ -38,7 +49,8 @@ class Api::DocumentsController < ApplicationController
       :private,
       :thumnail_url,
       :document_url,
-      :user_id
+      :user_id,
+      :file
     )
   end
 end

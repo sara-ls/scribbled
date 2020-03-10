@@ -1,5 +1,5 @@
 @documents.each do |document|
   json.set! document.id do
-    json.partial! 'document', document: document
+    json.extract! document, :id, :description, :title, :format, :user_id
   end
 end

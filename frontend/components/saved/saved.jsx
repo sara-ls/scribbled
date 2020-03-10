@@ -3,11 +3,11 @@ import SideBar from "../ui/sidebar"
 
 const Saved = () => {
   return (
-    <div className="documents-container">
+    <div className="main-component-container">
       <SideBar showSidebar={true} />
-      <div className="documents-inner-container">
+      <div className="main-component">
         <section className="doc-index-section1">
-          <div className="documents-header">
+          <div className="page-header">
             <h1>Saved</h1>
             <span>Titles you've saved.</span>
           </div>

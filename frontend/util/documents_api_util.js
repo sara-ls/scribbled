@@ -17,6 +17,15 @@ export const createDocument = documentForm =>{
     url: "api/documents",
     data: { document: documentForm }
   })
+
+  // return $.ajax({
+  //   method: "POST",
+  //   url: "api/documents",
+  //   data: { document: JSON.stringify(documentForm) },
+  //   dataType: "json",
+  //   success: res => console.log(res),
+  //   failure: err => console.log(err)
+  // });
 };
 
 export const updateDocument = documentForm =>

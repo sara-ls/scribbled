@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import SideBar from "../ui/sidebar";
 import { createDocument } from "../../actions/document_actions";
 
+// import FileUploader from "../file_uploader";
+
 class UploadForm extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +15,7 @@ class UploadForm extends React.Component {
       format: "pdf",
       thumbnail_url:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Document_icon_%28the_Noun_Project_27904%29.svg/768px-Document_icon_%28the_Noun_Project_27904%29.svg.png",
-      document_url: ""
+      file: undefined
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +23,8 @@ class UploadForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(Object.assign({}, this.state));
+    this.props.processForm(this.state)
+
   }
 
   update(field) {
@@ -32,16 +35,21 @@ class UploadForm extends React.Component {
   }
 
   render() {
+    let thumbnailSrc =
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Document_icon_%28the_Noun_Project_27904%29.svg/768px-Document_icon_%28the_Noun_Project_27904%29.svg.png";
     return (
       <div className="upload-form-component">
         <SideBar showSidebar={true} />
         <div className="upload-form-div">
-          {/* <div className="documents-header">
+          {/* <div className="page-header">
             <h1>Upload</h1>
           </div> */}
+          {/* <FileUploader
+            file={this.state.file}
+          /> */}
           <div className="upload-form-container">
             <div className="thumbnail-container">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Document_icon_%28the_Noun_Project_27904%29.svg/768px-Document_icon_%28the_Noun_Project_27904%29.svg.png" />
+              <img src={thumbnailSrc} />
             </div>
             <form className="upload-form" onSubmit={this.handleSubmit}>
               <div className="input-container">
@@ -74,7 +82,12 @@ class UploadForm extends React.Component {
               </div>
               <div className="input-container">
                 <label>File</label>
-                <input type="file" id="file" />
+                <input
+                  type="file"
+                  id="file"
+                  value={this.state.file}
+                  onChange={this.update("file")}
+                />
               </div>
               {/* <div className="input-container">
                 <label>Format</label>

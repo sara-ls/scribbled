@@ -1,12 +1,12 @@
 /**
 Splash start ---------------------------
 **/
-.main-section {
+.main {
   position: relative;
   top: 60px;
 }
 
-// .home-container {
+// .main-component-container {
 //   position: relative;
 //   top: 60px;
 // }
@@ -45,7 +45,7 @@ Splash start ---------------------------
   align-content: space-around;
 }
 
-.home-container span {
+.main-component-container span {
   color: white;
   font-weight: bold;
   font-size: 28px;

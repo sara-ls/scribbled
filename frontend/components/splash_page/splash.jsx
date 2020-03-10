@@ -8,7 +8,7 @@ import { openModal, closeModal } from "../../actions/modal_actions";
 
 const Splash = ({openModal}) => {
     return (
-      <div className="home-container">
+      <div className="main-component-container">
         <HomeTopPanel openModal={openModal} />
         <Offerings />
         <TopBooks />

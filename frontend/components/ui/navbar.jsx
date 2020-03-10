@@ -61,7 +61,10 @@ class NavBar extends React.Component {
                     </Link>
                   </li>
                   <li>
-                    <button className="dropdown-btn signout-btn" onClick={this.props.logout}>
+                    <button
+                      className="dropdown-btn signout-btn"
+                      onClick={this.props.logout}
+                    >
                       Sign Out
                     </button>
                   </li>

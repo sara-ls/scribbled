@@ -8,9 +8,11 @@ import DocumentIndex from "../documents/documents_index";
 class Home extends React.Component {
   render() {
     return (
-      <div className="home-container">
+      <div className="main-component-container">
         <SideBar showSidebar={true} />
-        <Featured />
+        <div className="main-component">
+          <Featured />
+        </div>
       </div>
     );
   }
@@ -21,6 +23,7 @@ const mapStateToProps = state => {
     modal: state.ui.modal
   };
 };
+
 
 const mapDispatchToProps = dispatch => {
   return {
