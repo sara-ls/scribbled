@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import SideBar from "../ui/sidebar";
 import { createDocument } from "../../actions/document_actions";
-
+import { Route, Redirect, withRouter } from "react-router-dom";
 // import FileUploader from "../file_uploader";
 
 class UploadForm extends React.Component {
@@ -120,4 +120,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   processForm: document => dispatch(createDocument(document))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(UploadForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UploadForm));

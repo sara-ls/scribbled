@@ -17,15 +17,7 @@ module.exports = {
           query: {
             presets: ["@babel/env", "@babel/react"]
           }
-        // },
-        // options: {
-        //   presets: [
-        //     "@babel/preset-env",
-        //     {
-        //       plugins: ["@babel/plugin-proposal-class-properties"]
-        //     }
-        //   ]
-        // }
+        }
       }
     ]
   },
