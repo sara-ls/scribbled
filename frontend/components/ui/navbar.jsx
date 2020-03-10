@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { login, logout } from "../../actions/session_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
@@ -31,14 +31,14 @@ class NavBar extends React.Component {
       navbarTools = (
         <div className="navbar-tools">
           <div className="upload-btn-container">
-            <Link to="/upload">
+            <NavLink to="/upload" activeClassName="hidden active-nav-link">
               <FontAwesomeIcon
                 id="upload-icon"
                 className="upload-icon"
                 icon={faArrowCircleUp}
               />
               <span>Upload</span>
-            </Link>
+            </NavLink>
           </div>
           <div className="user-menu-btn" onClick={this.toggleMenu}>
             <div className="user-btns">

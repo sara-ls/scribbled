@@ -38,3 +38,12 @@ html {
 .page-header>h1 {
   margin-bottom: 5px;
 }
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.active-nav-link {
+  pointer-events: none;
+}
