@@ -6,7 +6,7 @@ const Saved = () => {
     <div className="main-component-container">
       <SideBar showSidebar={true} />
       <div className="main-component">
-        <section className="doc-index-section1">
+        <section className="main-section1">
           <div className="page-header">
             <h1>Saved</h1>
             <span>Titles you've saved.</span>

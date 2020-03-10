@@ -19,7 +19,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  // justify-content: center;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .main-component ul {
@@ -37,5 +38,5 @@
 
 .documents-items-container * {
   font-size: 15px;
-  
+
 }

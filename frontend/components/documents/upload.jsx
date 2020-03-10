@@ -23,8 +23,7 @@ class UploadForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state)
-
+    this.props.processForm(this.state);
   }
 
   update(field) {
@@ -120,4 +119,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   processForm: document => dispatch(createDocument(document))
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UploadForm));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(UploadForm)
+);

@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import SideBar from "../ui/sidebar";
+import Featured from "../shared/featured"
 
 class Bestsellers extends React.Component {
   render() {
@@ -9,7 +10,7 @@ class Bestsellers extends React.Component {
       <div className="main-component-container">
         <SideBar showSidebar={true} />
         <div className="main-component">
-          <section className="doc-index-section1">
+          <section className="main-section1">
             <div className="page-header">
               <h1>Top Charts</h1>
               <span>
@@ -19,6 +20,7 @@ class Bestsellers extends React.Component {
             </div>
             <div className="documents-items-container">{items}</div>
           </section>
+          <Featured />
         </div>
       </div>
     );
