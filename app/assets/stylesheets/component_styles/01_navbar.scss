@@ -161,10 +161,37 @@ NavBar start -----------------------------
 .navbar-tools {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
-.user-btns:hover svg path{
-  color:#135057;
+.user-btns:hover svg path {
+  color: #135057;
+}
+
+.upload-btn-container {
+  padding: 1px 5px;
+  margin: 0 25px;
+  border-right: 2px solid #e9edf8;
+}
+
+.upload-btn-container a {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+#upload-icon path {
+  color: #1e7b85;
+}
+
+svg#upload-icon {
+  margin: 4px 5px 5px 5px;
+}
+
+.upload-btn-container span {
+  color: #1e7b85;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 /**

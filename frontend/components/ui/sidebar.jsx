@@ -2,8 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faScribd } from "@fortawesome/free-brands-svg-icons";
-import { faFileAlt } from "@fortawesome/free-regular-svg-icons";
-import { faBookOpen, faChartLine, faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faFileAlt, faBookmark } from "@fortawesome/free-regular-svg-icons";
+import { faBookOpen, faChartLine } from "@fortawesome/free-solid-svg-icons";
 
 class SideBar extends React.Component {
   render() {
