@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resource :user, only: %i[create show]
     resource :session, only: %i[create destroy show]
     resources :documents, only: %i[index show create update destroy]
+    resources :books, only: [:show, :create]
   end
 
   root 'static_pages#root'
