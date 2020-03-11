@@ -56,6 +56,11 @@ class NavBar extends React.Component {
                     Hi, {this.props.currentUser.full_name}!
                   </li>
                   <li>
+                    <Link className="dropdown-btn" to="/account">
+                      Account
+                    </Link>
+                  </li>
+                  <li>
                     <Link className="dropdown-btn" to="/upload">
                       Document Uploads
                     </Link>

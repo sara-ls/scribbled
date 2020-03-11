@@ -22,7 +22,7 @@
 // //     return (
 // //       <Dropzone onDrop={this.onDrop}>
 // //         {({ getRootProps, getInputProps }) => (
-// //           <section className="container">
+// //           <div className="container">
 // //             <div {...getRootProps({ className: "dropzone" })}>
 // //               <input {...getInputProps()} />
 // //               <p>Drag 'n' drop some files here, or click to select files</p>
@@ -31,7 +31,7 @@
 // //               <h4>Files</h4>
 // //               <ul>{files}</ul>
 // //             </div>
-// //           </section>
+// //           </div>
 // //         )}
 // //       </Dropzone>
 // //     );

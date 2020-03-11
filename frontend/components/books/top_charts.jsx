@@ -2,15 +2,22 @@ import React from "react";
 import { connect } from "react-redux";
 import SideBar from "../ui/sidebar";
 import Featured from "../shared/featured"
+import TopChartItem from "./top_chart_item"
 
-class Bestsellers extends React.Component {
+
+class TopCharts extends React.Component {
+  componentDidMount() {
+
+  }
+
   render() {
-    let items = null;
+    // let listItems = this.props.map()
+
     return (
       <div className="main-component-container">
         <SideBar showSidebar={true} />
         <div className="main-component">
-          <section className="main-section1">
+          <div className="main-section1">
             <div className="page-header">
               <h1>Top Charts</h1>
               <span>
@@ -18,9 +25,13 @@ class Bestsellers extends React.Component {
                 bestseller lists and generating buzz from critics.
               </span>
             </div>
-            <div className="documents-items-container">{items}</div>
-          </section>
+          </div>
           <Featured />
+          <div className="main-section2">
+            {/* <ol className="top-charts-list">
+              {listItems}
+            </ol> */}
+          </div>
         </div>
       </div>
     );
@@ -33,4 +44,4 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Bestsellers);
+export default connect(mapStateToProps, mapDispatchToProps)(TopCharts);

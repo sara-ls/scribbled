@@ -22,13 +22,14 @@ class DocumentIndex extends React.Component {
       <div className="main-component-container">
         <SideBar showSidebar={true} />
         <div className="main-component">
-          <section className="main-section1">
+          <div className="main-section1">
             <div className="page-header">
               <h1>Documents</h1>
               <span>Get started with the community’s uploads</span>
             </div>
-            <div className="documents-items-container">{items}</div>
-          </section>
+            <div className="documents-items-container">
+              <ul>{items}</ul></div>
+          </div>
         </div>
       </div>
     );

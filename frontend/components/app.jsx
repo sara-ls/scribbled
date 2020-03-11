@@ -11,6 +11,7 @@ import BookIndex from "./books/books_index";
 import TopCharts from "./books/top_charts";
 import Saved from "./saved/saved";
 import UploadForm from "./documents/upload";
+import Account from "./account";
 
 class App extends React.Component {
   render() {
@@ -29,6 +30,7 @@ class App extends React.Component {
             <ProtectedRoute exact path="/" component={Home} />
             <ProtectedRoute exact path="/saved" component={Saved} />
             <ProtectedRoute exact path="/upload" component={UploadForm} />
+            <ProtectedRoute exact path="/account" component={Account} />
             {/* Default redirect given bad path */}
             <Redirect path="*" to="/" />
           </Switch>

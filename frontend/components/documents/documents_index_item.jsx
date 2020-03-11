@@ -3,11 +3,10 @@ import React from "react";
 class DocumentIndexItem extends React.Component {
   render() {
     return (
-      <div>
-        <ul>
-          <li>Title: {this.props.document.title}</li>
-        </ul>
-      </div>
+      <li className="document-index-item">
+          <div>Title: {this.props.document.title}</div>
+          <div>Description: {this.props.document.description}</div>
+      </li>
     );
   }
 }

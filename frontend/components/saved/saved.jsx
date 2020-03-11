@@ -6,13 +6,13 @@ const Saved = () => {
     <div className="main-component-container">
       <SideBar showSidebar={true} />
       <div className="main-component">
-        <section className="main-section1">
+        <div className="main-section1">
           <div className="page-header">
             <h1>Saved</h1>
             <span>Titles you've saved.</span>
           </div>
           <div className="documents-items-container"></div>
-        </section>
+        </div>
       </div>
     </div>
   );
