@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { login, logout } from "../../actions/session_actions";
+import { login, logout } from "../../actions/session_user_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import {
   faUserCircle,
@@ -17,6 +17,7 @@ class NavBar extends React.Component {
       showMenu: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
+    // this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   toggleMenu() {
@@ -24,6 +25,18 @@ class NavBar extends React.Component {
       showMenu: !this.state.showMenu
     });
   }
+
+  // handleClickOutside(event) {
+  //   this.setState({ showMenu: false });
+  // }
+
+  // componentDidMount() {
+  //   document.addEventListener("mousedown", this.handleClickOutside);
+  // }
+
+  // componentWillUnmount() {
+  //   document.removeEventListener("mousedown", this.handleClickOutside);
+  // }
 
   render() {
     let navbarTools = null;

@@ -1,5 +1,9 @@
 import React from "react";
 import { fetchCurrentUser } from "../actions/user_actions";
+import {
+  faUserCircle
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { connect } from "react-redux";
 import SideBar from "./ui/sidebar";
@@ -9,6 +13,18 @@ const Account = ({ user: { full_name, email, uploadedDocIds } }) => {
     <div className="main-component-container">
       <SideBar showSidebar={true} />
       <div className="main-component">
+        <div className="account-banner">
+          <div>
+            <div className="banner-icon">
+              <FontAwesomeIcon
+                id="user-icon"
+                className="user-icon"
+                icon={faUserCircle}
+              />
+            </div>
+            <div className="banner-name">{full_name}</div>
+          </div>
+        </div>
         <div className="main-section1">
           <div className="page-header">
             <h1>Your Account</h1>

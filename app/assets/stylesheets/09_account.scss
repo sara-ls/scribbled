@@ -1,0 +1,25 @@
+.account-banner {
+  padding: 50px 24px;
+  color: #fff;
+  background: #0d6069;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.banner-name {
+  text-align: center;
+  justify-content: center;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.banner-icon {
+  width: 90px;
+  height: 90px;
+}
