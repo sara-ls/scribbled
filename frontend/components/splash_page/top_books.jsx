@@ -5,13 +5,16 @@ const TopBooks = () => {
     <div className="top-books">
       <h2>All of the Best Books</h2>
       <div className="book-covers-container">
-        <img className="book-cover" src={window.killURL} />
         <img className="book-cover" src={window.chemistryURL} />
         <img className="book-cover" src={window.lobsterURL} />
         <img className="book-cover" src={window.girlsURL} />
         <img className="book-cover" src={window.fleaURL} />
         <img className="book-cover" src={window.sapiensURL} />
         <img className="book-cover" src={window.deusURL} />
+        <img
+          className="book-cover"
+          src="https://images-na.ssl-images-amazon.com/images/I/41rOxRzBevL.jpg"
+        />
         <img className="book-cover" src={window.trickURL} />
         <img className="book-cover" src={window.bad_blood_coverURL} />
         <img className="book-cover" src={window.restURL} />

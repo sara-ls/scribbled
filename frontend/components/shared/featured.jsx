@@ -22,7 +22,10 @@ const Featured = () => {
           </div>
         </div>
         <div className="featured-img-container">
-          <img className="book-cover featured" src={window.killURL} />
+          <img
+            className="book-cover featured"
+            src="https://images-na.ssl-images-amazon.com/images/I/41rOxRzBevL.jpg"
+          />
         </div>
       </div>
     </div>
