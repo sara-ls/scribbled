@@ -17,4 +17,4 @@ export const fetchBooks = () => dispatch =>
   APIUtil.fetchBooks().then(books => dispatch(receiveBooks(books)));
 
 export const fetchBook = id => dispatch =>
-  APIUtil.fetchBooks(id).then(book => dispatch(receiveBook(book)));
+  APIUtil.fetchBook(id).then(book => dispatch(receiveBook(book)));
