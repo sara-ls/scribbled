@@ -1,14 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import SideBar from "../ui/sidebar";
-import Featured from "../shared/featured"
-import TopChartItem from "./top_chart_item"
-
+import Featured from "../shared/featured";
+import TopChartItem from "./top_chart_item";
 
 class TopCharts extends React.Component {
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   render() {
     // let listItems = this.props.map()
@@ -25,13 +22,13 @@ class TopCharts extends React.Component {
                 bestseller lists and generating buzz from critics.
               </span>
             </div>
-          </div>
-          <Featured />
+          </div>{" "}
           <div className="main-section2">
             {/* <ol className="top-charts-list">
               {listItems}
             </ol> */}
           </div>
+          <Featured />
         </div>
       </div>
     );

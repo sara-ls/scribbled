@@ -47,3 +47,7 @@ html {
 .active-nav-link {
   pointer-events: none;
 }
+
+.main-component > div {
+  padding: 14px;
+}
