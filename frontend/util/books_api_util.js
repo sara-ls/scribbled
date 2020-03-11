@@ -11,4 +11,3 @@ export const fetchBook = (id) => (
     url: `api/books/${id}`
   })
 )
-

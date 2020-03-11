@@ -1,14 +1,20 @@
 import * as APIUtil from "../util/books_api_util";
 
-export const RECEIVE_TOP_BOOKS = "RECEIVE_TOP_BOOKS";
+export const RECEIVE_ALL_BOOKS = "RECEIVE_ALL_BOOKS";
+export const RECEIVE_BOOK = "RECEIVE_BOOK";
 
-const receiveDocuments = books => ({
-  type: RECEIVE_TOP_BOOKS,
+const receiveBooks = books => ({
+  type: RECEIVE_ALL_BOOKS,
   books
 });
 
+const receiveBook = book => ({
+  type: RECEIVE_BOOK,
+  book
+});
 
 export const fetchBooks = () => dispatch =>
-  APIUtil.fetchBooks().then(books =>
-    dispatch(receiveBooks(books))
-  );
+  APIUtil.fetchBooks().then(books => dispatch(receiveBooks(books)));
+
+export const fetchBook = id => dispatch =>
+  APIUtil.fetchBooks(id).then(book => dispatch(receiveBook(book)));
