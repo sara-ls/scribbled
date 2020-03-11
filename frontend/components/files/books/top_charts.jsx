@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import SideBar from "../ui/sidebar";
-import Featured from "../shared/featured";
+import SideBar from "../../ui/sidebar";
+import Featured from "../../shared/featured";
 import TopChartItem from "./top_chart_item";
 
 class TopCharts extends React.Component {

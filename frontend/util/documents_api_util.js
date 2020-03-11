@@ -11,21 +11,12 @@ export const fetchDocument = id =>
     url: `api/documents/${id}`
   });
 
-export const createDocument = documentForm =>{
+export const createDocument = documentForm => {
   return $.ajax({
     method: "POST",
     url: "api/documents",
     data: { document: documentForm }
-  })
-
-  // return $.ajax({
-  //   method: "POST",
-  //   url: "api/documents",
-  //   data: { document: JSON.stringify(documentForm) },
-  //   dataType: "json",
-  //   success: res => console.log(res),
-  //   failure: err => console.log(err)
-  // });
+  });
 };
 
 export const updateDocument = documentForm =>
