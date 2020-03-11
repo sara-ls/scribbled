@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import SideBar from "../ui/sidebar";
 import Featured from "../shared/featured";
-import DocumentIndex from "../documents/documents_index";
 
 class Home extends React.Component {
   render() {

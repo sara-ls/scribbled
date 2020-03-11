@@ -1,12 +1,12 @@
 import React from "react";
-import { fetchCurrentUser } from "../actions/user_actions";
+import { fetchCurrentUser } from "../../actions/session_user_actions";
 import {
   faUserCircle
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { connect } from "react-redux";
-import SideBar from "./ui/sidebar";
+import SideBar from "../ui/sidebar";
 
 const Account = ({ user: { full_name, email, uploadedDocIds } }) => {
   return (

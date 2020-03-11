@@ -17,7 +17,6 @@ class NavBar extends React.Component {
       showMenu: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
-    // this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   toggleMenu() {
@@ -25,18 +24,6 @@ class NavBar extends React.Component {
       showMenu: !this.state.showMenu
     });
   }
-
-  // handleClickOutside(event) {
-  //   this.setState({ showMenu: false });
-  // }
-
-  // componentDidMount() {
-  //   document.addEventListener("mousedown", this.handleClickOutside);
-  // }
-
-  // componentWillUnmount() {
-  //   document.removeEventListener("mousedown", this.handleClickOutside);
-  // }
 
   render() {
     let navbarTools = null;

@@ -13,10 +13,8 @@ class SessionForm extends React.Component {
       email: "",
       password: "",
       full_name: ""
-      // , checked: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.updateChecked = this.updateChecked.bind(this);
   }
 
   componentWillUnmount() {
@@ -29,12 +27,6 @@ class SessionForm extends React.Component {
         [field]: e.currentTarget.value
       });
   }
-
-  // updateChecked(e) {
-  //   this.setState({
-  //     checked: !this.state.checked
-  //   });
-  // }
 
   handleSubmit(clicked) {
     return e => {
@@ -79,25 +71,6 @@ class SessionForm extends React.Component {
           />
         </div>
       );
-
-      // updatesCheckbox = (
-      //   <div className="checkbox-container">
-      //
-      //     <div className="checkbox-wrapper">
-      //       <input
-      //         id="checkbox-input"
-      //         type="checkbox"
-      //         className="login-input"
-      //         checked={this.state.checked}
-      //         onChange={this.updateChecked}
-      //       />
-      //       <span className="checkmark"></span>
-      //       <span className="checkbox-label">
-      //         Send me updates from Scribbled
-      //       </span>
-      //     </div>
-      //   </div>
-      // );
     }
 
     return (
@@ -114,8 +87,7 @@ class SessionForm extends React.Component {
             <div className="right-col">
               <div className="form-top">
                 <div className="form-top-btns">
-                  <div className="back-btn-container">
-                  </div>
+                  <div className="back-btn-container"></div>
                   <button className="close-btn" onClick={this.props.closeModal}>
                     <FontAwesomeIcon
                       id="modal-icon"
@@ -164,8 +136,6 @@ class SessionForm extends React.Component {
                       onKeyPress={this.handleSubmit(false)}
                     />
                   </div>
-                  {updatesCheckbox}
-
                   <button className="session-submit submit-btn" type="submit">
                     {this.props.formType === "login" ? "Sign In" : "Sign Up"}
                   </button>

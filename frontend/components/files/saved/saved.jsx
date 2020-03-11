@@ -1,5 +1,5 @@
 import React from "react";
-import SideBar from "../ui/sidebar"
+import SideBar from "../../ui/sidebar"
 
 const Saved = () => {
   return (
@@ -11,7 +11,7 @@ const Saved = () => {
             <h1>Saved</h1>
             <span>Titles you've saved.</span>
           </div>
-          <div className="documents-items-container"></div>
+          <div className="saved-items-container"></div>
         </div>
       </div>
     </div>

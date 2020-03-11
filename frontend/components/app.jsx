@@ -6,12 +6,12 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Modal from "./ui/modal";
 import Splash from "./splash_page/splash";
 import Home from "./home/home";
-import DocumentIndex from "./documents/documents_index";
+import DocumentIndex from "./files/documents/documents_index";
 import BookIndex from "./books/books_index";
 import TopCharts from "./books/top_charts";
-import Saved from "./saved/saved";
-import UploadForm from "./documents/upload";
-import Account from "./account";
+import Saved from "./files/saved/saved";
+import UploadForm from "./files/documents/upload";
+import Account from "./user_session/account";
 
 class App extends React.Component {
   render() {

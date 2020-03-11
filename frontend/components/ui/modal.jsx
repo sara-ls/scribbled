@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { closeModal } from "../../actions/modal_actions";
-import LoginForm from "../session_form/login_form_container";
-import SignupForm from "../session_form/signup_form_container";
+import LoginForm from "../user_session/login_form_container";
+import SignupForm from "../user_session/signup_form_container";
 
 const Modal = ({ modal, closeModal }) => {
   if (!modal) {

@@ -1,8 +1,8 @@
 import React from "react";
 import DocumentIndexItem from "./documents_index_item";
-import { fetchDocuments } from "../../actions/document_actions";
+import { fetchDocuments } from "../../../actions/document_actions";
 import { connect } from "react-redux";
-import SideBar from "../ui/sidebar";
+import SideBar from "../../ui/sidebar";
 
 class DocumentIndex extends React.Component {
   componentDidMount() {

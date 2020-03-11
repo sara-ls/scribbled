@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import SideBar from "../ui/sidebar";
-import { createDocument } from "../../actions/document_actions";
+import SideBar from "../../ui/sidebar";
+import { createDocument } from "../../../actions/document_actions";
 import { Route, Redirect, withRouter } from "react-router-dom";
 // import FileUploader from "../file_uploader";
 
