@@ -1,9 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { faCopy, faStar } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar as Fas } from "@fortawesome/free-solid-svg-icons";
+import ResetRating from "./star_rating";
 import Rating from "react-rating";
 
 class Reviews extends React.Component {
@@ -16,29 +14,29 @@ class Reviews extends React.Component {
       user_id: this.props.user_id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.update = this.update.bind(this);
+    this.resetRating = this.resetRating.bind(this);
   }
 
   //
-  update(rate) {
-    (e) => {
-      if (rate !== "text") {
+  resetRating() {
+    this.setState({
+      rating: undefined
+    });
+  }
+  update(field) {
+    return e => {
       this.setState({
-        rating: rate
+        [field]: e.currentTarget.value
       });
-    } else {
-      this.setState({
-        review_text: e.currentTarget.value
-      });
-    }
-    }
-    
+    };
   }
 
   handleSubmit(e) {
-    console.log(this.state);
     e.preventDefault();
-    this.props.submitReview(Object.assign({}, this.state));
+    let review = this.state;
+    review.rating = parseInt(review.rating);
+
+    this.props.submitReview(review);
     // redirect
   }
 
@@ -46,53 +44,83 @@ class Reviews extends React.Component {
     let allReviews = null;
     if (this.props.book.reviews) {
       allReviews = this.props.book.reviews.map(review => {
-        return (
-          <li key={review.id} className="review-item">
-            <div className="review-left">
-              <div>{review.review_text}</div>
-            </div>
-            <div className="review-right">
-              <div className="small-rating">
-                <Rating
-                  emptySymbol={<FontAwesomeIcon icon={faStar} />}
-                  fullSymbol={<FontAwesomeIcon icon={Fas} />}
-                  readOnly={true}
-                  initialRating={review.rating}
-                />
+        if (review) {
+          return (
+            <li key={review.id} className="review-item">
+              <div className="review-left">
+                <div>{review.review_text}</div>
               </div>
-              <div>({review.rating}/5)</div>
-            </div>
-          </li>
-        );
+              <div className="review-right">
+                <div className="small-rating">
+                  <Rating
+                    readOnly
+                    quiet
+                    initialRating={review.rating}
+                    value={review.rating}
+                    emptySymbol={
+                      <img src={window.starEmptyURL} className="icon" />
+                    }
+                    fullSymbol={
+                      <img src={window.starFullURL} className="icon" />
+                    }
+                  />
+                </div>
+                <div>({review.rating}/5)</div>
+              </div>
+            </li>
+          );
+        } else {
+          return null;
+        }
       });
+    }
+
+    let resetBtn = null;
+
+    if (this.state.rating !== undefined) {
+      resetBtn = (
+        <button className="rating-reset-button" onClick={this.resetRating}>
+          Clear Rating
+        </button>
+      );
     }
 
     return (
       <div>
         <div className="review-form-container">
-          <form onSubmit={this.handleSubmit} className="review-form">
+          <form
+            //onSubmit={this.handleSubmit}
+            className="review-form"
+          >
             <div className="form-row">
               <div className="rating-label">What did you think?</div>
               <div className="rating-container">
                 <Rating
-                  emptySymbol={<FontAwesomeIcon icon={faStar} />}
-                  fullSymbol={<FontAwesomeIcon icon={Fas} />}
+                  initialRating={this.state.rating}
                   value={this.state.rating}
-                  onChange={rate => this.update(rate)}
+                  emptySymbol={
+                    <img src={window.starEmptyURL} className="icon" />
+                  }
+                  fullSymbol={<img src={window.starFullURL} className="icon" />}
+                  onClick={rate => this.setState({ rating: [rate] })}
                 />
+                {resetBtn}
               </div>
             </div>
-
             <div className="rating-label review-label">Write a Review?</div>
             <textarea
               id="review-input"
               placeholder="Tell us what you liked about the book!"
               value={this.state.review_text}
-              onChange={() => this.update("text")}
+              onChange={this.update("review_text")}
               className="upload-input"
             />
             <div className="review-btn-container">
-              <button type="submit" className="post-review-btn submit-btn">
+              <button
+                onClick={this.handleSubmit}
+                type="submit"
+                className="post-review-btn submit-btn"
+              >
                 Post Review
               </button>
             </div>

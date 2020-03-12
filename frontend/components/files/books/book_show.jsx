@@ -5,7 +5,6 @@ import SideBar from "../../ui/sidebar";
 import { fetchBook, createReview } from "../../../actions/book_actions";
 import { faCopy, faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar as Fas } from "@fortawesome/free-solid-svg-icons";
 import Rating from "react-rating";
 import Reviews from "./reviews";
 
@@ -57,10 +56,15 @@ class BookShow extends React.Component {
               <div className="pages-rating-container">
                 <div className="small-rating rating-wrapper">
                   <Rating
-                    readonly={true}
-                    emptySymbol={<FontAwesomeIcon icon={faStar} />}
-                    fullSymbol={<FontAwesomeIcon icon={Fas} />}
-                    initialRating={this.props.book.average_rating}
+                    readOnly
+                    quiet
+                    value={this.props.book.average_rating}
+                    emptySymbol={
+                      <img src={window.starEmptyURL} className="icon" />
+                    }
+                    fullSymbol={
+                      <img src={window.starFullURL} className="icon" />
+                    }
                   />
                 </div>
                 <div className="pages">
