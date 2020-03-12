@@ -10,27 +10,33 @@ class Reviews extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      review_text: undefined,
-      rating: undefined
+      review_text: "",
+      rating: undefined,
+      book_id: this.props.book.id,
+      user_id: this.props.user_id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
-  update(field, rate = null) {
-    return e => {
-      if (field === "rating") {
-        this.setState({
-          rating: [rate]
-        });
-      } else {
-        this.setState({
-          [field]: e.currentTarget.value
-        });
-      }
-    };
+  //
+  update(rate) {
+    (e) => {
+      if (rate !== "text") {
+      this.setState({
+        rating: rate
+      });
+    } else {
+      this.setState({
+        review_text: e.currentTarget.value
+      });
+    }
+    }
+    
   }
 
   handleSubmit(e) {
+    console.log(this.state);
     e.preventDefault();
     this.props.submitReview(Object.assign({}, this.state));
     // redirect
@@ -64,7 +70,7 @@ class Reviews extends React.Component {
     return (
       <div>
         <div className="review-form-container">
-          <form className="review-form">
+          <form onSubmit={this.handleSubmit} className="review-form">
             <div className="form-row">
               <div className="rating-label">What did you think?</div>
               <div className="rating-container">
@@ -72,7 +78,7 @@ class Reviews extends React.Component {
                   emptySymbol={<FontAwesomeIcon icon={faStar} />}
                   fullSymbol={<FontAwesomeIcon icon={Fas} />}
                   value={this.state.rating}
-                  onChange={rate => this.update("rating", rate)}
+                  onChange={rate => this.update(rate)}
                 />
               </div>
             </div>
@@ -82,11 +88,11 @@ class Reviews extends React.Component {
               id="review-input"
               placeholder="Tell us what you liked about the book!"
               value={this.state.review_text}
-              onChange={() => this.update("review_text")}
+              onChange={() => this.update("text")}
               className="upload-input"
             />
             <div className="review-btn-container">
-              <button className="post-review-btn submit-btn">
+              <button type="submit" className="post-review-btn submit-btn">
                 Post Review
               </button>
             </div>

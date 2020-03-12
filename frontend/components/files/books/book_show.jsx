@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import SideBar from "../../ui/sidebar";
-import { fetchBook } from "../../../actions/book_actions";
+import { fetchBook, createReview } from "../../../actions/book_actions";
 import { faCopy, faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as Fas } from "@fortawesome/free-solid-svg-icons";
@@ -38,10 +38,10 @@ class BookShow extends React.Component {
               <li>
                 <Link to="/books">Books</Link>
               </li>
-              <li>></li>
+              {/* <li>></li>
               <li>
                 <Link to="/">{this.props.book.title}</Link>
-              </li>
+              </li> */}
             </ol>
           </nav>
           <div className="book-show-details">
@@ -82,7 +82,11 @@ class BookShow extends React.Component {
               </div>
             </div>
           </div>
-          <Reviews book={this.props.book} submitReview={this.props.submitReview} />
+          <Reviews
+            book={this.props.book}
+            user_id={this.props.user_id}
+            submitReview={this.props.submitReview}
+          />
         </div>
       );
     }
@@ -100,13 +104,14 @@ const mapStateToProps = (state, { match }) => {
   const id = parseInt(match.params.id);
   return {
     id: id,
-    book: state.entities.books[id]
+    book: state.entities.books[id],
+    user_id: state.session.id
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   fetchBook: id => dispatch(fetchBook(id)),
-  submitReview: undefined//review => dispatch(fetchBook(id))
+  submitReview: review => dispatch(createReview(review))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookShow);
