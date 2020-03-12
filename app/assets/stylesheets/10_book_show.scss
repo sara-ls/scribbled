@@ -185,7 +185,7 @@
 .rating-label {
   font-size: 16px;
   font-weight: bold;
-  padding: 12px 15px 10px 0;
+  padding: 12px 35px 10px 0;
 }
 
 .review-btn-container {
@@ -202,21 +202,33 @@
 }
 
 .small-rating {
-  height: 25px;
+  height: 26px;
 }
 
-.small-rating path {
-  color: #a90b5f;
+#empty-star {
+  filter: opacity(0);
 }
 
 .rating-reset-button {
   background-color: transparent;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
+  color: #1e7b85;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+#color-star {
+  filter: hue-rotate(40deg) brightness(0.9);
 }
 
 
 
+#form-rating-star {
+      margin-right: 25px;
+      height: 35px;
+      width: 35px;
+}
 
 
 

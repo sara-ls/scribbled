@@ -59,10 +59,22 @@ class BookShow extends React.Component {
                     readonly
                     initialRating={this.props.book.average_rating}
                     emptySymbol={
-                      <img src={window.starEmptyURL} className="icon" />
+                      <img
+                        src={window.starEmptyURL}
+                        opacity="0.4"
+                        className="icon"
+                        id="empty-star"
+                      />
                     }
                     fullSymbol={
-                      <img src={window.starFullURL} className="icon" />
+                      <img
+                        src={window.redStarFullURL}
+                        height="25px"
+                        padding-right="5px"
+                        // margin-right="10px"
+                        className="icon"
+                        id="color-star"
+                      />
                     }
                   />
                 </div>

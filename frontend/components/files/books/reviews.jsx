@@ -6,17 +6,39 @@ import Rating from "react-rating";
 class Reviews extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       review_text: "",
       rating: undefined,
       book_id: this.props.book.id,
       user_id: this.props.user_id
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.resetRating = this.resetRating.bind(this);
+    // this.updateLabel = this.updateLabel.bind(this);
   }
 
-  //
+  // updateLabel(rate) {
+  //   if(this.state.rating !== undefined) {
+  //     this.starLabel = (
+  //     <div>{rate}</div>
+  //   )
+  //   } else {
+  //     this.starLabel = null
+  //   }
+    
+  // }
+
+  // starLabel(rate) {
+  //   let
+  //   if (this.state.rating !== undefined) {
+  //     this.starLabel = <div>{rate}</div>;
+  //   } else {
+  //     this.starLabel = null;
+  //   }
+  // }
+
   resetRating() {
     this.setState({
       rating: undefined
@@ -56,10 +78,21 @@ class Reviews extends React.Component {
                     readonly
                     placeholderRating={review.rating}
                     emptySymbol={
-                      <img src={window.starEmptyURL} className="icon" />
+                      <img
+                        src={window.starEmptyURL}
+                        opacity="0.4"
+                        className="icon"
+                        id="empty-star"
+                      />
                     }
                     fullSymbol={
-                      <img src={window.starFullURL} className="icon" />
+                      <img
+                        src={window.redStarFullURL}
+                        height="25px"
+                        padding-right="5px"
+                        className="icon"
+                        id="color-star"
+                      />
                     }
                   />
                 </div>
@@ -94,11 +127,23 @@ class Reviews extends React.Component {
                   initialRating={this.state.rating}
                   value={this.state.rating}
                   emptySymbol={
-                    <img src={window.starEmptyURL} className="icon" />
+                    <img
+                      src={window.starEmptyURL}
+                      id="form-rating-star"
+                      className="icon"
+                    />
                   }
-                  fullSymbol={<img src={window.starFullURL} className="icon" />}
+                  fullSymbol={
+                    <img
+                      src={window.starFullURL}
+                      id="form-rating-star"
+                      className="icon"
+                    />
+                  }
+                  // onHover={rate => this.updateLabel(rate)}
                   onClick={rate => this.setState({ rating: [rate] })}
                 />
+                {/* {this.starLabel} */}
                 {resetBtn}
               </div>
             </div>
