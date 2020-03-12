@@ -23,13 +23,15 @@ class BookIndex extends React.Component {
       <div className="main-component-container">
         <SideBar showSidebar={true} />
         <div className="main-component">
+          
           <div className="main-section1">
             <div className="page-header">
               <h1>Books</h1>
               <span>Find your next favorite book</span>
             </div>
+            
             <div className="books-index-container">
-              <ul>{items}</ul>
+              <ul className="books-index-list">{items}</ul>
             </div>
           </div>
           <Featured />

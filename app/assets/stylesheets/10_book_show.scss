@@ -15,7 +15,7 @@
   flex-direction: column;
   background-color: white;
   justify-content: flex-start;
-  padding-top: 0px; 
+  padding-top: 0px;
 }
 
 .book-show-details .right-col {
@@ -54,6 +54,7 @@
   display: flex;
   align-content: center;
   padding-bottom: 5px;
+  padding-top: 3px;
 }
 
 .pages svg#pages-icon {
@@ -65,7 +66,17 @@
   font-size: 16px;
   font-weight: normal;
   margin-bottom: 0;
-  padding: 0;
+}
+
+.pages-rating-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.rating-wrapper {
+  height: 25px;
+  margin-right: 20px;
 }
 
 .book-show-divider {
@@ -79,6 +90,7 @@
   margin-bottom: 16px;
   min-height: 92px;
   line-height: 1.5;
+  text-align: justify;
 }
 
 .sub-nav {
@@ -107,13 +119,144 @@
   font-size: 16px;
   display: flex;
   flex-wrap: wrap;
+
 }
 
 // .book-data-table div:nth-child(2n) {
 //   width: 170px;
 // }
 
-.book-data-table div {
+.book-data-table>div {
   min-width: 200px;
+  width: 100%;
+  flex: 0 50%;
   height: 25px;
+}
+
+.book-show-container .save-btn {
+  max-width: 220px;
+  margin: 20px;
+}
+
+
+
+
+
+
+
+//review
+
+.review-form-container {
+  margin: 32px;
+  max-width: 650px;
+  align-self: center;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+#review-input {
+  width: 650px;
+  font-size: 16px;
+  height: 50px;
+}
+
+.rating-container {
+  overflow: hidden;
+  height: 100px;
+}
+
+.form-row {
+  display: flex;
+  align-content: center;
+  height: 65px;
+}
+
+.rating-container .fa-star {
+  width: 35px;
+  height: 35px;
+  margin: 2px 5px;
+}
+
+.rating-label {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 15px 10px 0;
+}
+
+.review-btn-container {
+  align-self: flex-end;
+  margin: 10px 0;
+}
+
+.review-item {
+  box-sizing: border-box;
+  border-bottom: 1px solid #e9edf8;
+  padding: 24px 0;
+  width: 100%;
+
+}
+
+.small-rating {
+  height: 25px;
+}
+
+.small-rating path {
+  color: #a90b5f;
+}
+
+
+
+
+
+
+
+// index
+.books-index-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.index-author {
+  font-size: 14px;
+  color: #57617a;
+}
+
+div.book-index-item {}
+
+div.book-index-item {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 160px;
+
+  height: 300px;
+  margin: 5px;
+}
+
+.book-index-img-container {
+  width: 100%;
+}
+
+.index-title {
+  overflow: hidden;
+  max-height: 45px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 5px;
+}
+
+.index-title div {
+  font-size: 16px;
+  max-height: 45px;
+  text-overflow: clip;
+  font-weight: bold;
+  color: #1c263d;
+  overflow: hidden;
 }
