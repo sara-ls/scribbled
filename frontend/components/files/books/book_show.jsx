@@ -56,9 +56,8 @@ class BookShow extends React.Component {
               <div className="pages-rating-container">
                 <div className="small-rating rating-wrapper">
                   <Rating
-                    readOnly
-                    quiet
-                    value={this.props.book.average_rating}
+                    readonly
+                    initialRating={this.props.book.average_rating}
                     emptySymbol={
                       <img src={window.starEmptyURL} className="icon" />
                     }

@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import ResetRating from "./star_rating";
 import Rating from "react-rating";
 
 class Reviews extends React.Component {
@@ -53,10 +52,9 @@ class Reviews extends React.Component {
               <div className="review-right">
                 <div className="small-rating">
                   <Rating
-                    readOnly
-                    quiet
                     initialRating={review.rating}
-                    value={review.rating}
+                    readonly
+                    placeholderRating={review.rating}
                     emptySymbol={
                       <img src={window.starEmptyURL} className="icon" />
                     }
@@ -88,10 +86,7 @@ class Reviews extends React.Component {
     return (
       <div>
         <div className="review-form-container">
-          <form
-            //onSubmit={this.handleSubmit}
-            className="review-form"
-          >
+          <form className="review-form">
             <div className="form-row">
               <div className="rating-label">What did you think?</div>
               <div className="rating-container">
