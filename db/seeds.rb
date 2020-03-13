@@ -162,6 +162,24 @@ Review.create!(book_id: collected_book.id, user_id: demo_user.id, rating: 4, rev
 
 # repeats
 
+grunt = Book.create!(
+  {
+    title: 'Grunt: The Curious Science of Humans at War', 
+    author: 'Mary Roach', 
+    description: 
+      "Best-selling author Mary Roach explores the science of keeping human beings intact, awake, sane, uninfected, and uninfested in the bizarre and extreme circumstances of war. Grunt tackles the science behind some of a soldier's most challenging adversaries—panic, exhaustion, heat, noise—and introduces us to the scientists who seek to conquer them.
+
+      Mary Roach dodges hostile fire with the U.S. Marine Corps Paintball Team as part of a study on hearing loss and survivability in combat. She visits the fashion design studio of U.S. Army Natick Labs and learns why a zipper is a problem for a sniper. She visits a repurposed movie studio where amputee actors help prepare Marine Corps medics for the shock and gore of combat wounds.
+
+      At Camp Lemmonier, Djibouti, in east Africa, we learn how diarrhea can be a threat to national security. Roach samples caffeinated meat, sniffs an archival sample of a World War II stink bomb, and stays up all night with the crew tending the missiles on the nuclear submarine USS Tennessee. She answers questions not found in any other book on the military: Why is DARPA interested in ducks? How is a wedding gown like a bomb suit? Why are shrimp more dangerous to sailors than sharks? Take a tour of duty with Roach, and you’ll never see our nation’s defenders in the same way again.", 
+    cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1463185939l/26530320.jpg', 
+    publisher: 'Knopf Publishing Group', 
+    pages: 285,
+    isbn: "0393245446",
+    release_date: "2018-02=5-05"
+  }
+)
+Review.create!(book_id: grunt.id, user_id: user1.id, rating: 5, review_text: "Great")
 
 
 stories_book2 = Book.create!(
@@ -192,19 +210,24 @@ Book.create!(
     release_date: "2005-12-15"
   }
 )
-Book.create!(
+
+chem2 = Book.create!(
   {
-    title: 'Consider the Lobster & Other Essays', 
-    author: 'David Foster Wallace', 
+    title: "Chemistry", 
+    author: "Weike Wang",
     description: 
-      "Do lobsters feel pain? Did Franz Kafka have a funny bone? What is John Updike's deal, anyway? And what happens when adult video starlets meet their fans in person? David Foster Wallace answers these questions and more in essays that are also enthralling narrative adventures. Whether covering the three-ring circus of a vicious presidential race, plunging into the wars between dictionary writers, or confronting the World's Largest Lobster Cooker at the annual Maine Lobster Festival, Wallace projects a quality of thought that is uniquely his and a voice as powerful and distinct as any in American letters.", 
-    cover_url: 'https://images-na.ssl-images-amazon.com/images/I/41LuDLgf0lL._SX331_BO1,204,203,200_.jpg', 
-    publisher: 'Little, Brown and Company', 
-    pages: 353,
-    isbn: "0-7595-1183-7",
-    release_date: "2005-12-15"
+      "At first glance, the quirky, overworked narrator [of this] novel seems to be on the cusp of a perfect life: she is studying for a prestigious PhD in chemistry that will make her Chinese parents proud (or at least satisfied), and her successful, supportive boyfriend has just proposed to her. But instead of feeling hopeful, she is wracked with ambivalence: the long demanding hours at the lab have created an exquisite pressure cooker, and she doesn't know how to answer the marriage question. When is all becomes too much and her life plan veers off course, she finds herself on a new path of discoveries about everything she thought she knew.", 
+    cover_url: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1479350390l/31684925._SY475_.jpg", 
+    publisher: 'Flatiron Books', 
+    pages: 342,
+    isbn: "1250107814",
+    release_date: "2018-04-03"
   }
 )
+
+
+Review.create!(book_id: chem2.id, user_id: user1.id, rating: 5, review_text: "Taut novel, tight prose. Fascinating approach to telling a story. Lots of ambition here. Found myself so frustrated and willing the narrator to make the choices I wanted her to make. So many lovely moments and turns of phrase. Interesting ending. Liked this book very much.
+")
 
 Book.create!(
   {
@@ -267,21 +290,19 @@ turing = Book.create!(
     release_date: "2018-02=5-05"
   }
 )
-grunt = Book.create!(
+
+
+Book.create!(
   {
-    title: 'Grunt: The Curious Science of Humans at War', 
-    author: 'Mary Roach', 
+    title: 'Consider the Lobster & Other Essays', 
+    author: 'David Foster Wallace', 
     description: 
-      "Best-selling author Mary Roach explores the science of keeping human beings intact, awake, sane, uninfected, and uninfested in the bizarre and extreme circumstances of war. Grunt tackles the science behind some of a soldier's most challenging adversaries—panic, exhaustion, heat, noise—and introduces us to the scientists who seek to conquer them.
-
-      Mary Roach dodges hostile fire with the U.S. Marine Corps Paintball Team as part of a study on hearing loss and survivability in combat. She visits the fashion design studio of U.S. Army Natick Labs and learns why a zipper is a problem for a sniper. She visits a repurposed movie studio where amputee actors help prepare Marine Corps medics for the shock and gore of combat wounds.
-
-      At Camp Lemmonier, Djibouti, in east Africa, we learn how diarrhea can be a threat to national security. Roach samples caffeinated meat, sniffs an archival sample of a World War II stink bomb, and stays up all night with the crew tending the missiles on the nuclear submarine USS Tennessee. She answers questions not found in any other book on the military: Why is DARPA interested in ducks? How is a wedding gown like a bomb suit? Why are shrimp more dangerous to sailors than sharks? Take a tour of duty with Roach, and you’ll never see our nation’s defenders in the same way again.", 
-    cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1463185939l/26530320.jpg', 
-    publisher: 'Knopf Publishing Group', 
-    pages: 285,
-    isbn: "0393245446",
-    release_date: "2018-02=5-05"
+      "Do lobsters feel pain? Did Franz Kafka have a funny bone? What is John Updike's deal, anyway? And what happens when adult video starlets meet their fans in person? David Foster Wallace answers these questions and more in essays that are also enthralling narrative adventures. Whether covering the three-ring circus of a vicious presidential race, plunging into the wars between dictionary writers, or confronting the World's Largest Lobster Cooker at the annual Maine Lobster Festival, Wallace projects a quality of thought that is uniquely his and a voice as powerful and distinct as any in American letters.", 
+    cover_url: 'https://images-na.ssl-images-amazon.com/images/I/41LuDLgf0lL._SX331_BO1,204,203,200_.jpg', 
+    publisher: 'Little, Brown and Company', 
+    pages: 353,
+    isbn: "0-7595-1183-7",
+    release_date: "2005-12-15"
   }
 )
 grunt2 = Book.create!(
