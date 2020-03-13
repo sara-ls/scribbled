@@ -15,9 +15,11 @@ class BookIndex extends React.Component {
     };
   }
   componentDidMount() {
-    this.props
-      .fetchBooks()
-      .then(() => setTimeout(() => this.setState({ loading: false }), 1300));
+
+    this.props.fetchBooks().then((res) => {
+      setTimeout(() => this.setState({ loading: false }), 1300);
+       console.log(res);
+    });
   }
 
   render() {
