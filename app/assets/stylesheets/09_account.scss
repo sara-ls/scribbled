@@ -19,7 +19,18 @@
   font-weight: 700;
 }
 
-.banner-icon {
-  width: 90px;
-  height: 90px;
+.banner-icon #user-icon{
+  width: 110px;
+  height: 110px;
+}
+
+.account-banner > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+.account-info-container {
+  margin: 20px;
+      font-weight: normal;
 }

@@ -32,7 +32,7 @@ class SessionForm extends React.Component {
     return e => {
       if (e.which === 13 || clicked) {
         e.preventDefault();
-        this.props.processForm(Object.assign({}, this.state));
+        this.props.processForm(Object.assign({}, this.state))
       }
     };
   }

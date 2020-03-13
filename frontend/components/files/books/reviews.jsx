@@ -1,7 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Rating from "react-rating";
+import { fetchBook, createReview } from "../../../actions/book_actions";
+import ReviewsList from "./reviews_list";
+import RotateLoader from "react-spinners/PulseLoader";
+import { css } from "@emotion/core";
 
 class Reviews extends React.Component {
   constructor(props) {
@@ -12,38 +16,24 @@ class Reviews extends React.Component {
       rating: undefined,
       book_id: this.props.book.id,
       user_id: this.props.user_id
+      , loading: false
     };
+
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.resetRating = this.resetRating.bind(this);
-    // this.updateLabel = this.updateLabel.bind(this);
   }
 
-  // updateLabel(rate) {
-  //   if(this.state.rating !== undefined) {
-  //     this.starLabel = (
-  //     <div>{rate}</div>
-  //   )
-  //   } else {
-  //     this.starLabel = null
-  //   }
-    
-  // }
-
-  // starLabel(rate) {
-  //   let
-  //   if (this.state.rating !== undefined) {
-  //     this.starLabel = <div>{rate}</div>;
-  //   } else {
-  //     this.starLabel = null;
-  //   }
-  // }
+  componentDidMount() {
+    this.props.fetchBook(this.props.bookId);
+  }
 
   resetRating() {
     this.setState({
       rating: undefined
     });
   }
+
   update(field) {
     return e => {
       this.setState({
@@ -54,59 +44,49 @@ class Reviews extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let review = this.state;
+    let { loading, ...review }= this.state;
     review.rating = parseInt(review.rating);
 
-    this.props.submitReview(review);
-    // redirect
+    this.setState({
+      loading: true
+    })
+
+    this.props.submitReview(review).then(() => {
+      this.props.fetchBook(this.props.bookId);
+      setTimeout(() => {
+        this.setState({
+          review_text: "",
+          rating: undefined,
+          book_id: this.props.book.id,
+          user_id: this.props.user_id,
+          loading: false
+        });
+      }, 1500);
+    });
   }
 
   render() {
-    let allReviews = null;
-    if (this.props.book.reviews) {
-      allReviews = this.props.book.reviews.map(review => {
-        if (review) {
-          return (
-            <li key={review.id} className="review-item">
-              <div className="review-left">
-                <div>{review.review_text}</div>
-              </div>
-              <div className="review-right">
-                <div className="small-rating">
-                  <Rating
-                    initialRating={review.rating}
-                    readonly
-                    placeholderRating={review.rating}
-                    emptySymbol={
-                      <img
-                        src={window.starEmptyURL}
-                        opacity="0.4"
-                        className="icon"
-                        id="empty-star"
-                      />
-                    }
-                    fullSymbol={
-                      <img
-                        src={window.redStarFullURL}
-                        height="25px"
-                        padding-right="5px"
-                        className="icon"
-                        id="color-star"
-                      />
-                    }
-                  />
-                </div>
-                <div>({review.rating}/5)</div>
-              </div>
-            </li>
-          );
-        } else {
-          return null;
-        }
-      });
-    }
-
     let resetBtn = null;
+
+    if (this.state.loading) {
+      const override = css`
+        display: block;
+        margin: auto;
+        border-color: white;
+      `;
+      return (
+        <div className="main-component-container">
+          <div className="loading submit-loading">
+            <RotateLoader
+              css={override}
+              size={20}
+              color={"#1a7d88"}
+              loading={this.state.loading}
+            />
+          </div>
+        </div>
+      );
+    }
 
     if (this.state.rating !== undefined) {
       resetBtn = (
@@ -116,62 +96,92 @@ class Reviews extends React.Component {
       );
     }
 
-    return (
-      <div>
-        <div className="review-form-container">
-          <form className="review-form">
-            <div className="form-row">
-              <div className="rating-label">What did you think?</div>
-              <div className="rating-container">
-                <Rating
-                  initialRating={this.state.rating}
-                  value={this.state.rating}
-                  emptySymbol={
-                    <img
-                      src={window.starEmptyURL}
-                      id="form-rating-star"
-                      className="icon"
-                    />
-                  }
-                  fullSymbol={
-                    <img
-                      src={window.starFullURL}
-                      id="form-rating-star"
-                      className="icon"
-                    />
-                  }
-                  // onHover={rate => this.updateLabel(rate)}
-                  onClick={rate => this.setState({ rating: [rate] })}
-                />
-                {/* {this.starLabel} */}
-                {resetBtn}
+    let allReviews = null;
+    let reviewForm = null;
+
+    if (this.props.book.reviews) {
+      if (!this.props.book.reviewAuthorIds.includes(this.props.user_id)) {
+        reviewForm = (
+          <div className="review-form-container">
+            <form className="review-form">
+              <div className="form-row">
+                <div className="rating-label">What did you think?</div>
+                <div className="rating-container">
+                  <Rating
+                    initialRating={this.state.rating}
+                    value={this.state.rating}
+                    emptySymbol={
+                      <img
+                        src={window.starEmptyURL}
+                        id="form-rating-star"
+                        className="icon"
+                      />
+                    }
+                    fullSymbol={
+                      <img
+                        src={window.starFullURL}
+                        id="form-rating-star"
+                        className="icon"
+                      />
+                    }
+                    onClick={rate => this.setState({ rating: [rate] })}
+                  />
+                  {resetBtn}
+                </div>
               </div>
-            </div>
-            <div className="rating-label review-label">Write a Review?</div>
-            <textarea
-              id="review-input"
-              placeholder="Tell us what you liked about the book!"
-              value={this.state.review_text}
-              onChange={this.update("review_text")}
-              className="upload-input"
-            />
-            <div className="review-btn-container">
-              <button
-                onClick={this.handleSubmit}
-                type="submit"
-                className="post-review-btn submit-btn"
-              >
-                Post Review
-              </button>
-            </div>
-          </form>
-        </div>
+              <div className="rating-label review-label">Write a Review?</div>
+              <textarea
+                id="review-input"
+                placeholder="Tell us what you liked about the book!"
+                value={this.state.review_text}
+                onChange={this.update("review_text")}
+                className="upload-input"
+              />
+              <div className="review-btn-container">
+                <button
+                  onClick={this.handleSubmit}
+                  type="submit"
+                  className="post-review-btn submit-btn"
+                >
+                  Post Review
+                </button>
+              </div>
+            </form>
+          </div>
+        );
+      }
+    }
+
+    return (
+      <div className="reviews-contain">
+        {reviewForm}
         <div>
-          <ul className="reveiws-list">{allReviews}</ul>
+          <h2 className="reviews-header">Reader Reviews</h2>
+          <ul className="reveiws-list">
+            <ReviewsList user_id={this.props.user_id } book={this.props.book} />
+          </ul>
         </div>
       </div>
     );
   }
 }
 
-export default Reviews;
+const mapStateToProps = (state, { match }) => {
+  const bookId = parseInt(match.params.id);
+  return {
+    bookId,
+    book: state.entities.books[bookId],
+    user_id: state.session.id
+    // ,
+    // reviews: Object.values(state.entities.books[bookId].reviews)
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+  fetchBook: bookId => dispatch(fetchBook(bookId)),
+  submitReview: review => dispatch(createReview(review))
+});
+
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Reviews)
+);

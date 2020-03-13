@@ -19,3 +19,10 @@ export const createReview = (review) => {
       data: { review }
     });
 }
+
+// export const fetchReviewsForBook = (bookId) => {
+//   return $.ajax({
+//     method: "GET",
+//     url: `api/books/${id}`
+//   });
+// }

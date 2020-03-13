@@ -33,7 +33,7 @@ class BookShow extends React.Component {
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <li>></li>
+              <li id="carat">></li>
               <li>
                 <Link to="/books">Books</Link>
               </li>
@@ -55,31 +55,33 @@ class BookShow extends React.Component {
               </div>
               <div className="pages-rating-container">
                 <div className="small-rating rating-wrapper">
-                  <Rating
-                    readonly
-                    initialRating={this.props.book.average_rating}
-                    emptySymbol={
-                      <img
-                        src={window.starEmptyURL}
-                        opacity="0.4"
-                        className="icon"
-                        id="empty-star"
-                      />
-                    }
-                    fullSymbol={
-                      <img
-                        src={window.redStarFullURL}
-                        height="25px"
-                        padding-right="5px"
-                        // margin-right="10px"
-                        className="icon"
-                        id="color-star"
-                      />
-                    }
-                  />
+                  {this.props.book.average_rating ? (
+                    <Rating
+                      readonly
+                      initialRating={this.props.book.average_rating}
+                      emptySymbol={
+                        <img
+                          src={window.starEmptyURL}
+                          opacity="0.4"
+                          className="icon"
+                          id="empty-star"
+                        />
+                      }
+                      fullSymbol={
+                        <img
+                          src={window.redStarFullURL}
+                          height="21px"
+                          padding-right="0px"
+                          // margin-right="10px"
+                          className="icon"
+                          id="color-star"
+                        />
+                      }
+                    />
+                  ) : (<span>No Reviews</span>)}
                 </div>
                 <div className="pages">
-                  <FontAwesomeIcon icon={faCopy} id="pages-icon" />
+                  <FontAwesomeIcon icon={faCopy} width="25px" id="pages-icon" />
                   <span>{this.props.book.pages} Pages</span>
                 </div>
               </div>
@@ -98,9 +100,9 @@ class BookShow extends React.Component {
             </div>
           </div>
           <Reviews
-            book={this.props.book}
-            user_id={this.props.user_id}
-            submitReview={this.props.submitReview}
+            // book={this.props.book}
+            // user_id={this.props.user_id}
+            // submitReview={this.props.submitReview}
           />
         </div>
       );
@@ -125,8 +127,9 @@ const mapStateToProps = (state, { match }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchBook: id => dispatch(fetchBook(id)),
-  submitReview: review => dispatch(createReview(review))
+  fetchBook: id => dispatch(fetchBook(id))
+  // ,
+  // submitReview: review => dispatch(createReview(review))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookShow);

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import SideBar from "../ui/sidebar";
 import Featured from "../shared/featured";
+// import BooksIndex from "../files/books/books_index"
 
 class Home extends React.Component {
   render() {
@@ -11,6 +12,13 @@ class Home extends React.Component {
         <SideBar showSidebar={true} />
         <div className="main-component">
           <Featured />
+          {/* <div className="main-section1">
+            <div className="books-index-container">
+              <ul className="books-index-list">
+
+              </ul>
+            </div>
+          </div> */}
         </div>
       </div>
     );
