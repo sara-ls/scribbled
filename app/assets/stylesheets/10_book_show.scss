@@ -433,6 +433,7 @@ width: 30%;
   overflow: hidden;
   font-size: 13px;
   text-align: justify;
+      color: #57617a
 }
 
 .top-book-li {
@@ -464,7 +465,7 @@ width: 30%;
 .top-book-li .top-div {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-around;
       padding-left: 15px;
       max-height: 280px;
 
