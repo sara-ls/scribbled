@@ -11,7 +11,7 @@ const TopBooks = () => {
         />
         <img
           className="book-cover"
-          src="https://images-na.ssl-images-amazon.com/images/I/41LuDLgf0lL._SX331_BO1,204,203,200_.jpg'"
+          src="https://images-na.ssl-images-amazon.com/images/I/41LuDLgf0lL._SX331_BO1,204,203,200_.jpg"
         />
         <img className="book-cover" src={window.girlsURL} />
         <img className="book-cover" src={window.fleaURL} />

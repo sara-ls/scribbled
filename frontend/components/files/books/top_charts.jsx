@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import SideBar from "../../ui/sidebar";
 import Featured from "../../shared/featured";
-import TopChartItem from "./top_chart_item";
 import { fetchBooks } from "../../../actions/book_actions";
 import BookIndexItem from "./books_index_item";
 import { css } from "@emotion/core";

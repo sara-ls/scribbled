@@ -17,8 +17,6 @@ const Featured = () => {
             </p>
           </div>
           <div className="featured-btns-container">
-            {/* <button className="featured-listen-now-btn"></button> */}
-            {/* <button className="featured-save-btn"></button> */}
           </div>
         </div>
         <div className="featured-img-container">
