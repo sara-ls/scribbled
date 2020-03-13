@@ -34,7 +34,7 @@ class App extends React.Component {
             <ProtectedRoute exact path="/upload" component={UploadForm} />
             <ProtectedRoute exact path="/account" component={Account} />
             {/* Default redirect given bad path */}
-            <Redirect path="*" to="/" />
+            <Redirect path="*" to="/books" />
           </Switch>
           <Footer />
         </div>
