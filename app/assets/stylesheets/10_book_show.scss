@@ -374,13 +374,13 @@ div.book-index-item:hover {
 
 .users-review {
 
-  animation: fadein 2s;
-  -moz-animation: fadein 2s;
+  animation: fadeinfilter 2s;
+  -moz-animation: fadeinfilter 2s;
   /* Firefox */
-  -webkit-animation: fadein 2s;
+  -webkit-animation: fadeinfilter 2s;
 }
 
-@keyframes fadein {
+@keyframes fadeinfilter {
   from {
     opacity: 0;
     // filter: saturate(1.9) brightness(0.9);
@@ -419,34 +419,53 @@ div.book-index-item .top-book-li {
   display: flex;
   flex-direction: row;
   align-content: center;
+  justify-content: space-between;
 }
 
 .top-charts-list .book-index-img-container {
-  width: 20%;
+    margin-top: 20px;
+width: 30%;
 }
 
 .top-charts-list .description-contain {
-  width: 50%;
+  width: 100%;
   float: right;
   overflow: hidden;
   font-size: 13px;
+  text-align: justify;
 }
 
 .top-book-li {
   // max-height: 230px;
       width: 95%;
   background-color: white;
-  overflow: hidden;
+  padding: 10px;
 }
+
 .top-charts-list {
-  list-style: none;
+  // list-style: decimal;
   padding: 5px;
   display: flex;
   flex-direction: column;
   align-content: center;
+      margin-left: 15px;
 }
 
 .rank {
   font-weight: bold;
   font-size: 20px;
+}
+
+.top-book-li >div.book-index-item:hover {
+  transform: scale(1.02);
+  background-color: white;
+}
+
+.top-book-li .top-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 15px;
+      max-height: 280px;
+
 }
