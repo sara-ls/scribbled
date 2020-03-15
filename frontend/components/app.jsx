@@ -22,14 +22,14 @@ class App extends React.Component {
         <Modal id="form" />
         <div className="main">
           <Switch>
-            <Route exact path="/documents" component={DocumentIndex} />
-            <Route exact path="/topcharts" component={TopCharts} />
             {/* Render Splash page as main content component if logged out */}
             <AuthRoute exact path="/splash" component={Splash} />
             {/* Render Home page as main content component if logged in */}
             <ProtectedRoute exact path="/" component={Home} />
             <ProtectedRoute exact path="/books" component={BookIndex} />
             <ProtectedRoute exact path="/books/:id" component={Book} />
+            <ProtectedRoute exact path="/documents" component={DocumentIndex} />
+            <ProtectedRoute exact path="/topcharts" component={TopCharts} />
             <ProtectedRoute exact path="/saved" component={Saved} />
             <ProtectedRoute exact path="/upload" component={UploadForm} />
             <ProtectedRoute exact path="/account" component={Account} />

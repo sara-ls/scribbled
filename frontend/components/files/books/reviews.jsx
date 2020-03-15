@@ -6,6 +6,9 @@ import { fetchBook, createReview } from "../../../actions/book_actions";
 import ReviewsList from "./reviews_list";
 import RotateLoader from "react-spinners/PulseLoader";
 import { css } from "@emotion/core";
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { clearReviewsErrors } from "../../../actions/book_actions";
 
 class Reviews extends React.Component {
   constructor(props) {
@@ -15,10 +18,9 @@ class Reviews extends React.Component {
       review_text: "",
       rating: undefined,
       book_id: this.props.book.id,
-      user_id: this.props.user_id
-      , loading: false
+      user_id: this.props.user_id,
+      loading: false
     };
-
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.resetRating = this.resetRating.bind(this);
@@ -26,6 +28,10 @@ class Reviews extends React.Component {
 
   componentDidMount() {
     this.props.fetchBook(this.props.bookId);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   resetRating() {
@@ -44,25 +50,45 @@ class Reviews extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let { loading, ...review }= this.state;
+    let { loading, ...review } = this.state;
     review.rating = parseInt(review.rating);
 
     this.setState({
       loading: true
-    })
+    });
 
-    this.props.submitReview(review).then(() => {
-      this.props.fetchBook(this.props.bookId);
-      setTimeout(() => {
+    this.props.submitReview(review).then(
+      () => {
+        this.props.fetchBook(this.props.bookId);
+        setTimeout(() => {
+          this.setState({
+            review_text: "",
+            rating: undefined,
+            book_id: this.props.book.id,
+            user_id: this.props.user_id,
+            loading: false
+          });
+        }, 1500);
+      },
+      err => {
         this.setState({
-          review_text: "",
-          rating: undefined,
-          book_id: this.props.book.id,
-          user_id: this.props.user_id,
           loading: false
         });
-      }, 1500);
-    });
+      }
+    );
+  }
+
+  renderErrors() {
+    return (
+      <ul className="errors-list">
+        {this.props.errors.slice(0, 3).map((error, i) => (
+          <li key={`error-${i}`} className="err">
+            <FontAwesomeIcon icon={faExclamationCircle} id="error-icon" />
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -103,6 +129,7 @@ class Reviews extends React.Component {
       if (!this.props.book.reviewAuthorIds.includes(this.props.user_id)) {
         reviewForm = (
           <div className="review-form-container">
+            <div className="errors-container">{this.renderErrors()}</div>
             <form className="review-form">
               <div className="form-row">
                 <div className="rating-label">What did you think?</div>
@@ -158,7 +185,7 @@ class Reviews extends React.Component {
         <div>
           <h2 className="reviews-header">Reader Reviews</h2>
           <ul className="reveiws-list">
-            <ReviewsList user_id={this.props.user_id } book={this.props.book} />
+            <ReviewsList user_id={this.props.user_id} book={this.props.book} />
           </ul>
         </div>
       </div>
@@ -171,7 +198,8 @@ const mapStateToProps = (state, { match }) => {
   return {
     bookId,
     book: state.entities.books[bookId],
-    user_id: state.session.id
+    user_id: state.session.id,
+    errors: state.errors.reviews
     // ,
     // reviews: Object.values(state.entities.books[bookId].reviews)
   };
@@ -179,7 +207,8 @@ const mapStateToProps = (state, { match }) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchBook: bookId => dispatch(fetchBook(bookId)),
-  submitReview: review => dispatch(createReview(review))
+  submitReview: review => dispatch(createReview(review)),
+  clearErrors: () => dispatch(clearReviewsErrors())
 });
 
 export default withRouter(

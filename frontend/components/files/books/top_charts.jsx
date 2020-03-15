@@ -65,12 +65,10 @@ class TopCharts extends React.Component {
                 bestseller lists and generating buzz from critics.
               </span>
             </div>
-          </div>{" "}
+          </div>
           <div className="main-section2">
             <ol className="top-charts-list">
-              
                 {items}
-              
             </ol>
           </div>
           <Featured />

@@ -20,6 +20,14 @@ export const createReview = (review) => {
     });
 }
 
+export const deleteReview = (reviewId) => {
+    return $.ajax({
+      method: "DELETE",
+      url: `api/reviews`,
+      data: reviewId 
+    });
+}
+
 // export const fetchReviewsForBook = (bookId) => {
 //   return $.ajax({
 //     method: "GET",

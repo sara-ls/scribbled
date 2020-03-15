@@ -2,7 +2,7 @@
 SideBar start -----------------------------
 **/
 
-aside {
+aside.sidebar {
   height: 100%;
   position: fixed;
   width: 180px;
@@ -13,6 +13,7 @@ aside {
       #eff7f8 67%,
       #e9f7fe);
   z-index: 2;
+  box-shadow: 4px 0 8px rgba(80, 100, 130, 0.1);
 }
 
 ul.sidebar-content {

@@ -425,6 +425,7 @@ div.book-index-item .top-book-li {
 .top-charts-list .book-index-img-container {
     margin-top: 20px;
 width: 30%;
+padding-right: 10px;
 }
 
 .top-charts-list .description-contain {
@@ -433,28 +434,33 @@ width: 30%;
   overflow: hidden;
   font-size: 13px;
   text-align: justify;
-      color: #57617a
+      color: #57617a;
+  min-height: 100px;
+  text-overflow: clip;      
+}
+
+.description-contain * {
+  text-overflow: clip;
 }
 
 .top-book-li {
-  // max-height: 230px;
-      width: 95%;
+      width: 98%;
   background-color: white;
-  padding: 10px;
+    padding: 5px;
 }
 
 .top-charts-list {
-  // list-style: decimal;
   padding: 5px;
   display: flex;
   flex-direction: column;
   align-content: center;
-      margin-left: 15px;
+    list-style: none;
 }
 
 .rank {
-  font-weight: bold;
-  font-size: 20px;
+font-weight: bold;
+font-size: 20px;
+padding: 100px 15px 5px 5px;
 }
 
 .top-book-li >div.book-index-item:hover {

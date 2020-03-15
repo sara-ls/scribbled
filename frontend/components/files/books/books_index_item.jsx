@@ -6,11 +6,11 @@ class BookIndexItem extends React.Component {
   render() {
     return (
       <div className="book-index-item">
-        {/* {this.props.rank ? (
+        {this.props.rank ? (
           <div className="rank">
-            {this.props.rank}.
+            {this.props.rank}
           </div>
-        ) : null} */}
+        ) : null}
         <div className="book-index-img-container">
           {/* <Link to={`/books/${this.props.book.id}`}> */}
           <img src={this.props.book.cover_url} height="205" />

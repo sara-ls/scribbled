@@ -1,8 +1,3 @@
-# frozen_string_literal: true
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-
 User.destroy_all
 Document.destroy_all
 Book.destroy_all
@@ -33,11 +28,11 @@ sapiens_book = Book.create!(
   author: 'Yuval Noah Harari', 
   description: "100,000 years ago, at least six human species inhabited the earth. Today there is just one. Us. Homo sapiens. 
 
-How did our species succeed in the battle for dominance? Why did our foraging ancestors come together to create cities and kingdoms? How did we come to believe in gods, nations and human rights; to trust money, books and laws; and to be enslaved by bureaucracy, timetables and consumerism? And what will our world be like in the millennia to come? 
+  How did our species succeed in the battle for dominance? Why did our foraging ancestors come together to create cities and kingdoms? How did we come to believe in gods, nations and human rights; to trust money, books and laws; and to be enslaved by bureaucracy, timetables and consumerism? And what will our world be like in the millennia to come? 
 
-In Sapiens, Dr Yuval Noah Harari spans the whole of human history, from the very first humans to walk the earth to the radical – and sometimes devastating – breakthroughs of the Cognitive, Agricultural and Scientific Revolutions. Drawing on insights from biology, anthropology, paleontology and economics, he explores how the currents of history have shaped our human societies, the animals and plants around us, and even our personalities. Have we become happier as history has unfolded? Can we ever free our behaviour from the heritage of our ancestors? And what, if anything, can we do to influence the course of the centuries to come? 
+  In Sapiens, Dr Yuval Noah Harari spans the whole of human history, from the very first humans to walk the earth to the radical – and sometimes devastating – breakthroughs of the Cognitive, Agricultural and Scientific Revolutions. Drawing on insights from biology, anthropology, paleontology and economics, he explores how the currents of history have shaped our human societies, the animals and plants around us, and even our personalities. Have we become happier as history has unfolded? Can we ever free our behaviour from the heritage of our ancestors? And what, if anything, can we do to influence the course of the centuries to come? 
 
-Bold, wide-ranging and provocative, Sapiens challenges everything we thought we knew about being human: our thoughts, our actions, our power ... and our future.", 
+  Bold, wide-ranging and provocative, Sapiens challenges everything we thought we knew about being human: our thoughts, our actions, our power ... and our future.", 
   cover_url: 'https://images-na.ssl-images-amazon.com/images/I/51Sn8PEXwcL.jpg', publisher: 'Harper Collins', 
   pages: 631,
   isbn: "9780062316103",
@@ -58,7 +53,7 @@ rest = Book.create!(
   author: 'Ottessa Moshfegh', 
   description: "Our narrator should be happy, shouldn't she? She's young, thin, pretty, a recent Columbia graduate, works an easy job at a hip art gallery, lives in an apartment on the Upper East Side of Manhattan paid for, like the rest of her needs, by her inheritance. But there is a dark and vacuous hole in her heart, and it isn't just the loss of her parents, or the way her Wall Street boyfriend treats her, or her sadomasochistic relationship with her best friend, Reva. It's the year 2000 in a city aglitter with wealth and possibility; what could be so terribly wrong?
 
-My Year of Rest and Relaxation is a powerful answer to that question. Through the story of a year spent under the influence of a truly mad combination of drugs designed to heal our heroine from her alienation from this world, Moshfegh shows us how reasonable, even necessary, alienation can be. Both tender and blackly funny, merciless and compassionate, it is a showcase for the gifts of one of our major writers working at the height of her powers.", 
+  My Year of Rest and Relaxation is a powerful answer to that question. Through the story of a year spent under the influence of a truly mad combination of drugs designed to heal our heroine from her alienation from this world, Moshfegh shows us how reasonable, even necessary, alienation can be. Both tender and blackly funny, merciless and compassionate, it is a showcase for the gifts of one of our major writers working at the height of her powers.", 
   cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1513096558l/36552920._SY475_.jpg', publisher: 'Harper Collins', 
   pages: 303,
   isbn: "0525510540",
@@ -68,6 +63,7 @@ My Year of Rest and Relaxation is a powerful answer to that question. Through th
 Review.create!({
   user_id: user2.id, book_id: rest.id, rating: 4, review_text: "I really really enjoyed this one. I feel like Ottessa Moshfegh let herself loose with a bizarre idea and it totally payed off. I'm still not sure if I liked the main character and I love that. Overall very much recommend!"
 })
+
 Review.create!({
   user_id: user1.id, book_id: rest.id, rating: 4, review_text: "Hilarious and sad at the same time."
 })
@@ -262,8 +258,10 @@ animals = Book.create!(
     author: 'Jonathan Safran Foer ', 
     description: 
       "Jonathan Safran Foer spent much of his life oscillating between enthusiastic carnivore and occasional vegetarian. Once he started a family, the moral dimensions of food became increasingly important.
-Faced with the prospect of being unable to explain why we eat some animals and not others, Foer set out to explore the origins of many eating traditions and the fictions involved with creating them. Traveling to the darkest corners of our dining habits, Foer raises the unspoken question behind every fish we eat, every chicken we fry, and every burger we grill.
-Part memoir and part investigative report, Eating Animals is a book that, in the words of the Los Angeles Times, places Jonathan Safran Foer 'at the table with our greatest philosophers.'", 
+
+      Faced with the prospect of being unable to explain why we eat some animals and not others, Foer set out to explore the origins of many eating traditions and the fictions involved with creating them. Traveling to the darkest corners of our dining habits, Foer raises the unspoken question behind every fish we eat, every chicken we fry, and every burger we grill.
+
+      Part memoir and part investigative report, Eating Animals is a book that, in the words of the Los Angeles Times, places Jonathan Safran Foer 'at the table with our greatest philosophers.'", 
     cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327941328l/3117996.jpg', 
     publisher: 'Knopf Publishing Group', 
     pages: 349,
