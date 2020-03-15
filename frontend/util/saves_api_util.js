@@ -5,13 +5,6 @@ export const fetchSavesForUser = (userId) => {
   });
 };
 
-// export const fetchSaves = () => {
-//   return $.ajax({
-//     method: "GET",
-//     url: `api/books/${id}`
-//   });
-// };
-
 export const createSave = save => {
   return $.ajax({
     method: "POST",
