@@ -244,6 +244,7 @@ ul.reveiws-list {}
 
 .small-rating {
   height: 25px;
+  width: 160px;
 }
 
 #empty-star {
@@ -353,13 +354,13 @@ div.book-index-item:hover {
 
 
 .loading {
-  min-height: 550px;
+  min-height: 80vh;
   padding-left: 180px;
   display: flex;
   flex-direction: row;
   align-content: flex-start;
   justify-content: center;
-  padding-top: 250px;
+  padding-top: 35vh;
 }
 
 .main-component-container>.submit-loading {

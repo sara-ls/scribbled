@@ -4,6 +4,8 @@ class Document < ApplicationRecord
   validates :title, uniqueness: { scope: :format }
 
   belongs_to :user
+  has_many :saves, as: :item
 
-  has_one_attached :file
+
+  # has_one_attached :file
 end

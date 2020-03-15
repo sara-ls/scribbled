@@ -5,6 +5,7 @@ class Book < ApplicationRecord
     foreign_key: :book_id,
     class_name: :Review
 
+  has_many :saves, as: :item
 
   def average_rating 
     

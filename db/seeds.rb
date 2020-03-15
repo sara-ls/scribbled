@@ -2,6 +2,7 @@ User.destroy_all
 Document.destroy_all
 Book.destroy_all
 Review.destroy_all
+Save.destroy_all
 
 user1 = User.create!(
   email: 'user1@gmail.com', 
@@ -38,6 +39,10 @@ sapiens_book = Book.create!(
   isbn: "9780062316103",
   release_date: "2015-02-10"
 )
+
+Save.create!(item_id: sapiens_book.id, user_id: demo_user.id, item_type: "Book")
+
+
 trick_book = Book.create!(
   title: 'Trick Mirror: Reflections on Self-Delusion', 
   author: 'Jia Tolentino', 
