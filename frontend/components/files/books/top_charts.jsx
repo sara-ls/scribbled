@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import SideBar from "../../ui/sidebar";
-import Featured from "../../shared/featured";
 import { fetchBooks } from "../../../actions/book_actions";
 import BookIndexItem from "./books_index_item";
 import { css } from "@emotion/core";
@@ -71,7 +70,6 @@ class TopCharts extends React.Component {
                 {items}
             </ol>
           </div>
-          <Featured />
         </div>
       </div>
     );

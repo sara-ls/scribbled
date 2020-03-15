@@ -10,6 +10,9 @@ class ReviewsList extends React.Component {
   render() {
     let allReviews = null;
     if (this.props.book.reviews) {
+      if (this.props.book.reviews.length === 0 ) {
+        return <div>No reviews yet</div>
+      }
       let rev = this.props.book.reviews.sort((a, b) => b.id - a.id)
       allReviews = rev.map(review => {
         if (review) {
