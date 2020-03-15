@@ -4,7 +4,7 @@ import NavBar from "./ui/navbar";
 import Footer from "./ui/footer";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Modal from "./ui/modal";
-import Splash from "./splash_page/splash";
+import Splash from "./splash";
 import Home from "./home/home";
 import DocumentIndex from "./files/documents/documents_index";
 import BookIndex from "./files/books/books_index";
