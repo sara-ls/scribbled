@@ -6,16 +6,16 @@
 
 ## Features
 
-User Authentication
-
+User Authentication <br/>
 ![](https://media.giphy.com/media/XZZlQMTbqo2Hu2b7AS/giphy.gif)
 
-Book Reviews 
-
+Book Reviews <br/>
 ![](https://media.giphy.com/media/WryTJPQO0clmVty06f/giphy.gif)
-
+ 
+Book Show Page <br/>
 ![](./lib/assets/book_page.png)
 
+Books Index Page <br/>
 ![](./lib/assets/books_page.png)
 
 ## Technologies
