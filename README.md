@@ -7,7 +7,7 @@
 ## Features
 
 User Authentication <br/>
-![](https://media.giphy.com/media/XZZlQMTbqo2Hu2b7AS/giphy.gif)
+![](https://media.giphy.com/media/PgjMpg08IIrpRjT7mK/giphy.gif)
 
 Book Reviews <br/>
 ![](https://media.giphy.com/media/WryTJPQO0clmVty06f/giphy.gif)
