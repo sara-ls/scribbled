@@ -1,8 +1,12 @@
 ![Scribbled Logo](./app/assets/images/scribbled-logo.png)
 
+*An online books and documents library inspired by Scribd, built with Ruby on Rails*
+
 **[LIVE DEMO](https://scribbled-scribd.herokuapp.com/#/)**
 
 ## Features
+
+![]("./lib/assets/screenshot")
 
 User Authentication
 
