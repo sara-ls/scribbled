@@ -6,8 +6,6 @@
 
 ## Features
 
-![]("./lib/assets/screenshot")
-
 User Authentication
 
 ![](https://media.giphy.com/media/XZZlQMTbqo2Hu2b7AS/giphy.gif)
@@ -15,6 +13,10 @@ User Authentication
 Book Reviews 
 
 ![](https://media.giphy.com/media/WryTJPQO0clmVty06f/giphy.gif)
+
+![](./lib/assets/book_page.png)
+
+![](./lib/assets/books_page.png)
 
 ## Technologies
 
