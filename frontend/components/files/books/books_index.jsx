@@ -11,12 +11,12 @@ class BookIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: !!this.props.books
+      loading: !!this.props.books,
     };
   }
   componentDidMount() {
     this.props.fetchBooks().then((res) => {
-      setTimeout(() => this.setState({ loading: false }), 1300);
+      setTimeout(() => this.setState({ loading: false }), 200);
     });
   }
 
@@ -30,7 +30,9 @@ class BookIndex extends React.Component {
     if (this.state.loading) {
       return (
         <div className="main-component-container">
-          <SideBar showSidebar={true} />
+          <SideBar
+            showSidebar={this.props.showSidebar === false ? false : true}
+          />
           <div className="loading">
             <BounceLoader
               css={override}
@@ -42,7 +44,7 @@ class BookIndex extends React.Component {
         </div>
       );
     } else {
-      items = this.props.books.map(book => {
+      items = this.props.books.map((book) => {
         if (book) {
           return <BookIndexItem book={book} key={book.id} />;
         } else {
@@ -55,17 +57,16 @@ class BookIndex extends React.Component {
       <div className="main-component-container">
         <SideBar showSidebar={true} />
         <div className="main-component">
+          <Featured />
           <div className="main-section1">
             <div className="page-header">
               <h1>Books</h1>
               <span>Find your next favorite book</span>
             </div>
-
             <div className="books-index-container">
               <ul className="books-index-list">{items}</ul>
             </div>
           </div>
-          <Featured />
         </div>
       </div>
     );
@@ -74,12 +75,12 @@ class BookIndex extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    books: Object.values(state.entities.books)
+    books: Object.values(state.entities.books),
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchBooks: () => dispatch(fetchBooks())
+  fetchBooks: () => dispatch(fetchBooks()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookIndex);

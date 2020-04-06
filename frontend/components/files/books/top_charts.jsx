@@ -16,7 +16,7 @@ class TopCharts extends React.Component {
   componentDidMount() {
     this.props
       .fetchBooks()
-      .then(() => setTimeout(() => this.setState({ loading: false }), 1300));
+      .then(() => setTimeout(() => this.setState({ loading: false }), 200));
   }
 
   render() {
