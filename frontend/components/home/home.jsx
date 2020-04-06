@@ -1,41 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
 import { openModal, closeModal } from "../../actions/modal_actions";
-import SideBar from "../ui/sidebar";
-import Featured from "../shared/featured";
-// import BooksIndex from "../files/books/books_index"
+import BooksIndex from "../files/books/books_index";
 
 class Home extends React.Component {
   render() {
-    return (
-      <div className="main-component-container">
-        <SideBar showSidebar={true} />
-        <div className="main-component">
-          <Featured />
-          {/* <div className="main-section1">
-            <div className="books-index-container">
-              <ul className="books-index-list">
-
-              </ul>
-            </div>
-          </div> */}
-        </div>
-      </div>
-    );
+    return <BooksIndex />;
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
   };
 };
 
-
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
-    openModal: modal => dispatch(openModal(modal))
+    openModal: (modal) => dispatch(openModal(modal)),
   };
 };
 
