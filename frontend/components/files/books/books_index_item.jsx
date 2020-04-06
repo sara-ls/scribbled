@@ -12,9 +12,9 @@ class BookIndexItem extends React.Component {
           </div>
         ) : null}
         <div className="book-index-img-container">
-          {/* <Link to={`/books/${this.props.book.id}`}> */}
+          <Link to={`/books/${this.props.book.id}`}>
           <img src={this.props.book.cover_url} height="205" />
-          {/* </Link> */}
+          </Link>
         </div>
         <div className="top-div">
           <div className="index-title">
