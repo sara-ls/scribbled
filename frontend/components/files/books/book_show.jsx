@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import SideBar from "../../ui/sidebar";
-import { fetchBook, createReview } from "../../../actions/book_actions";
-import { faCopy, faStar } from "@fortawesome/free-regular-svg-icons";
+import { fetchBook } from "../../../actions/book_actions";
+import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Rating from "react-rating";
 import Reviews from "./reviews";
@@ -37,10 +37,6 @@ class BookShow extends React.Component {
               <li>
                 <Link to="/books">Books</Link>
               </li>
-              {/* <li>></li>
-              <li>
-                <Link to="/">{this.props.book.title}</Link>
-              </li> */}
             </ol>
           </nav>
           <div className="book-show-details">
@@ -72,13 +68,14 @@ class BookShow extends React.Component {
                           src={window.redStarFullURL}
                           height="21px"
                           padding-right="0px"
-                          // margin-right="10px"
                           className="icon"
                           id="color-star"
                         />
                       }
                     />
-                  ) : (<span>No Reviews</span>)}
+                  ) : (
+                    <span>No Reviews</span>
+                  )}
                 </div>
                 <div className="pages">
                   <FontAwesomeIcon icon={faCopy} width="25px" id="pages-icon" />
@@ -99,11 +96,7 @@ class BookShow extends React.Component {
               </div>
             </div>
           </div>
-          <Reviews
-            // book={this.props.book}
-            // user_id={this.props.user_id}
-            // submitReview={this.props.submitReview}
-          />
+          <Reviews />
         </div>
       );
     }
@@ -122,14 +115,12 @@ const mapStateToProps = (state, { match }) => {
   return {
     id: id,
     book: state.entities.books[id],
-    user_id: state.session.id
+    user_id: state.session.id,
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  fetchBook: id => dispatch(fetchBook(id))
-  // ,
-  // submitReview: review => dispatch(createReview(review))
+const mapDispatchToProps = (dispatch) => ({
+  fetchBook: (id) => dispatch(fetchBook(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookShow);

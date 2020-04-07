@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import SideBar from "../../ui/sidebar";
 import { createDocument } from "../../../actions/document_actions";
 import { Route, Redirect, withRouter } from "react-router-dom";
-// import FileUploader from "../file_uploader";
 
 class UploadForm extends React.Component {
   constructor(props) {
@@ -11,47 +10,68 @@ class UploadForm extends React.Component {
     this.state = {
       title: "",
       description: "",
-      user_id: this.props.user_id,
-      format: "pdf",
+      // format: "pdf",
       thumbnail_url:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Document_icon_%28the_Noun_Project_27904%29.svg/768px-Document_icon_%28the_Noun_Project_27904%29.svg.png",
-      file: undefined
+      file: undefined,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
+
+    // Must use FormData when uploading file
+    const formData = new FormData();
+    formData.append("document[title]", this.state.title);
+    formData.append("document[user_id]", this.props.user_id);
+    formData.append("document[file]", this.state.file);
+    formData.append("document[description]", this.state.description);
+
+    // Redirect to documents page on success
     this.props
-      .processForm(this.state)
+      .processForm(formData)
       .then(() => this.props.history.push("/documents"));
-      // redirect to documents page on success
   }
 
   update(field) {
-    return e =>
+    return (e) =>
       this.setState({
-        [field]: e.currentTarget.value
+        [field]: e.currentTarget.value,
       });
   }
 
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ file: file, thumbnail_url: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    } else {
+      this.setState({ thumbnail_url: "", file: null });
+    }
+  }
+
   render() {
-    let thumbnailSrc =
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Document_icon_%28the_Noun_Project_27904%29.svg/768px-Document_icon_%28the_Noun_Project_27904%29.svg.png";
     return (
       <div className="upload-form-component">
         <SideBar showSidebar={true} />
         <div className="upload-form-div">
-          {/* <div className="page-header">
-            <h1>Upload</h1>
-          </div> */}
-          {/* <FileUploader
-            file={this.state.file}
-          /> */}
+          <div className="page-header">
+            <h1>Publish to the world</h1>
+          </div>
+          <div className="upload-page-subheader">
+            <span>
+              Presentations, research papers, legal documents, and more
+            </span>
+          </div>
           <div className="upload-form-container">
             <div className="thumbnail-container">
-              <img src={thumbnailSrc} />
+              <img src={this.state.thumbnail_url} />
             </div>
             <form className="upload-form" onSubmit={this.handleSubmit}>
               <div className="input-container">
@@ -82,27 +102,11 @@ class UploadForm extends React.Component {
                   className="upload-input"
                 />
               </div>
-              <div className="input-container">
+              <div className="input-container" id="file-contain">
                 <label>File</label>
-                <input
-                  type="file"
-                  id="file"
-                  value={this.state.file}
-                  onChange={this.update("file")}
-                />
+                <input type="file" id="file" onChange={this.handleFile} />
+                <button id="file-btn">{this.state.file ? `${this.state.file.name} ✓` : "Select a file to upload"}</button>
               </div>
-              {/* <div className="input-container">
-                <label>Format</label>
-                <span className="req">(Required)</span>
-                <input
-                  id="format-input"
-                  type="text"
-                  value={this.state.format}
-                  onChange={this.update("format")}
-                  className="upload-input"
-                  autoComplete="off"
-                />
-              </div> */}
               <button className="submit-btn" type="submit">
                 Upload
               </button>
@@ -115,11 +119,11 @@ class UploadForm extends React.Component {
 }
 
 const mapStateToProps = ({ session }) => ({
-  user_id: session.id
+  user_id: session.id,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  processForm: document => dispatch(createDocument(document))
+  processForm: (document) => dispatch(createDocument(document)),
 });
 
 export default withRouter(

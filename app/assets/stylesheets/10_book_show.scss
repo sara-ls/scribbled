@@ -171,7 +171,7 @@
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  max-width: 850px;
+  // max-width: 850px;
 }
 
 #review-input {
@@ -208,8 +208,6 @@
 .review-btn-container {
   align-self: flex-end;
   margin: 10px 0;
-
-
 }
 
 h2.reviews-header {
@@ -217,8 +215,6 @@ h2.reviews-header {
   font-size: 28px;
   color: #000514;
 }
-
-ul.reveiws-list {}
 
 .reviews-contain {
   padding: 40px;
@@ -269,23 +265,6 @@ textarea#review-input:not(:empty) {
   border-color: #02a793;
   box-shadow: 0 0 1px 0 #017f70;
 }
-
-// .review-btn-container {
-//   visibility: hidden;
-// }
-
-// textarea#review-input:not(:empty) .review-btn-container {
-//     visibility: visible;
-//   }
-
-// #review-input:focus .review-btn-container {
-//   visibility: visible;
-// }
-
-// #review-input:focus:after .review-btn-container {
-//   visibility: visible;
-// }
-
 
 #form-rating-star {
   margin-right: 25px;
@@ -379,7 +358,6 @@ div.book-index-item:hover {
 @keyframes fadeinfilter {
   from {
     opacity: 0;
-    // filter: saturate(1.9) brightness(0.9);
   }
 
   to {
@@ -401,11 +379,6 @@ div.book-index-item:hover {
   margin-left: 4px;
 }
 
-// .books-index-item img#color-star {
-//   margin-right: 5px;
-
-// }
-
 div.book-index-item .top-book-li {
   width: 100%;
 }
@@ -419,9 +392,9 @@ div.book-index-item .top-book-li {
 }
 
 .top-charts-list .book-index-img-container {
-    margin-top: 20px;
-width: 30%;
-padding-right: 10px;
+  margin-top: 20px;
+  width: 30%;
+  padding-right: 10px;
 }
 
 .top-charts-list .description-contain {
@@ -430,9 +403,9 @@ padding-right: 10px;
   overflow: hidden;
   font-size: 13px;
   text-align: justify;
-      color: #57617a;
+  color: #57617a;
   min-height: 100px;
-  text-overflow: clip;      
+  text-overflow: clip;
 }
 
 .description-contain * {
@@ -440,9 +413,9 @@ padding-right: 10px;
 }
 
 .top-book-li {
-      width: 98%;
+  width: 98%;
   background-color: white;
-    padding: 5px;
+  padding: 5px;
 }
 
 .top-charts-list {
@@ -450,25 +423,24 @@ padding-right: 10px;
   display: flex;
   flex-direction: column;
   align-content: center;
-    list-style: none;
+  list-style: none;
 }
 
 .rank {
-font-weight: bold;
-font-size: 20px;
-padding: 100px 15px 5px 5px;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 100px 15px 5px 5px;
 }
 
-.top-book-li >div.book-index-item:hover {
+.top-book-li>div.book-index-item:hover {
   transform: scale(1.02);
   background-color: white;
 }
 
 .top-book-li .top-div {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      padding-left: 15px;
-      max-height: 280px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 15px;
+  max-height: 280px;
 }

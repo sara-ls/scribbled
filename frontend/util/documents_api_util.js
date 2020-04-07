@@ -15,7 +15,10 @@ export const createDocument = documentForm => {
   return $.ajax({
     method: "POST",
     url: "api/documents",
-    data: { document: documentForm }
+    data: documentForm,
+    contentType: false,
+    processData: false
+    // Prevent formatting of FormData
   });
 };
 

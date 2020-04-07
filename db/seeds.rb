@@ -1,3 +1,5 @@
+require 'open-uri'
+
 User.destroy_all
 Document.destroy_all
 Book.destroy_all

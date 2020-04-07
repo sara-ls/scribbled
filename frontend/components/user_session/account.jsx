@@ -4,49 +4,17 @@ import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect } from "react-redux";
 import SideBar from "../ui/sidebar";
-import { css } from "@emotion/core";
-import BounceLoader from "react-spinners/BounceLoader";
 
 class Account extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { loading: true };
   }
 
   componentDidMount() {
     this.props.fetchCurrentUser();
-    setTimeout(
-      () =>
-        this.setState({
-          loading: false
-        }),
-      900
-    );
   }
 
   render() {
-    const override = css`
-      display: block;
-      margin: 10px auto;
-      border-color: white;
-    `;
-
-    if (this.state.loading) {
-      return (
-        <div className="main-component-container">
-          <SideBar showSidebar={true} />
-          <div className="loading">
-            <BounceLoader
-              css={override}
-              size={50}
-              color={"#1a7d88"}
-              loading={this.state.loading}
-            />
-          </div>
-        </div>
-      );
-    }
-
     return (
       <div className="main-component-container">
         <SideBar showSidebar={true} />
