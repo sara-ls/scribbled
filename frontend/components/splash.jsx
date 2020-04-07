@@ -72,7 +72,10 @@ const Splash = ({ openModal }) => {
           />
           <img className="book-cover" src={window.girlsURL} />
           <img className="book-cover" src={window.fleaURL} />
-          <img className="book-cover" src={window.sapiensURL} />
+          <img
+            className="book-cover"
+            src="https://images-na.ssl-images-amazon.com/images/I/51Sn8PEXwcL.jpg"
+          />
           <img className="book-cover" src={window.deusURL} />
           <img
             className="book-cover"
@@ -92,7 +95,10 @@ const Splash = ({ openModal }) => {
           <img className="book-cover" src={window.storiesURL} />
           <img className="book-cover" src={window.talkURL} />
           <img className="book-cover" src={window.enlightURL} />
-          <img className="book-cover" src={window.factURL} />
+          <img
+            className="book-cover"
+            src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1544964112l/40933227._SY475_.jpg"
+          />
         </div>
       </div>
       <div className="fold">
