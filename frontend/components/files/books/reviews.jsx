@@ -68,7 +68,7 @@ class Reviews extends React.Component {
             user_id: this.props.user_id,
             loading: false
           });
-        }, 1500);
+        }, 1000);
       },
       err => {
         this.setState({
