@@ -25,10 +25,10 @@ class UploadForm extends React.Component {
 
     // Must use FormData when uploading file
     const formData = new FormData();
-    formData.append('document[title]', this.state.title)
-    formData.append('document[user_id]', this.props.user_id);
-    formData.append('document[file]', this.state.file);
-    formData.append('document[description]', this.state.description);
+    formData.append("document[title]", this.state.title);
+    formData.append("document[user_id]", this.props.user_id);
+    formData.append("document[file]", this.state.file);
+    formData.append("document[description]", this.state.description);
 
     // Redirect to documents page on success
     this.props
@@ -51,6 +51,8 @@ class UploadForm extends React.Component {
     };
     if (file) {
       fileReader.readAsDataURL(file);
+    } else {
+      this.setState({ thumbnail_url: "", file: null });
     }
   }
 
@@ -60,7 +62,12 @@ class UploadForm extends React.Component {
         <SideBar showSidebar={true} />
         <div className="upload-form-div">
           <div className="page-header">
-            <h1>Upload</h1>
+            <h1>Publish to the world</h1>
+          </div>
+          <div className="upload-page-subheader">
+            <span>
+              Presentations, research papers, legal documents, and more
+            </span>
           </div>
           <div className="upload-form-container">
             <div className="thumbnail-container">
@@ -95,13 +102,10 @@ class UploadForm extends React.Component {
                   className="upload-input"
                 />
               </div>
-              <div className="input-container">
+              <div className="input-container" id="file-contain">
                 <label>File</label>
-                <input
-                  type="file"
-                  id="file"
-                  onChange={this.handleFile}
-                />
+                <input type="file" id="file" onChange={this.handleFile} />
+                <button id="file-btn">{this.state.file ? `${this.state.file.name} ✓` : "Select a file to upload"}</button>
               </div>
               <button className="submit-btn" type="submit">
                 Upload

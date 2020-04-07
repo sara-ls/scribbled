@@ -41,7 +41,7 @@ class BookShow extends React.Component {
           </nav>
           <div className="book-show-details">
             <div className="left-col">
-              <img src={this.props.book.photoURL} width="220" />
+              <img src={this.props.book.cover_url} width="220" />
               <div className="book-show-btns-container">{bookButtons}</div>
             </div>
             <div className="right-col">
@@ -68,13 +68,14 @@ class BookShow extends React.Component {
                           src={window.redStarFullURL}
                           height="21px"
                           padding-right="0px"
-                          // margin-right="10px"
                           className="icon"
                           id="color-star"
                         />
                       }
                     />
-                  ) : (<span>No Reviews</span>)}
+                  ) : (
+                    <span>No Reviews</span>
+                  )}
                 </div>
                 <div className="pages">
                   <FontAwesomeIcon icon={faCopy} width="25px" id="pages-icon" />
@@ -95,11 +96,7 @@ class BookShow extends React.Component {
               </div>
             </div>
           </div>
-          <Reviews
-            // book={this.props.book}
-            // user_id={this.props.user_id}
-            // submitReview={this.props.submitReview}
-          />
+          <Reviews />
         </div>
       );
     }
@@ -118,12 +115,12 @@ const mapStateToProps = (state, { match }) => {
   return {
     id: id,
     book: state.entities.books[id],
-    user_id: state.session.id
+    user_id: state.session.id,
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  fetchBook: id => dispatch(fetchBook(id))
+const mapDispatchToProps = (dispatch) => ({
+  fetchBook: (id) => dispatch(fetchBook(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookShow);

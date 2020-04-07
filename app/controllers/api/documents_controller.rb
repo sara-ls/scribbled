@@ -27,8 +27,6 @@ class Api::DocumentsController < ApplicationController
 
     if UpdateDocumentService.new(@document, document_params).call
       render "api/documents/show"
-    # if @document.update(document_params)
-    #   render :show
     else
       render json: @document.errors.full_messages, status: 422
     end
