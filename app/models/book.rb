@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   validates :title, :author, :description, presence: true
 
+
   has_many :reviews,
     foreign_key: :book_id,
     class_name: :Review

@@ -8,20 +8,18 @@
 .main-component span {
   color: #57617a;
   font-size: 18px;
-    padding-bottom: 5px;
+  padding-bottom: 5px;
   font-style: normal;
   display: block;
 }
 
 .main-component {
   padding: 0px;
-  min-height: 90vh;
+  min-height: 80vh;
   padding-left: 180px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  align-items: flex-start;
-  justify-content: space-between;
 }
 
 .main-component ul {
@@ -35,11 +33,9 @@
 
 .page-header {
   padding: 14px;
-      margin-top: 10PX;
-
+  margin-top: 10PX;
 }
 
 .documents-items-container * {
   font-size: 15px;
-
 }

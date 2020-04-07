@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import SideBar from "../../ui/sidebar";
-import { fetchBook, createReview } from "../../../actions/book_actions";
-import { faCopy, faStar } from "@fortawesome/free-regular-svg-icons";
+import { fetchBook } from "../../../actions/book_actions";
+import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Rating from "react-rating";
 import Reviews from "./reviews";
@@ -37,15 +37,11 @@ class BookShow extends React.Component {
               <li>
                 <Link to="/books">Books</Link>
               </li>
-              {/* <li>></li>
-              <li>
-                <Link to="/">{this.props.book.title}</Link>
-              </li> */}
             </ol>
           </nav>
           <div className="book-show-details">
             <div className="left-col">
-              <img src={this.props.book.cover_url} width="220" />
+              <img src={this.props.book.photoURL} width="220" />
               <div className="book-show-btns-container">{bookButtons}</div>
             </div>
             <div className="right-col">
@@ -128,8 +124,6 @@ const mapStateToProps = (state, { match }) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchBook: id => dispatch(fetchBook(id))
-  // ,
-  // submitReview: review => dispatch(createReview(review))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookShow);
