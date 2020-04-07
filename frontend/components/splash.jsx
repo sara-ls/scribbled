@@ -10,10 +10,7 @@ const Splash = ({ openModal }) => {
           <span>
             Thousands of the best books, audiobooks, and more. All in one app.
           </span>
-          <button
-            className="signup-btn"
-            onClick={() => this.props.openModal("signup")}
-          >
+          <button className="signup-btn" onClick={() => openModal("signup")}>
             Start Your Free Trial
           </button>
         </div>
@@ -113,10 +110,10 @@ const Splash = ({ openModal }) => {
         <div className="cta-row">
           <button
             className="signup-btn"
-            onClick={() => {
-              this.props.openModal("signup");
+            onClick={
+              () => openModal("signup")
               // window.scrollTo(0, window.modalRef.current.offsetTop);
-            }}
+            }
           >
             Read Free for 30 Days
           </button>
@@ -126,10 +123,10 @@ const Splash = ({ openModal }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
-    openModal: modal => dispatch(openModal(modal))
+    openModal: (modal) => dispatch(openModal(modal)),
   };
 };
 
