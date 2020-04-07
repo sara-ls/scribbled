@@ -6,16 +6,20 @@
 
 ## Features
 
-User Authentication <br/>
+User Authentication
+
 ![](https://media.giphy.com/media/PgjMpg08IIrpRjT7mK/giphy.gif)
 
-Book Reviews <br/>
+Book Reviews
+
 ![](https://media.giphy.com/media/WryTJPQO0clmVty06f/giphy.gif)
- 
-Book Show Page <br/>
+
+Book Show Page
+
 ![](./lib/assets/book_page.png)
 
-Books Index Page <br/>
+Books Index Page
+
 ![](./lib/assets/books_page.png)
 
 ## Technologies
@@ -26,3 +30,4 @@ Books Index Page <br/>
 * PostgreSQL
 * AJAX
 * Heroku
+* AWS S3
