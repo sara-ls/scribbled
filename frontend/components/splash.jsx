@@ -71,6 +71,7 @@ const Splash = ({ openModal }) => {
           <img alt="book-cover" className="book-cover" src={window.girlsURL} />
           <img alt="book-cover" className="book-cover" src={window.fleaURL} />
           <img
+            alt="sapiens-book-cover"
             className="book-cover"
             src="https://images-na.ssl-images-amazon.com/images/I/51Sn8PEXwcL.jpg"
           />
@@ -91,6 +92,7 @@ const Splash = ({ openModal }) => {
             src={window.bad_blood_coverURL}
           />
           <img
+            alt="trick-mirror-book-cover"
             className="book-cover"
             src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1544069605l/43126457.jpg"
           />
@@ -116,6 +118,7 @@ const Splash = ({ openModal }) => {
             src={window.enlightURL}
           />
           <img
+            alt="factfulness-book-cover"
             className="book-cover"
             src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1544964112l/40933227._SY475_.jpg"
           />
