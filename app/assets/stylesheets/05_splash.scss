@@ -25,7 +25,8 @@ Splash start ---------------------------
 .home-content {
   margin: 0px 200px;
   height: 400px;
-  width: 600px;
+    width: 600px;
+    max-width: 100vw;
   text-shadow: 2px 2px 5px #000000d1;
   text-align: center;
   display: flex;

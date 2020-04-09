@@ -2,7 +2,7 @@ import React from "react";
 import {
   faTimes,
   faAngleLeft,
-  faExclamationCircle
+  faExclamationCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -12,7 +12,7 @@ class SessionForm extends React.Component {
     this.state = {
       email: "",
       password: "",
-      full_name: ""
+      full_name: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,17 +22,17 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    return e =>
+    return (e) =>
       this.setState({
-        [field]: e.currentTarget.value
+        [field]: e.currentTarget.value,
       });
   }
 
   handleSubmit(clicked) {
-    return e => {
+    return (e) => {
       if (e.which === 13 || clicked) {
         e.preventDefault();
-        this.props.processForm(Object.assign({}, this.state))
+        this.props.processForm(Object.assign({}, this.state));
       }
     };
   }
@@ -139,6 +139,14 @@ class SessionForm extends React.Component {
                   <button className="session-submit submit-btn" type="submit">
                     {this.props.formType === "login" ? "Sign In" : "Sign Up"}
                   </button>
+                  {this.props.formType === "login" ? (
+                    <button
+                      className="demo-signin-btn"
+                      onClick={this.props.demoLogin}
+                    >
+                      Demo User Login
+                    </button>
+                  ) : null}
                 </div>
               </form>
               <div className="right-footer-container">
