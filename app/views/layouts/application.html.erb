@@ -13,12 +13,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_30-scribd-512.png">
+
+    <script type="text/javascript">
+    </script>
+    <%# <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_30-scribd-512.png"> %>
+
+    <%= render 'application/favicon' %>
+    <meta name="theme-color" content="#ffffff">
     
   </head>
   <script type="text/javascript">
     window.animalsURL = "<%= image_url('book-covers/animals.jpg') %>";
-    window.bad_blood_coverURL = "<%= image_url('book-covers/bad_blood_cover.png') %>";
+    window.bad_blood_coverURL = "<%= image_url('book-covers/bad_blood_cover.jpeg') %>";
     window.schizo_coverURL = "<%= image_url('book-covers/cover_schizopgrenias.jpg') %>";
     window.girlsURL = "<%= image_url('book-covers/DearGirls.jpg') %>";
     window.enlightURL = "<%= image_url('book-covers/enlight.jpg') %>";
