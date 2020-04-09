@@ -13,14 +13,13 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <%# <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_30-scribd-512.png"> %>
-    <link rel="apple-touch-icon" href="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/290_Scribd-512.png">
+    <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/social-media-applications/64/social_media_applications_30-scribd-512.png">
+
+    <%# <link rel="apple-touch-icon" href="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/290_Scribd-512.png"> %>
     <meta name="theme-color" content="#ffffff">
-    
-  </head>
-  <script type="text/javascript">
+    <script type="text/javascript">
     window.animalsURL = "<%= image_url('book-covers/animals.jpg') %>";
-    window.bad_blood_coverURL = "<%= image_url('book-covers/bad_blood_cover.jpeg') %>";
+    window.bad_blood_coverURL = "<%= image_url('book-covers/bad_blood_cover.jpg') %>";
     window.schizo_coverURL = "<%= image_url('book-covers/cover_schizopgrenias.jpg') %>";
     window.girlsURL = "<%= image_url('book-covers/DearGirls.jpg') %>";
     window.enlightURL = "<%= image_url('book-covers/enlight.jpg') %>";
@@ -36,6 +35,8 @@
     window.starFullURL = "<%= image_url('star-full.png') %>";
     window.redStarFullURL = "<%= image_url('red-star-full.png') %>";
   </script>
+  </head>
+  
 
   <body>
     <%= yield %>
