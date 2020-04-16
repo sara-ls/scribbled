@@ -309,22 +309,32 @@ div.book-index-item:hover {
 }
 
 .index-title {
-  overflow: hidden;
   max-height: 45px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   padding-top: 5px;
+
+  div {
+    font-size: 16px;
+    max-height: 45px;
+    text-overflow: clip;
+    font-weight: bold;
+    color: #1c263d;
+    overflow: hidden;
+  }
 }
 
-.index-title div {
-  font-size: 16px;
-  max-height: 45px;
-  text-overflow: clip;
-  font-weight: bold;
-  color: #1c263d;
-  overflow: hidden;
+.books-index-list {
+  .index-title {
+    overflow: hidden;
+
+
+  }
+
+
 }
+
 
 
 .loading {
@@ -429,7 +439,10 @@ div.book-index-item .top-book-li {
 .rank {
   font-weight: bold;
   font-size: 20px;
-  padding: 100px 15px 5px 5px;
+  padding: 100px 0;
+  margin: 0 5px;
+  min-width: 2em;
+  height: 100%;
 }
 
 .top-book-li>div.book-index-item:hover {

@@ -1,6 +1,5 @@
 import React from "react";
 import SideBar from "../../ui/sidebar";
-// import { withRouter } from "react-router-dom"
 class Saved extends React.Component {
 
   render() {

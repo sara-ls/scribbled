@@ -23,7 +23,7 @@ class TopCharts extends React.Component {
       );
 
       items = top_books
-        .sort((a, b) => a.average_rating - b.average_rating)
+        .sort((a, b) => b.average_rating - a.average_rating)
         .map((book, i) => {
           return (
             <li key={book.id} className="top-book-li">
