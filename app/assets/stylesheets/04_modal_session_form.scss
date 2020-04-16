@@ -76,6 +76,10 @@ div.login-form {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+
+  button.demo-signin-btn {
+    margin: 10px 0;
+  }
 }
 
 form input {

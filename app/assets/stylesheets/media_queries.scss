@@ -135,4 +135,8 @@
   .footer-main {
     flex-direction: column;
   }
+
+  button, [class*='btn'] {
+    font-size: 0.9em;
+  }
 }

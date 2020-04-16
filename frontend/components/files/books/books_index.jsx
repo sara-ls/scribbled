@@ -6,6 +6,7 @@ import { fetchBooks } from "../../../actions/book_actions";
 import BookIndexItem from "./books_index_item";
 import { css } from "@emotion/core";
 import BounceLoader from "react-spinners/BounceLoader";
+import { withRouter } from "react-router-dom";
 
 class BookIndex extends React.Component {
   constructor(props) {
@@ -83,4 +84,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchBooks: () => dispatch(fetchBooks()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookIndex);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(BookIndex)
+);
