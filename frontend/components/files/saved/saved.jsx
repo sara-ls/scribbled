@@ -1,5 +1,5 @@
 import React from "react";
-import SideBar from "../../ui/sidebar"
+import SideBar from "../../ui/sidebar";
 
 const Saved = () => {
   return (

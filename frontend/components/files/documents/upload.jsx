@@ -7,6 +7,7 @@ import { Route, Redirect, withRouter } from "react-router-dom";
 class UploadForm extends React.Component {
   constructor(props) {
     super(props);
+    this.props.history.push("/upload");
     this.state = {
       title: "",
       description: "",
@@ -105,7 +106,11 @@ class UploadForm extends React.Component {
               <div className="input-container" id="file-contain">
                 <label>File</label>
                 <input type="file" id="file" onChange={this.handleFile} />
-                <button id="file-btn">{this.state.file ? `${this.state.file.name} ✓` : "Select a file to upload"}</button>
+                <button id="file-btn">
+                  {this.state.file
+                    ? `${this.state.file.name} ✓`
+                    : "Select a file to upload"}
+                </button>
               </div>
               <button className="submit-btn" type="submit">
                 Upload

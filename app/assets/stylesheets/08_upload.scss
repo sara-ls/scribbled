@@ -43,19 +43,19 @@
   border: 1px dashed #017f70;
   min-height: 100px;
   position: absolute;
-  background-color: white;
+  background-color: transparent;
   top: 30px;
   left: 0;
+  z-index: 100000;
 
   &::-webkit-file-upload-button {
     visibility: hidden;
     display: none;
-    width: 0px;
     -webkit-appearance: none;
   }
 
   &:hover {
-     cursor: pointer;
+    cursor: pointer;
   }
 
   &::after {
@@ -66,13 +66,13 @@
 }
 
 #file-btn {
-    font-size: 20px;
-    transition: all .4s;
-    border-color: transparent;
-    position: absolute;
-    top: 70px;
-    left: calc(50% - 100px);
-    height: 30px;
+  font-size: 20px;
+  transition: all .4s;
+  border-color: transparent;
+  position: absolute;
+  top: 70px;
+  left: calc(50% - 100px);
+  height: 30px;
 }
 
 input#description-input {
