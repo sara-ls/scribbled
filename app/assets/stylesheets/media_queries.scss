@@ -124,7 +124,15 @@
     grid-row-gap: 0;
     justify-content: flex-start;
   }
+
   ul {
     padding-left: 0;
+  }
+}
+
+
+@media all and (max-width: 600px) {
+  .footer-main {
+    flex-direction: column;
   }
 }

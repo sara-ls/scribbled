@@ -4,33 +4,45 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faScribd,
   faGithub,
-  faLinkedin
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-main">
-        <h4>ABOUT</h4>
-        <ul className="footer-list">
-          <li>
-            <a href="https://www.scribd.com/?lohp=2">Scribd.com</a>
-          </li>
-          <li>
-            <a href="https://github.com/sara-ls/Scribbled">Scribbled Repo</a>
-          </li>
-          <li>
-            <a href="https://github.com/sara-ls/Scribbled/wiki">Wiki</a>
-          </li>
-          <li>
-            <a href="https://github.com/sara-ls/Scribbled/blob/master/README.md">
-              Read Me
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/sara-ls">Contact</a>
-          </li>
-        </ul>
+        <div className="about">
+          <h4>ABOUT</h4>
+          <ul className="footer-list">
+            <li>
+              <a href="https://github.com/sara-ls/Scribbled">Scribbled Repo</a>
+            </li>
+            <li>
+              <a href="https://github.com/sara-ls/Scribbled/blob/master/README.md">
+                Read Me
+              </a>
+            </li>
+            <li>
+              <a href="https://www.scribd.com/?lohp=2">scribd.com</a>
+            </li>
+          </ul>
+        </div>
+        <div className="Contact">
+          <h4>CONTACT</h4>
+          <ul className="footer-list">
+            <li>
+              <a href="https://github.com/sara-ls">GitHub Profile</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/sara~sampson">
+                LinkedIn Profile
+              </a>
+            </li>
+            <li>
+              <a href="https://sarasampson.com">sarasampson.com</a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="social-container">
         <a href="https://www.scribd.com/">
@@ -47,7 +59,7 @@ const Footer = () => {
             id="github-icon"
           />
         </a>
-        <a href="https://www.linkedin.com/">
+        <a href="https://www.linkedin.com/sara~sampson">
           <FontAwesomeIcon
             icon={faLinkedin}
             className="social-icon"
@@ -64,7 +76,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faCircle} />
           </li>
           <li>
-            <span>slimsampson</span>
+            <span>Sara Sampson</span>
           </li>
         </ul>
       </div>
