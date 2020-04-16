@@ -25,7 +25,7 @@ class App extends React.Component {
           <div className="main">
             <Switch>
               {/* Render Home page as main content component if logged in */}
-              <ProtectedRoute exact path="/" component={Home} />
+              <ProtectedRoute exact path="/" component={BookIndex} />
               {/* Render Splash page as main content component if logged out */}
               <AuthRoute exact path="/splash" component={Splash} />
 
