@@ -2,11 +2,6 @@ import React from "react";
 import SideBar from "../../ui/sidebar";
 // import { withRouter } from "react-router-dom"
 class Saved extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   debugger;
-  //   this.props.history.push("/saved");
-  // }
 
   render() {
     return (
