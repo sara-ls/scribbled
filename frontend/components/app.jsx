@@ -16,7 +16,7 @@ import Book from "./files/books/book_show";
 
 class App extends React.Component {
   render() {
-    // debugger;
+    debugger;
     return (
       <div className="app">
         <NavBar />

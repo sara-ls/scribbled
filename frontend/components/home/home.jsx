@@ -7,6 +7,7 @@ import BooksIndex from "../files/books/books_index";
 class Home extends React.Component {
 
   render() {
+    debugger;
     return <BooksIndex />;
   }
 }
