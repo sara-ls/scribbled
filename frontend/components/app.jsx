@@ -16,17 +16,17 @@ import Book from "./files/books/book_show";
 
 class App extends React.Component {
   render() {
-    debugger;
     return (
       <div className="app">
         <NavBar />
         <Modal id="form" />
         <div className="main">
+          {/* Render Home page as main content component if logged in */}
+          <ProtectedRoute exact path="/" component={Home} />{" "}
           <Switch>
             {/* Render Splash page as main content component if logged out */}
             <AuthRoute exact path="/splash" component={Splash} />
-            {/* Render Home page as main content component if logged in */}
-            <ProtectedRoute exact path="/" component={Home} />
+
             <ProtectedRoute exact path="/books" component={BookIndex} />
             <ProtectedRoute exact path="/books/:id" component={Book} />
             <ProtectedRoute exact path="/documents" component={DocumentIndex} />

@@ -6,7 +6,7 @@ import { openModal, closeModal } from "../../actions/modal_actions";
 import {
   faUserCircle,
   faAngleDown,
-  faArrowCircleUp
+  faArrowCircleUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -14,14 +14,14 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showMenu: false
+      showMenu: false,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   toggleMenu() {
     this.setState({
-      showMenu: !this.state.showMenu
+      showMenu: !this.state.showMenu,
     });
   }
 
@@ -112,14 +112,21 @@ class NavBar extends React.Component {
 }
 
 const mapStateToProps = ({ session, entities: { users } }) => ({
-  currentUser: users[session.id]
+  currentUser: users[session.id],
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   logout: () => dispatch(logout()),
-  openModal: modal => dispatch(openModal(modal)),
+  openModal: (modal) => dispatch(openModal(modal)),
   demoLogin: () =>
-    dispatch(login({ email: "demo@demo.demo", password: "demopassword" }))
+    dispatch(login({ email: "demo@demo.demo", password: "demopassword" })).then(
+      () => {
+        setTimeout(() => {
+          alert("Your demo user session has expired. Please log in again.");
+          dispatch(logout());
+        }, 600000);
+      }
+    ),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
