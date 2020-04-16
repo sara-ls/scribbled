@@ -7,7 +7,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
   <Route
     path={path}
     exact={exact}
-    render={props =>
+    render={(props) =>
       !loggedIn ? <Component {...props} /> : <Redirect to="/" />
     }
   />
@@ -17,15 +17,15 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
 const Protected = ({ component: Component, path, loggedIn, exact }) => (
   <Route
     path={path}
-    exact={exact}
-    render={props =>
+    exact={exact ? true : false}
+    render={(props) =>
       loggedIn ? <Component {...props} /> : <Redirect to="/splash" />
     }
   />
 );
 
 // access the Redux state to check if the user is logged in
-const mapStateToProps = state => ({ loggedIn: Boolean(state.session.id) });
+const mapStateToProps = (state) => ({ loggedIn: Boolean(state.session.id) });
 
 // connect Auth to the redux state
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));

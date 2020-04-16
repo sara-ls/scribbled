@@ -7,14 +7,14 @@ import { Route, Redirect, withRouter } from "react-router-dom";
 class UploadForm extends React.Component {
   constructor(props) {
     super(props);
-    this.props.history.push("/upload");
+    // this.props.history.push("/upload");
     this.state = {
       title: "",
       description: "",
       // format: "pdf",
       thumbnail_url:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Document_icon_%28the_Noun_Project_27904%29.svg/768px-Document_icon_%28the_Noun_Project_27904%29.svg.png",
-      file: undefined,
+      file: undefined
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,7 +34,7 @@ class UploadForm extends React.Component {
     // Redirect to documents page on success
     this.props
       .processForm(formData)
-      .then(() => this.props.history.push("/documents"));
+      // .then(() => this.props.history.push("/documents"));
   }
 
   update(field) {
