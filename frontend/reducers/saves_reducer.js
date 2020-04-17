@@ -1,4 +1,4 @@
-import { RECEIVE_SAVE, RECEIVE_SAVES} from "../actions/save_actions";
+import { RECEIVE_SAVE, RECEIVE_SAVES } from "../actions/save_actions";
 
 const savesReducer = (state = {}, action) => {
   Object.freeze(state);

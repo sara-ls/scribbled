@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchSavesForUser, deleteSave } from "../../../actions/save_actions";
 import SideBar from "../../ui/sidebar";
+import SavedItem from "./saved_item";
 class Saved extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +13,14 @@ class Saved extends React.Component {
   }
 
   render() {
+    let saves = this.props.saves.filter(
+      (save) => save.user_id === this.props.userId
+    );
+
+    let savedItems = saves.map((save) => {
+      return <SavedItem save={save} />;
+    });
+
     return (
       <div className="main-component-container">
         <SideBar showSidebar={true} />
@@ -21,7 +30,9 @@ class Saved extends React.Component {
               <h1>Saved</h1>
               <span>Titles you've saved.</span>
             </div>
-            <div className="saved-items-container"></div>
+            <div className="saved-items-container">
+              <ul className="saved-items-list">{savedItems}</ul>
+            </div>
           </div>
         </div>
       </div>
@@ -32,7 +43,7 @@ class Saved extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     userId: state.session.id,
-    saves: Object.values(state.entities.saves)
+    saves: Object.values(state.entities.saves),
   };
 };
 
