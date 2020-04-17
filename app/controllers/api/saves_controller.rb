@@ -2,7 +2,6 @@
 
 class Api::SavesController < ApplicationController
   def index
-    debugger
     @saves = Save.all
     render :index
   end
