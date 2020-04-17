@@ -18,7 +18,7 @@ class Saved extends React.Component {
     );
 
     let savedItems = saves.map((save) => {
-      return <SavedItem save={save} />;
+      return <SavedItem save={save} key={save.id} />;
     });
 
     return (
