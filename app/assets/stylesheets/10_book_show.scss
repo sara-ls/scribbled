@@ -409,17 +409,18 @@ div.book-index-item .top-book-li {
 
 .top-charts-list .description-contain {
   width: 100%;
-  float: right;
   overflow: hidden;
   font-size: 13px;
   text-align: justify;
   color: #57617a;
-  min-height: 100px;
-  text-overflow: clip;
-}
-
-.description-contain * {
-  text-overflow: clip;
+  text-overflow: ellipsis;
+  // white-space: pre-wrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 1.5;
+  max-height: 180px;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
 }
 
 .top-book-li {
