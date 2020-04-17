@@ -31,3 +31,5 @@ Books Index Page
 * AJAX
 * Heroku
 * AWS S3
+* HTML
+* SCSS

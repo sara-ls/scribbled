@@ -20,6 +20,14 @@ class User < ApplicationRecord
     through: :authored_reviews,
     source: :book
 
+  has_many :saves,
+    foreign_key: :user_id,
+    class_name: :Save
+
+  has_many :saved_items,
+    through: :saves,
+    source: :item
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user

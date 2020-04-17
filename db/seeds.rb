@@ -24,7 +24,7 @@ demo_user = User.create!(
   password: 'demopassword'
 )
 
-doc1 = Document.create!(title: 'Catch and Kill', description: 'Both a spy thriller and a meticulous work of investigative journalism, Catch and Kill breaks devastating new stories about the rampant abuse of power and sheds far-reaching light on investigations that shook our culture.', user_id: user1.id, thumbnail_url: '', document_url: '', format: 'pdf', private: false)
+# doc1 = Document.create!(title: 'Catch and Kill', description: 'Both a spy thriller and a meticulous work of investigative journalism, Catch and Kill breaks devastating new stories about the rampant abuse of power and sheds far-reaching light on investigations that shook our culture.', user_id: user1.id, thumbnail_url: '', document_url: '', format: 'pdf', private: false)
 
 sapiens_book = Book.create!(
   title: 'Sapiens', 
@@ -54,6 +54,8 @@ trick_book = Book.create!(
   isbn: "0525510540",
   release_date: "2019-09-10"
 )
+
+Save.create!(user_id: demo_user.id, item_id: trick_book.id, item_type: "Book")
 
 rest = Book.create!(
   title: 'My Year of Rest and Relaxation', 

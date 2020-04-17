@@ -1,6 +1,15 @@
 import React from "react";
+import { connect } from "react-redux";
+import { fetchSavesForUser, deleteSave } from "../../../actions/save_actions";
 import SideBar from "../../ui/sidebar";
 class Saved extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    this.props.fetchSavesForUser();
+  }
 
   render() {
     return (
@@ -20,4 +29,18 @@ class Saved extends React.Component {
   }
 }
 
-export default Saved;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    userId: state.session.id,
+    saves: Object.values(state.entities.saves)
+  };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    fetchSavesForUser: () => dispatch(fetchSavesForUser()),
+    deleteSave: (saveId) => dispatch(deleteSave(saveId)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Saved);

@@ -1,7 +1,7 @@
-export const fetchSavesForUser = (userId) => {
+export const fetchSavesForUser = () => {
   return $.ajax({
     method: "GET",
-    url: "api/user/saves"
+    url: `api/user/saves`
   });
 };
 
