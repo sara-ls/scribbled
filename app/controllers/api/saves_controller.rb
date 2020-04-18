@@ -17,11 +17,11 @@ class Api::SavesController < ApplicationController
   end
 
   def destroy
-    @save = Save..find_by(id: params[:id])
+    @save = Save.find_by(id: params[:id])
     @save.destroy
   end
 
   def save_params
-    param.require(:save).permit(:item_id, :item_type, :user_id)
+    param.require(:save).permit(:id, :item_id, :item_type, :user_id)
   end
 end
