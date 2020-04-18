@@ -16,7 +16,9 @@ class SavedItem extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBook(this.props.save.item_id);
+    this.props
+      .fetchBook(this.props.save.item_id)
+      .then(() => this.setState({ book: this.props.book }));
   }
 
   handleRemoveSave() {

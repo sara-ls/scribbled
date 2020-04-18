@@ -24,9 +24,15 @@ ul.saved-items-list {
 
     .right-saved {
       padding: 10px;
-      *{
+
+      * {
         float: right;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
+
     }
   }
 
