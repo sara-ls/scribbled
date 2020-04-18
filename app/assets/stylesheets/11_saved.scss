@@ -25,11 +25,15 @@ ul.saved-items-list {
     .right-saved {
       padding: 10px;
 
-      * {
+      #trash-icon {
         float: right;
 
         &:hover {
           cursor: pointer;
+          
+           path {
+              color: #1e7b85;
+          }
         }
       }
 

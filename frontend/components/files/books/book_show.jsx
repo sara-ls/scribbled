@@ -3,27 +3,42 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import SideBar from "../../ui/sidebar";
 import { fetchBook } from "../../../actions/book_actions";
+import { createSave } from "../../../actions/save_actions";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import Rating from "react-rating";
 import Reviews from "./reviews";
 
 class BookShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      saved: false,
+    };
+    this.handleSave = this.handleSave.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBook(this.props.id);
   }
 
+  handleSave() {}
+
   render() {
     let book_show = null;
-    let bookButtons = (
-      <div>
+
+    let bookButton;
+
+    if (this.state.saved) {
+      bookButton = (
+        <button className="save-btn submit-btn" disabled>Saved</button>
+      );
+    } else {
+      bookButton = (
         <button className="save-btn submit-btn">Save For Later</button>
-      </div>
-    );
+      );
+    }
 
     if (this.props.book) {
       book_show = (
@@ -42,7 +57,7 @@ class BookShow extends React.Component {
           <div className="book-show-details">
             <div className="left-col">
               <img src={this.props.book.cover_url} width="220" />
-              <div className="book-show-btns-container">{bookButtons}</div>
+              <div className="book-show-btns-container">{bookButton}</div>
             </div>
             <div className="right-col">
               <div className="book-title">{this.props.book.title}</div>
@@ -121,6 +136,7 @@ const mapStateToProps = (state, { match }) => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchBook: (id) => dispatch(fetchBook(id)),
+  createSave: (save) => dispatch(createSave(save)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookShow);

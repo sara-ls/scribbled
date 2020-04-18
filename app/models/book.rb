@@ -6,7 +6,12 @@ class Book < ApplicationRecord
     foreign_key: :book_id,
     class_name: :Review
 
-  has_many :saves, as: :item
+  has_many :saves, 
+    as: :item
+
+  has_many :saved_users,
+    through: :saves,
+    source: :user
 
   # For active storage
   has_one_attached :photo
@@ -23,4 +28,7 @@ class Book < ApplicationRecord
     all_ratings.sum / all_ratings.length
   end
 
+  def saved?
+    self.saves.pluck(:user_id).includes?(@current_user.id)
+  end
 end

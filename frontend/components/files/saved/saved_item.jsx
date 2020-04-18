@@ -49,6 +49,7 @@ class SavedItem extends React.Component {
           </div>
           <div className="right-saved">
             <FontAwesomeIcon
+              id="trash-icon"
               icon={faTrashAlt}
               onClick={this.handleRemoveSave}
             />
