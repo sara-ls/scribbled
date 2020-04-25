@@ -86,7 +86,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   ),
   clearErrors: () => dispatch(clearSessionErrors()),
 });
-``
+```
 
 ### Book Reviews
 
