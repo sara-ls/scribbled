@@ -27,6 +27,67 @@
 
 ![User Auth GIF](https://media.giphy.com/media/PgjMpg08IIrpRjT7mK/giphy.gif)
 
+Modal UI component renders either the login or signup form container components
+
+``` jsx
+const Modal = ({ modal, closeModal }) => {
+  if (!modal) {
+    return null;
+  }
+
+  let component = null;
+  switch (modal) {
+    case "login":
+      component = <LoginForm id="form" />;
+      break;
+    case "signup":
+      component = <SignupForm id="form" />;
+      break;
+  }
+  return (
+    <div className="modal-background" onClick={closeModal}>
+      <div className="modal-child" onClick={e => e.stopPropagation()}>
+        {component}
+      </div>
+    </div>
+  );
+};
+```
+
+Login/signup form container component provides session form component with correct form type, actions, and a button to switch to other form type as props
+
+``` jsx
+const mapStateToProps = ({ session, entities: { users }, errors }) => ({
+  currentUser: users[session.id],
+  formType: "login",
+  errors: errors.session,
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  processForm: (user) => dispatch(login(user)),
+  demoLogin: () =>
+    dispatch(login({ email: "demo@demo.demo", password: "demopassword" })).then(
+      () => {
+        setTimeout(() => {
+          alert("Your demo user session has expired. Please log in again.");
+          dispatch(logout());
+        }, 600000);
+      }
+    ),
+  closeModal: () => dispatch(closeModal()),
+  // Button to change modal to other form type
+  otherForm: (
+    <button
+      className="other-form"
+      onClick={() => dispatch(openModal("signup"))}
+    >
+      Sign Up
+    </button>
+  ),
+  clearErrors: () => dispatch(clearSessionErrors()),
+});
+``
+
 ### Book Reviews
 
 ![Book review GIF](https://media.giphy.com/media/WryTJPQO0clmVty06f/giphy.gif)
