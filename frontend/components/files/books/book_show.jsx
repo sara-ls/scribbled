@@ -36,7 +36,6 @@ class BookShow extends React.Component {
   }
 
   render() {
-    console.log(this.props.userSaves);
     let book_show = null;
 
     let bookButton;
@@ -50,6 +49,7 @@ class BookShow extends React.Component {
             borderColor: "transparent",
             backgroundColor: "transparent",
             color: "#1e7b85",
+            cursor: "default"
           }}
         >
           Saved
