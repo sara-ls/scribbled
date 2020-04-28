@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import SideBar from "../../ui/sidebar";
 import { fetchBook } from "../../../actions/book_actions";
-import { createSave } from "../../../actions/save_actions";
+import { createSave, fetchSavesForUser } from "../../../actions/save_actions";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -14,29 +14,44 @@ class BookShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      saved: false,
+      saved: this.props.userSaves.some(
+        (save) => save.item_id === this.props.id
+      ),
     };
     this.handleSave = this.handleSave.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBook(this.props.id);
+    this.props.fetchSavesForUser();
   }
 
-  handleSave() {}
+  handleSave() {
+    this.props
+      .createSave({
+        item_id: this.props.id,
+        item_type: "Book",
+      })
+      .then(this.setState({ saved: true }));
+  }
 
   render() {
+    console.log(this.props.userSaves);
     let book_show = null;
 
     let bookButton;
 
-    if (this.state.saved) {
+    if (this.props.userSaves.some(save => save.item_id === this.props.id)) {
       bookButton = (
-        <button className="save-btn submit-btn" disabled>Saved</button>
+        <button className="save-btn submit-btn" disabled>
+          Saved
+        </button>
       );
     } else {
       bookButton = (
-        <button className="save-btn submit-btn">Save For Later</button>
+        <button className="save-btn submit-btn" onClick={this.handleSave}>
+          Save For Later
+        </button>
       );
     }
 
@@ -131,11 +146,13 @@ const mapStateToProps = (state, { match }) => {
     id: id,
     book: state.entities.books[id],
     user_id: state.session.id,
+    userSaves: Object.values(state.entities.saves),
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
   fetchBook: (id) => dispatch(fetchBook(id)),
+  fetchSavesForUser: () => dispatch(fetchSavesForUser()),
   createSave: (save) => dispatch(createSave(save)),
 });
 
