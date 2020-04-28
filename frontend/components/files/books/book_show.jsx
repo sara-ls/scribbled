@@ -41,9 +41,17 @@ class BookShow extends React.Component {
 
     let bookButton;
 
-    if (this.props.userSaves.some(save => save.item_id === this.props.id)) {
+    if (this.props.userSaves.some((save) => save.item_id === this.props.id)) {
       bookButton = (
-        <button className="save-btn submit-btn" disabled>
+        <button
+          className="save-btn submit-btn"
+          disabled
+          style={{
+            borderColor: "transparent",
+            backgroundColor: "transparent",
+            color: "#1e7b85",
+          }}
+        >
           Saved
         </button>
       );
