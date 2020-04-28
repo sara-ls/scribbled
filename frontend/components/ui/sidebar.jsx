@@ -74,7 +74,7 @@ class SideBar extends React.Component {
                 Books
               </NavLink>
             </li>
-            <li className="sidebar-row">
+            {/* <li className="sidebar-row">
               <NavLink
                 to="/documents"
                 className="nav-link"
@@ -87,7 +87,7 @@ class SideBar extends React.Component {
                 />
                 Documents
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </aside>
       );

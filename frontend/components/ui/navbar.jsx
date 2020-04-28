@@ -61,6 +61,11 @@ class NavBar extends React.Component {
                     </Link>
                   </li>
                   <li>
+                    <Link className="dropdown-btn" to="/saved">
+                      Saved Books
+                    </Link>
+                  </li>
+                  <li>
                     <Link className="dropdown-btn" to="/upload">
                       Document Uploads
                     </Link>

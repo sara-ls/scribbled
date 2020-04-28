@@ -44,10 +44,10 @@ class Account extends React.Component {
                 <label>Email</label>
                 <span>{this.props.user.email}</span>
               </div>
-              <div>
-              <label>Your Uploaded Docs</label>
-              <span>{this.props.user.uploadedDocIds}</span>
-            </div>
+              {/* <div>
+                <label>Your Uploaded Docs</label>
+                <span>{this.props.user.uploadedDocIds}</span>
+              </div> */}
             </div>
           </div>
         </div>
@@ -57,14 +57,14 @@ class Account extends React.Component {
 }
 
 const mapStateToProps = ({ entities, session }) => ({
-  user: entities.users[session.id]
+  user: entities.users[session.id],
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchCurrentUser: () => {
       dispatch(fetchCurrentUser());
-    }
+    },
   };
 };
 
