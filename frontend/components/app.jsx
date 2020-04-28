@@ -1,18 +1,24 @@
 import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
+import loadable from "@loadable/component";
+
 import NavBar from "./ui/navbar";
 import Footer from "./ui/footer";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import Modal from "./ui/modal";
+
+const Modal = loadable(() => import("./ui/modal"));
 import Splash from "./splash";
-import DocumentIndex from "./files/documents/documents_index";
+const DocumentIndex = loadable(() => import("./files/documents/documents_index"));
 import BookIndex from "./files/books/books_index";
-import TopCharts from "./files/books/top_charts";
-import Saved from "./files/saved/saved";
-import UploadForm from "./files/documents/upload";
-import Account from "./user_session/account";
-import Book from "./files/books/book_show";
+const TopCharts = loadable(() => import("./files/books/top_charts"));
+const Saved = loadable(() => import("./files/saved/saved"));
+
+const UploadForm = loadable(() => import("./files/documents/upload"));
+const Account = loadable(() => import("./user_session/account"));
+// import Book from "./files/books/book_show";
 import ScrollToTop from "./ui/scroll_top";
+
+const Book = loadable(() => import("./files/books/book_show"));
 
 class App extends React.Component {
   render() {

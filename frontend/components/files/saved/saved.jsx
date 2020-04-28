@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchSavesForUser, deleteSave } from "../../../actions/save_actions";
 import SideBar from "../../ui/sidebar";
 import SavedItem from "./saved_item";
+
 class Saved extends React.Component {
   constructor(props) {
     super(props);

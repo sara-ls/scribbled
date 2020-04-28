@@ -76,7 +76,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faCircle} />
           </li>
           <li>
-            <span>Sara Sampson</span>
+            <span>Sara Lim Sampson</span>
           </li>
         </ul>
       </div>
