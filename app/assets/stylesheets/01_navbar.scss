@@ -1,6 +1,3 @@
-/**
-NavBar start -----------------------------
-**/
 .navbar {
   display: block;
   position: fixed;
@@ -28,7 +25,6 @@ NavBar start -----------------------------
 
 .logo-img {
   width: 140px;
-  /* height: 30px; */
   padding-left: 15px;
 }
 
@@ -36,10 +32,8 @@ NavBar start -----------------------------
   width: 58px;
   color: #1e7b85;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  color: #1e7b85;
   cursor: pointer;
 }
 
@@ -164,7 +158,6 @@ NavBar start -----------------------------
 
 .navbar-tools {
   display: flex;
-  flex-direction: row;
   align-items: center;
   margin-right: 5px;
 }
@@ -199,11 +192,6 @@ svg#upload-icon {
 
 .upload-btn-container span {
   color: #1e7b85;
-    font-size: 13px;
-
+  font-size: 13px;
   font-weight: bold;
 }
-
-/**
-NavBar end -----------------------------
-**/

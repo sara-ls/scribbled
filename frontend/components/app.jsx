@@ -33,7 +33,6 @@ class App extends React.Component {
               <ProtectedRoute exact path="/" component={BookIndex} />
               {/* Render Splash page as main content component if logged out */}
               <AuthRoute exact path="/splash" component={Splash} />
-
               <ProtectedRoute exact path="/books" component={BookIndex} />
               <ProtectedRoute exact path="/books/:id" component={Book} />
               <ProtectedRoute
